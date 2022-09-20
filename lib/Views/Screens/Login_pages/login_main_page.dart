@@ -9,7 +9,7 @@ import '../../../const/App_Colors.dart';
 import '../../../const/App_Logo.dart';
 import '../../Widgets/BackGround_Container.dart';
 import 'common_login/continer_templete.dart';
-import 'common_login/login_templete.dart';
+import '../../Widgets/customtextformfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -60,14 +60,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             LoginTemplete(
               HintText: 'Email Address',
-              svgicon: 'assets/Icons/Email.svg',
+              svgicon: SvgPicture.asset('assets/Icons/Email.svg'),
             ),
             SizedBox(
               height: 30,
             ),
             LoginTemplete(
               HintText: 'Password',
-              svgicon: 'assets/Icons/Password.svg',
+              svgicon: SvgPicture.asset('assets/Icons/Password.svg'),
             ),
             // Container(
             //   child: SizedBox(

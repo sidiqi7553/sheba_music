@@ -17,11 +17,9 @@ class ContinerTemplete extends StatelessWidget {
       margin: EdgeInsets.only(right: 20, left: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(17),
-        boxShadow: [
-          BoxShadow(
+
             color: primary,
-          ),
-        ],
+
       ),
       child: Center(
           child: AppText(
