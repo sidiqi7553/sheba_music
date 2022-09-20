@@ -36,9 +36,9 @@ class ContinueWithPhone extends StatelessWidget {
                 textcolor: white,
                 WeightofFont: FontWeight.w700,
               ),
-              SizedBox(
-                height: 20,
-              ),
+              // SizedBox(
+              //   height: 20,
+              // ),
               Container(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.9,
