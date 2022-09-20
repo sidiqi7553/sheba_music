@@ -2,10 +2,13 @@ import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sheba_music/Views/Widgets/Artist_MiniProfile.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/Icon_container.dart';
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
+import 'package:sheba_music/Views/songDetailsBottomSheet/MyProfile_Expand_Sheet.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import '../../../Widgets/MyProfile_ListMenu.dart';
 import '../../../songDetailsBottomSheet/artist_Expanded_sheet.dart';
 
 class MyProfile extends StatefulWidget {
@@ -187,8 +190,38 @@ body: BackGround_Container(child: SingleChildScrollView(
         ),
       ),
       Container(
-        child: check ? null : artist_Expanded_sheet(),
+        child: check ? null : MyProfile_Expand_Sheet(),
       ),
+
+
+      MyProfile_ListMenu(title: "Edit Profile", svgicon: "assets/Icons/Profile.svg"),
+      MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg"),
+      MyProfile_ListMenu(title: "Notifications", svgicon: "assets/Icons/Notification.svg"),
+      MyProfile_ListMenuformessenger(title: "Messenger", svgicon: "assets/Icons/Chat.svg"),
+      MyProfile_ListMenu(title: "Delete Account", svgicon: "assets/Icons/Delete.svg"),
+      MyProfile_ListMenu(title: "Purchased Tickets", svgicon: "assets/Icons/Ticket.svg"),
+      MyProfile_ListMenu(title: "Support", svgicon: "assets/Icons/Chat.svg"),
+      MyProfile_ListMenu(title: "Permissions", svgicon: "assets/Icons/Permission.svg"),
+      MyProfile_ListMenu(title: "Privacy Policy", svgicon: "assets/Icons/PrivacyPolicy.svg"),
+      MyProfile_ListMenu(title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
+      MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
+
+      Container(
+        height: 50,
+        width: MediaQuery.of(context).size.width*0.4,
+        margin: EdgeInsets.symmetric(horizontal:100,vertical: 50 ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: primary,
+        ),
+        child: Center(
+          child: AppText(
+            text: "Log out",
+            SizeofFont: 20,
+            textcolor: white,
+          ),
+        ),
+      )
 
 
     ],
