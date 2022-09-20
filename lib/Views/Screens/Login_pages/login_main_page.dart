@@ -69,53 +69,58 @@ class _LoginPageState extends State<LoginPage> {
               HintText: 'Password',
               svgicon: 'assets/Icons/Password.svg',
             ),
-            Container(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.92,
-                child: TextFormField(
-                  autofocus: true,
-                  keyboardType: TextInputType.emailAddress,
-                  controller: tectec,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: MultiValidator( [
-                    RequiredValidator(errorText: "Required"),
-                    MinLengthValidator(7,
-                        errorText:
-                        "Password must contains more than 7 characters")
-                  ]),
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(17),
-                  borderSide: BorderSide(color: primary, width: 1.0),
-                ),
-                    fillColor:
-                    Color(0xff18191B),
-                    filled: true,
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: SvgPicture.asset('assets/Icons/Password.svg'),
-                    ),
-                    hintText: 'Password',
-                    contentPadding: EdgeInsets.only(left: 5),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none),
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _obsecure = !_obsecure;
-                        });
-                      },
-                      child: Icon(
-                        _obsecure ? Icons.visibility_off : Icons.visibility,
-                        color: Colors.black45,
-                      ),
-                    ),
-                  ),
-                  obscureText: _obsecure,
-                ),
-              ),
-            ),
+            // Container(
+            //   child: SizedBox(
+            //     width: MediaQuery.of(context).size.width * 0.89,
+            //     child: TextFormField(
+            //       autofocus: true,
+            //       keyboardType: TextInputType.emailAddress,
+            //       controller: tectec,
+            //       autovalidateMode: AutovalidateMode.onUserInteraction,
+            //       validator: MultiValidator( [
+            //         RequiredValidator(errorText: "Required"),
+            //         MinLengthValidator(7,
+            //             errorText:
+            //             "Password must contains more than 7 characters")
+            //       ]),
+            //       decoration: InputDecoration(
+            //         focusedBorder: OutlineInputBorder(
+            //           borderRadius: BorderRadius.circular(17),
+            //           borderSide: BorderSide(color: primary, width: 1.0),
+            //         ),
+            //         enabledBorder: OutlineInputBorder(
+            //           borderRadius: BorderRadius.circular(17),
+            //           borderSide: BorderSide(color: primary, width: 1.0),
+            //         ),
+            //
+            //         fillColor:
+            //         Color(0xff18191B),
+            //         filled: true,
+            //         prefixIcon: Padding(
+            //           padding: const EdgeInsets.all(12.0),
+            //           child: SvgPicture.asset('assets/Icons/Password.svg'),
+            //         ),
+            //         hintText: 'Password',
+            //         contentPadding: EdgeInsets.only(left: 5),
+            //         border: OutlineInputBorder(
+            //             borderRadius: BorderRadius.circular(12),
+            //             borderSide: BorderSide.none),
+            //         suffixIcon: GestureDetector(
+            //           onTap: () {
+            //             setState(() {
+            //               _obsecure = !_obsecure;
+            //             });
+            //           },
+            //           child: Icon(
+            //             _obsecure ? Icons.visibility_off : Icons.visibility,
+            //             color: Colors.black45,
+            //           ),
+            //         ),
+            //       ),
+            //       obscureText: _obsecure,
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 35,
             ),
