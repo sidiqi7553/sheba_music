@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
+import 'Views/Screens/Login_pages/login_main_page.dart';
 import 'Views/Screens/Main_Screens/SplashScreen.dart';
 
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
 canvasColor: Colors.transparent,
         primarySwatch: Colors.red,
       ),
-      home:  Menu(),
+      home:  LoginPage(),
     );
   }
 }
