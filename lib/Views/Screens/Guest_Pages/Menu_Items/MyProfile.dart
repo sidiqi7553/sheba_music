@@ -203,7 +203,7 @@ body: BackGround_Container(child: SingleChildScrollView(
       MyProfile_ListMenu(title: "Permissions", svgicon: "assets/Icons/Permission.svg"),
       MyProfile_ListMenu(title: "Privacy Policy", svgicon: "assets/Icons/PrivacyPolicy.svg"),
       MyProfile_ListMenu(title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
-      MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
+      // MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
 
       Container(
         height: 50,
