@@ -16,11 +16,11 @@ class Artist_SeeAll extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: inner_Pages_App_Bar(
+        child:
+        inner_Pages_App_Bar(
           title: "Trending Artists",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
-        )
-        ,
+        ),
       ),
       body: BackGround_Container(
 

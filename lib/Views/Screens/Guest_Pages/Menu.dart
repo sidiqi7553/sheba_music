@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Library.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Tickets.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
@@ -8,6 +9,7 @@ import 'package:sheba_music/const/App_Text.dart';
 
 import 'Menu_Items/Discover.dart';
 import 'Menu_Items/Home.dart';
+import 'Menu_Items/MyProfile.dart';
 import 'Menu_Items/Search.dart';
 
 class Menu extends StatefulWidget {
@@ -33,7 +35,7 @@ class _MenuState extends State<Menu> {
             padding: const EdgeInsets.only(bottom: 60),
             child: Builder(builder: (context) {
               if (widget.selectedind == 0) {
-                return  Home();
+                return  MyProfile();
               }
               if (widget.selectedind == 1) {
                 return Discover();
@@ -45,10 +47,10 @@ class _MenuState extends State<Menu> {
                 return Tickets();
               }
               if (widget.selectedind == 4) {
-                return AppText(text: "hello", SizeofFont: 50);
+                return Library();
               }
               else {
-                return AppText(text: "hello", SizeofFont: 50);
+                return MyProfile();
               }
             }),
           ),

@@ -5,11 +5,11 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 class purchasedPaidSongs extends StatelessWidget {
-  String title,note;
-  Widget? nextpage;
+  String title,note,btntext;
+  Widget? nextpage,songprice;
    purchasedPaidSongs({Key? key,this.title="Purchase Paid Beats"
    ,this.note="Click on the button to complete your Song purchase.Payment will be deducted from your wallet.",
-     this.nextpage
+     this.nextpage,this.songprice,this.btntext="Proceed to Payment"
    })  : super(key: key);
 
   @override
@@ -46,7 +46,9 @@ class purchasedPaidSongs extends StatelessWidget {
               child: Center(child: AppText(text: note, SizeofFont: 15,textcolor: white,align:TextAlign.center,) ,),
             ),
             SizedBox(height: 150,),
-            AppText(text: 'Total \$6 will Deduct', SizeofFont: 13,textcolor: white,),
+              Container(
+                child: songprice,
+              ),
 
             GestureDetector(
               onTap: (){
@@ -63,7 +65,7 @@ class purchasedPaidSongs extends StatelessWidget {
                 ),
                 child: Center(
                   child: AppText(
-                    text: "Proceed to Payment",
+                    text: btntext,
                     SizeofFont: 20,
                     textcolor: white,
                     WeightofFont: FontWeight.w600,

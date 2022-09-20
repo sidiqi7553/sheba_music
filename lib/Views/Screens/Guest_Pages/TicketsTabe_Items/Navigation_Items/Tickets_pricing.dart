@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Deposit_Money.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/GlassBox.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
+import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
@@ -40,6 +42,7 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
     ),
   ];
   int list = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,16 +50,18 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           title: "Ticket Name",
-          action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
-        )
-        ,
+          action: ActionIcon(
+            icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
+          ),
+        ),
       ),
       body: BackGround_Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 28.0, right: 28.0, top: 29),
+                padding:
+                    const EdgeInsets.only(left: 28.0, right: 28.0, top: 29),
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: primary, width: 2),
@@ -221,13 +226,13 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
               Container(
                 height: 35,
                 margin:
-                const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+                    const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(25)),
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
-                  // controller: scrollController,
+                    // controller: scrollController,
                     itemCount: catagory.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (ctx, index) {
@@ -266,9 +271,9 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
                                   color: containercolor),
                               child: Center(
                                   child: Text(
-                                    catagory[index],
-                                    style: TextStyle(fontSize: 13, color: white),
-                                  )),
+                                catagory[index],
+                                style: TextStyle(fontSize: 13, color: white),
+                              )),
                             ),
                           ),
                         ),
@@ -290,7 +295,6 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
 }
 
 class VVIP extends StatefulWidget {
-
   const VVIP({Key? key}) : super(key: key);
 
   @override
@@ -298,30 +302,29 @@ class VVIP extends StatefulWidget {
 }
 
 class _VVIPState extends State<VVIP> {
-  double productprice=17.60;
+  double productprice = 17.60;
   double? price;
-
 
   int _counter = 1;
 
   void _incrementCounter() {
     setState(() {
-
       _counter++;
     });
   }
+
   void _decreamentCounter() {
     setState(() {
-
       _counter--;
     });
   }
+
   void _priceCounter() {
     setState(() {
-
-      price=(productprice)*_counter;
+      price = (productprice) * _counter;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -339,113 +342,114 @@ class _VVIPState extends State<VVIP> {
                 WeightofFont: FontWeight.bold,
               ),
             ),
-
             Container(
               height: 60,
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 30),
               decoration: BoxDecoration(
-                color: containercolor,
+                  color: containercolor,
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: primary)
-              ),
+                  border: Border.all(color: primary)),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                      InkWell(
-                        onTap: () {
-                          if (_counter > 1) {
-                            _decreamentCounter();
-                          }
-                          _priceCounter();
-                        },
-                        child: Container(
-
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            color: containercolor,
-
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(2,2),
-                                blurRadius: 4,
-                                color: black.withOpacity(0.25)
-                              ),
-                            ]
-                          ),
-                          child: Center(child: Text("-",style: TextStyle(color: white,fontSize: 50),),),
-                        ),
-                      ),
-                  
-                  AppText(text: '$_counter', SizeofFont: 30,textcolor: white,),
                   InkWell(
                     onTap: () {
-
-                        _incrementCounter();
-                        _priceCounter();
-
+                      if (_counter > 1) {
+                        _decreamentCounter();
+                      }
+                      _priceCounter();
                     },
                     child: Container(
-
                       height: 60,
                       width: 60,
                       decoration: BoxDecoration(
                           color: containercolor,
-
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
-                                offset: Offset(-2,-2),
+                                offset: Offset(2, 2),
                                 blurRadius: 4,
-                                color: white.withOpacity(0.25)
-                            ),
-                          ]
+                                color: black.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "-",
+                          style: TextStyle(color: white, fontSize: 50),
+                        ),
                       ),
-                      child: Center(child: Text("+",style: TextStyle(color: white,fontSize: 40),),),
                     ),
                   ),
-
+                  AppText(
+                    text: '$_counter',
+                    SizeofFont: 30,
+                    textcolor: white,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _incrementCounter();
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(-2, -2),
+                                blurRadius: 4,
+                                color: white.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "+",
+                          style: TextStyle(color: white, fontSize: 40),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-
           ],
         ),
-
       ),
       bottomSheet: GlassBox(
         width: double.infinity,
         height: 80.0,
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 20),
-
           child: ListTile(
             title: AppText(
               text: "TOTAL PRICE",
               SizeofFont: 15,
               textcolor: yellow,
             ),
-            subtitle:AppText(
-              text: "\$"+(price).toString(),
+            subtitle: AppText(
+              text: "\$" + (price).toString(),
               SizeofFont: 20,
               textcolor: white,
             ),
-            trailing: Container(
-              height: 40,
-              width: 140,
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(15),
-
-              ),
-              child: Center(
-                child: AppText(
-                  text: "Continue",
-                  SizeofFont: 20,
-                  textcolor: white,
+            trailing: GestureDetector(
+              onTap: () {
+                buyticket(context);
+              },
+              child: Container(
+                height: 40,
+                width: 140,
+                decoration: BoxDecoration(
+                  color: primary,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(
+                  child: AppText(
+                    text: "Continue",
+                    SizeofFont: 20,
+                    textcolor: white,
+                  ),
                 ),
               ),
             ),
@@ -454,4 +458,21 @@ class _VVIPState extends State<VVIP> {
       ),
     );
   }
+}
+
+void buyticket(BuildContext context) {
+  showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (BuildContext c) {
+        return FractionallySizedBox(
+          heightFactor: 0.8,
+          child: purchasedPaidSongs(
+            nextpage: Deposit_Money(),
+            btntext: "Deposit Payment",
+            title: "Payment Details",
+            note:  "You do not have sufficient funds to purchase this ticket. Deposit Money into your wallet to continue.",
+          ),
+        );
+      });
 }

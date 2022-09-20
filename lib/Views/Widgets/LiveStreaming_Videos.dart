@@ -110,6 +110,7 @@ livestreamingpurchase(BuildContext context) {
         return FractionallySizedBox(
           heightFactor: 0.8,
           child: purchasedPaidSongs(
+            songprice:  AppText(text: 'Total \$6 will Deduct', SizeofFont: 13,textcolor: white,),
             nextpage: LiveStreaminng(),
             title: "Pay and Start Live Stream",
             note: "Click on the button to complete your Live Stream Payment. Payment will be deducted from your wallet.",

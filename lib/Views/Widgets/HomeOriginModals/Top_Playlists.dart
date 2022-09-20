@@ -111,7 +111,8 @@ class Top_Playlists extends StatelessWidget {
                     ),
                   );
                 }),
-          ),],
+          ),
+        ],
       ),
     );
   }

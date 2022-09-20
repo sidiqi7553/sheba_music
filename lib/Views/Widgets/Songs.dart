@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 
+import '../../const/App_Colors.dart';
+import '../../const/App_Text.dart';
 import '../songDetailsBottomSheet/song1Details.dart';
 import '../songDetailsBottomSheet/songPlay.dart';
 import 'SongListTile.dart';
@@ -91,7 +93,9 @@ void purchasedPaidBeats(BuildContext context) {
       builder: (BuildContext c) {
         return FractionallySizedBox(
           heightFactor: 0.8,
-          child: purchasedPaidSongs(),
+          child: purchasedPaidSongs(
+            songprice:  AppText(text: 'Total \$6 will Deduct', SizeofFont: 13,textcolor: white,),
+          ),
         );
       });
 }
