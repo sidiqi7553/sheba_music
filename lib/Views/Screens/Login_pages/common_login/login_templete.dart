@@ -5,13 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginTemplete extends StatelessWidget {
   String? HintText;
-  String svgicon;
+  Widget? svgicon;
   Widget? svgicon1;
 
   LoginTemplete({
     Key? key,
     this.HintText,
-    required this.svgicon,
+    this.svgicon,
     this.svgicon1,
   }) : super(key: key);
 
@@ -35,7 +35,7 @@ class LoginTemplete extends StatelessWidget {
           decoration: InputDecoration(
             prefixIcon: Padding(
               padding: const EdgeInsets.all(12.0),
-              child: SvgPicture.asset(svgicon),
+              child: svgicon,
             ),
             suffixIcon: Padding(
               padding: const EdgeInsets.all(12.0),
