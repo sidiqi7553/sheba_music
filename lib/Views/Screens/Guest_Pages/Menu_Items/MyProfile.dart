@@ -1,15 +1,14 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:sheba_music/Views/Widgets/Artist_MiniProfile.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
-import 'package:sheba_music/Views/Widgets/Icon_container.dart';
+
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/MyProfile_Expand_Sheet.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../Widgets/MyProfile_ListMenu.dart';
-import '../../../songDetailsBottomSheet/artist_Expanded_sheet.dart';
+
 
 class MyProfile extends StatefulWidget {
   const MyProfile({Key? key}) : super(key: key);
