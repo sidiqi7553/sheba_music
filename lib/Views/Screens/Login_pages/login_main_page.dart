@@ -12,6 +12,8 @@ import '../../Widgets/BackGround_Container.dart';
 import 'common_login/continer_templete.dart';
 import '../../Widgets/customtextformfield.dart';
 import 'continue_with_phone.dart';
+import 'forget_password_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -140,10 +142,15 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  AppText(
-                    text: "Forget Password?",
-                    SizeofFont: 15,
-                    textcolor: white,
+                  TextButton(
+                    onPressed: () {
+                      Get.to(ForgetPasswordPage());
+                    },
+                    child: AppText(
+                      text: "Forget Password?",
+                      SizeofFont: 15,
+                      textcolor: white,
+                    ),
                   ),
                 ],
               ),
@@ -313,10 +320,15 @@ class _LoginPageState extends State<LoginPage> {
                   SizeofFont: 15,
                   textcolor: white,
                 ),
-                AppText(
-                  text: "Register Here",
-                  SizeofFont: 15,
-                  textcolor: primary,
+                TextButton(
+                  onPressed: () {
+                    Get.to(RegisterPage());
+                  },
+                  child: AppText(
+                    text: "Register Here",
+                    SizeofFont: 15,
+                    textcolor: primary,
+                  ),
                 ),
               ],
             ),

@@ -5,6 +5,9 @@ import '../../../const/App_Logo.dart';
 import '../../../const/App_Text.dart';
 import '../../Widgets/BackGround_Container.dart';
 import 'package:pinput/pinput.dart';
+import 'package:get/get.dart';
+
+import 'common_login/continer_templete.dart';
 
 class VerifyOtpPage extends StatefulWidget {
   const VerifyOtpPage({Key? key}) : super(key: key);
@@ -22,9 +25,12 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
         color: Color.fromRGBO(30, 60, 87, 1),
         fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      color: textformfieldColor,
-      borderRadius: BorderRadius.circular(15),
-    ),
+        color: textformfieldColor,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: primary,
+          width: 1.0,
+        )),
   );
 
   @override
@@ -109,6 +115,82 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
                     pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                     showCursor: true,
                     onCompleted: (pin) => print(pin),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Center(
+                    child: Text(
+                      '02:59',
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: yellow),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Enter Valid OTP Number ! ',
+                          style: TextStyle(
+                              fontSize: 15,
+                              // fontWeight: FontWeight.bold,
+                              color: white),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          'You will receive a 4 digit code ',
+                          style: TextStyle(fontSize: 15, color: white),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Didn’t receive code?',
+                          style: TextStyle(
+                              fontSize: 19,
+                              // fontWeight: FontWeight.bold,
+                              color: white),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          'Resend',
+                          style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                              color: white),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Get.to(ContinueWithPhone());
+                    },
+                    child: ContinerTemplete(
+                      BoxText: "Send Otp",
+                    ),
                   ),
                 ],
               ),
