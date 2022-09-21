@@ -8,6 +8,8 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
+import '../../Wallet/Wallet_Main.dart';
+
 class Artist_SeeAll extends StatelessWidget {
   const Artist_SeeAll({Key? key}) : super(key: key);
 
@@ -18,6 +20,7 @@ class Artist_SeeAll extends StatelessWidget {
         preferredSize: Size.fromHeight(55),
         child:
         inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
           title: "Trending Artists",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         ),

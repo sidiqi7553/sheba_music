@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/LoginPages_Backbtn.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import '../../../const/App_Logo.dart';
@@ -20,6 +23,10 @@ class ContinueWithPhone extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+
+              LoginPages_Backbtn(),
+
+
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
                 child: Center(

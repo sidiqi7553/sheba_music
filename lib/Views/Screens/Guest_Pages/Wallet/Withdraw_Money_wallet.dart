@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
-import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Tickets_pricing.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Withdraw_terms.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
-import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
-import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
+import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-import '../../../../Widgets/inner_Pages_App_Bar.dart';
-import 'Going.dart';
+import '../MyProfile_Navigation_Items/Notifications.dart';
 
+class Withdraw_Money_wallet extends StatelessWidget {
+  const Withdraw_Money_wallet({Key? key}) : super(key: key);
 
-class Deposit_Money extends StatefulWidget {
-  const Deposit_Money({Key? key}) : super(key: key);
-
-  @override
-  State<Deposit_Money> createState() => _Deposit_MoneyState();
-}
-
-class _Deposit_MoneyState extends State<Deposit_Money> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +20,8 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           nextscreen: Notifications(),
-          title: "Deposit Money",
+
+          title: "Withdraw Money",
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Notification.svg"),
           ),
@@ -52,10 +44,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  Get.to(Tickets_pricing());
-                  payment(context);
-                },
+
                 child: Container(
                     margin: EdgeInsets.symmetric(vertical: 15),
                     height: 90,
@@ -205,26 +194,20 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                       ),
                     ),
                   )),
+
+              Container(
+                margin: EdgeInsets.all(30),
+                child: GestureDetector(
+                    onTap: (){
+                      Get.to(Withdraw_terms());
+                    },
+                    child: AppText(text: "Withdraw Terms", SizeofFont: 15,textcolor: white,)),
+              )
+
             ],
           ),
         ),
       ),
     );
   }
-}
-
-void payment(BuildContext context) {
-
-  showModalBottomSheet(
-      isScrollControlled: true,
-      context: context,
-      builder: (BuildContext c) {
-        return FractionallySizedBox(
-          heightFactor: 0.8,
-          child: purchasedPaidSongs(
-              nextpage:Going(),
-              title: "Payment Details",
-              note: "Click on the button to complete your ticket purchase.Payment will be deducted from your wallet."),
-        );
-      });
 }

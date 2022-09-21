@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Deposit_Money_wallet.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Request_Send_Money.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/HomeOriginModals/Trending_Artists.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
@@ -11,6 +13,7 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import 'RecentTransactions_SeeAll.dart';
+import 'Withdraw_Money_wallet.dart';
 
 class Wallet_Main extends StatefulWidget {
   const Wallet_Main({Key? key}) : super(key: key);
@@ -66,56 +69,71 @@ class _Wallet_MainState extends State<Wallet_Main> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Column(
-                        children: [
-                          Universal_Container(
-                              height: 50,
-                              border: Border.all(color: primary),
-                              widht: 50,
-                              child: Center(
-                                child: SvgPicture.asset(
-                                    "assets/Icons/Deposit.svg"),
-                              )),
-                          AppText(
-                            text: "Deposit",
-                            SizeofFont: 15,
-                            textcolor: white,
-                          )
-                        ],
+                      GestureDetector(
+                       onTap: (){
+                         Get.to(Deposit_Money_wallet());
+                       },
+                        child: Column(
+                          children: [
+                            Universal_Container(
+                                height: 50,
+                                border: Border.all(color: primary),
+                                widht: 50,
+                                child: Center(
+                                  child: SvgPicture.asset(
+                                      "assets/Icons/Deposit.svg"),
+                                )),
+                            AppText(
+                              text: "Deposit",
+                              SizeofFont: 15,
+                              textcolor: white,
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Universal_Container(
-                              height: 50,
-                              border: Border.all(color: primary),
-                              widht: 50,
-                              child: Center(
-                                child:
-                                    SvgPicture.asset("assets/Icons/Send.svg"),
-                              )),
-                          AppText(
-                            text: "Withdraw",
-                            SizeofFont: 15,
-                            textcolor: white,
-                          )
-                        ],
+                      GestureDetector(
+                       onTap: (){
+                         Get.to(Withdraw_Money_wallet());
+                       },
+                        child: Column(
+                          children: [
+                            Universal_Container(
+                                height: 50,
+                                border: Border.all(color: primary),
+                                widht: 50,
+                                child: Center(
+                                  child:
+                                      SvgPicture.asset("assets/Icons/Send.svg"),
+                                )),
+                            AppText(
+                              text: "Withdraw",
+                              SizeofFont: 15,
+                              textcolor: white,
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Universal_Container(
-                              height: 50,
-                              border: Border.all(color: primary),
-                              widht: 50,
-                              child: Center(
-                                child: SvgPicture.asset(
-                                    "assets/Icons/Icon_Swap.svg"),
-                              )),
-                          AppText(
-                            text: "Request \n/ Send",
-                            SizeofFont: 15,
-                            textcolor: white,
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          Get.to(Request_Send_Money());
+                        },
+                        child: Column(
+                          children: [
+                            Universal_Container(
+                                height: 50,
+                                border: Border.all(color: primary),
+                                widht: 50,
+                                child: Center(
+                                  child: SvgPicture.asset(
+                                      "assets/Icons/Icon_Swap.svg"),
+                                )),
+                            AppText(
+                              text: "Request \n/ Send",
+                              SizeofFont: 15,
+                              textcolor: white,
+                            )
+                          ],
+                        ),
                       ),
                       Column(
                         children: [

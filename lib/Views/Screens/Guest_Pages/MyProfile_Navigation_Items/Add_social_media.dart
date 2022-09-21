@@ -6,6 +6,8 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import '../Wallet/Wallet_Main.dart';
+
 class Add_social_media extends StatelessWidget {
   const Add_social_media({Key? key}) : super(key: key);
 
@@ -15,6 +17,8 @@ class Add_social_media extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Add Social Media",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         )

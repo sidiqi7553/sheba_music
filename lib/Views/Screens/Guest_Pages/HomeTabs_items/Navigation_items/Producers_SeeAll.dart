@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
@@ -23,6 +24,8 @@ class _Producers_SeeAllState extends State<Producers_SeeAll> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Trending Producers",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         )

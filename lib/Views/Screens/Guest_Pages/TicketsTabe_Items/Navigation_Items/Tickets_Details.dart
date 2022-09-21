@@ -11,6 +11,7 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../../Widgets/inner_Pages_App_Bar.dart';
+import '../../Wallet/Wallet_Main.dart';
 import 'Maps.dart';
 import 'Tickets_pricing.dart';
 
@@ -29,6 +30,8 @@ class _Tickets_DetailsState extends State<Tickets_Details> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           title: "Ticket Name",
+          nextscreen: Wallet_Main(),
+
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/LiveStreaming_Videos.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
@@ -16,6 +17,8 @@ class LiveStreaming_SeeAll  extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Live Streaming",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         )

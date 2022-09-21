@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Going.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Tickets_pricing.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Deposit_Terms.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
 import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
@@ -29,6 +31,8 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           title: "Deposit Money",
+          nextscreen: Notifications(),
+
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Notification.svg"),
           ),
@@ -51,10 +55,7 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  Get.to(Tickets_pricing());
-                  payment(context);
-                },
+               
                 child: Container(
                     margin: EdgeInsets.symmetric(vertical: 15),
                     height: 90,
@@ -204,6 +205,16 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                       ),
                     ),
                   )),
+              
+              Container(
+                margin: EdgeInsets.all(30),
+                child: GestureDetector(
+                    onTap: (){
+                      Get.to(Deposit_Terms());
+                    },
+                    child: AppText(text: "Deposit Terms", SizeofFont: 15,textcolor: white,)),
+              )
+              
             ],
           ),
         ),

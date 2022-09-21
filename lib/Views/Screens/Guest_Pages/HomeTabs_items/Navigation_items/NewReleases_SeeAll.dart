@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
@@ -23,6 +24,8 @@ class _NewReleases_SeeAllState extends State<NewReleases_SeeAll> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "New Releases",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         )

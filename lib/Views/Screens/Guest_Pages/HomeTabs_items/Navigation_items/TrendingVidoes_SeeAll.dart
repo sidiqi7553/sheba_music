@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/LiveStreaming_Videos.dart';
 import 'package:sheba_music/Views/Widgets/Videos.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
@@ -18,6 +19,8 @@ class TrendingVidoes_SeeAll extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Trending Videos",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/Comments.dart';
 import 'package:sheba_music/Views/Widgets/customtextfield.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
@@ -31,6 +32,8 @@ class _LiveStreaminngState extends State<LiveStreaminng> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Live Streaming",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         ),

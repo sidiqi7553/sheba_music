@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Songs.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
@@ -13,6 +14,8 @@ class Liked_songs extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          nextscreen: Wallet_Main(),
+
           title: "Liked Songs",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
         ),
