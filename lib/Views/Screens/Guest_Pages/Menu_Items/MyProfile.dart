@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Support.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
@@ -11,6 +12,8 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../Widgets/MyProfile_ListMenu.dart';
+import '../MyProfile_Navigation_Items/Privacy_Policy.dart';
+import '../MyProfile_Navigation_Items/Purchased_Tickets.dart';
 
 
 class MyProfile extends StatefulWidget {
@@ -201,10 +204,10 @@ body: BackGround_Container(child: SingleChildScrollView(
       MyProfile_ListMenu(title: "Notifications", svgicon: "assets/Icons/Notification.svg",nextpage: Notifications(),),
       MyProfile_ListMenuformessenger(title: "Messenger", svgicon: "assets/Icons/Chat.svg",nextpage: Messenger(),),
       MyProfile_ListMenu(title: "Delete Account", svgicon: "assets/Icons/Delete.svg"),
-      MyProfile_ListMenu(title: "Purchased Tickets", svgicon: "assets/Icons/Ticket.svg"),
-      MyProfile_ListMenu(title: "Support", svgicon: "assets/Icons/Chat.svg"),
+      MyProfile_ListMenu(title: "Purchased Tickets", svgicon: "assets/Icons/Ticket.svg",nextpage: Purchased_Tickets(),),
+      MyProfile_ListMenu(title: "Support", svgicon: "assets/Icons/Chat.svg",nextpage: Support(),),
       MyProfile_ListMenu(title: "Permissions", svgicon: "assets/Icons/Permission.svg"),
-      MyProfile_ListMenu(title: "Privacy Policy", svgicon: "assets/Icons/PrivacyPolicy.svg"),
+      MyProfile_ListMenu(title: "Privacy Policy", svgicon: "assets/Icons/PrivacyPolicy.svg",nextpage: Privacy_Policy(),),
       MyProfile_ListMenu(title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
       MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
 

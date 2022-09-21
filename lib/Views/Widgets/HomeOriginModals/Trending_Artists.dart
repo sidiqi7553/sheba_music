@@ -17,7 +17,8 @@ class Trending_Artists extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: [ListTile(
+        children: [
+          ListTile(
           title: AppText(
             text: title,
             SizeofFont: 20,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../../../const/App_Logo.dart';
 import '../../../const/App_Text.dart';
@@ -67,7 +67,6 @@ class ContinueWithPhone extends StatelessWidget {
                       filled: true,
                       hintText: 'Phone Number',
                       contentPadding: EdgeInsets.only(left: 15),
-
                     ),
                   ),
                 ),

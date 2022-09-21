@@ -35,7 +35,7 @@ class _MenuState extends State<Menu> {
             padding: const EdgeInsets.only(bottom: 60),
             child: Builder(builder: (context) {
               if (widget.selectedind == 0) {
-                return  MyProfile();
+                return  Home();
               }
               if (widget.selectedind == 1) {
                 return Discover();

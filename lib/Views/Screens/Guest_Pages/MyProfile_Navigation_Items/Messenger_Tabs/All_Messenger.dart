@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import '../../../../../const/App_Text.dart';
+import '../Chat_Messenger.dart';
 
 class All_Messenger extends StatelessWidget {
   const All_Messenger({Key? key}) : super(key: key);
@@ -19,12 +20,12 @@ class All_Messenger extends StatelessWidget {
               itemCount: contents.length,
               itemBuilder: (ctx, index) {
                 return GestureDetector(
-                  // onTap: () {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => ChatDetailPage()));
-                  // },
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Chat_Messenger()));
+                  },
                   child: ListTile(
                       leading: AvatarView(
                         radius: 25,
@@ -107,7 +108,7 @@ List<ChatsList> contents = [
       ),
   ChatsList(
       title: 'Odeusz Piotrowski',
-      image: 'Aassets/Images/DP_Images/Image_DP1.png',
+      image: 'assets/Images/DP_Images/Image_DP2.png',
       subtitle: "Will do, super, thank you 😄❤️",
       time: "Tue"
       // discription: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "
@@ -123,7 +124,7 @@ List<ChatsList> contents = [
       ),
   ChatsList(
       title: 'Maciej Orłowski',
-      image: 'assets/Images/DP_Images/Image_DP1.png',
+      image: 'assets/Images/DP_Images/Image_DP3.png',
       subtitle: "Here is another tutorial, if you...",
       time: "23 Mar"
       // discription: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "

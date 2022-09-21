@@ -54,6 +54,7 @@ class _HomeState extends State<Home> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Main_Pages_App_Bar(
+
             title: Leadingtitle(
           leadingtext: "Hi Hamza,",
           Welcome: "Welcome Back",
