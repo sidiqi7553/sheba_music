@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import '../../../const/App_Logo.dart';
 import '../../../const/App_Text.dart';
+import 'common_login/continer_templete.dart';
+import 'verify_otp_page.dart';
 
 class ContinueWithPhone extends StatelessWidget {
   const ContinueWithPhone({Key? key}) : super(key: key);
@@ -39,6 +42,9 @@ class ContinueWithPhone extends StatelessWidget {
               // SizedBox(
               //   height: 20,
               // ),
+              SizedBox(
+                height: 30,
+              ),
               Container(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.9,
@@ -69,6 +75,17 @@ class ContinueWithPhone extends StatelessWidget {
                       contentPadding: EdgeInsets.only(left: 15),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(VerifyOtpPage());
+                },
+                child: ContinerTemplete(
+                  BoxText: "Login",
                 ),
               ),
             ],

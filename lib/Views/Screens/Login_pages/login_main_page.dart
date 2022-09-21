@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:get/get.dart';
 
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
@@ -10,6 +11,7 @@ import '../../../const/App_Logo.dart';
 import '../../Widgets/BackGround_Container.dart';
 import 'common_login/continer_templete.dart';
 import '../../Widgets/customtextformfield.dart';
+import 'continue_with_phone.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -23,9 +25,7 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _obsecure = true;
 
-  bool? checkedvalue=false;
-
-
+  bool? checkedvalue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -65,67 +65,72 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 30,
             ),
-            LoginTemplete(
-              HintText: 'Password',
-              svgicon: SvgPicture.asset('assets/Icons/Password.svg'),
+            Container(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.89,
+                child: TextFormField(
+                  style: TextStyle(color: white),
+                  autofocus: true,
+                  keyboardType: TextInputType.emailAddress,
+                  controller: tectec,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: MultiValidator([
+                    RequiredValidator(errorText: "Required"),
+                    MinLengthValidator(7,
+                        errorText:
+                            "Password must contains more than 7 characters")
+                  ]),
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(17),
+                      borderSide: BorderSide(color: primary, width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(17),
+                      borderSide: BorderSide(color: primary, width: 1.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(17),
+                      borderSide: BorderSide(color: primary, width: 1.0),
+                    ),
+                    fillColor: Color(0xff18191B),
+                    filled: true,
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: SvgPicture.asset('assets/Icons/Password.svg'),
+                    ),
+                    hintText: 'Password',
+                    hintStyle: TextStyle(color: white),
+                    contentPadding: EdgeInsets.only(left: 5),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _obsecure = !_obsecure;
+                        });
+                      },
+                      child: Icon(
+                        _obsecure ? Icons.visibility_off : Icons.visibility,
+                        color: white,
+                      ),
+                    ),
+                  ),
+                  obscureText: _obsecure,
+                ),
+              ),
             ),
-            // Container(
-            //   child: SizedBox(
-            //     width: MediaQuery.of(context).size.width * 0.89,
-            //     child: TextFormField(
-            //       autofocus: true,
-            //       keyboardType: TextInputType.emailAddress,
-            //       controller: tectec,
-            //       autovalidateMode: AutovalidateMode.onUserInteraction,
-            //       validator: MultiValidator( [
-            //         RequiredValidator(errorText: "Required"),
-            //         MinLengthValidator(7,
-            //             errorText:
-            //             "Password must contains more than 7 characters")
-            //       ]),
-            //       decoration: InputDecoration(
-            //         focusedBorder: OutlineInputBorder(
-            //           borderRadius: BorderRadius.circular(17),
-            //           borderSide: BorderSide(color: primary, width: 1.0),
-            //         ),
-            //         enabledBorder: OutlineInputBorder(
-            //           borderRadius: BorderRadius.circular(17),
-            //           borderSide: BorderSide(color: primary, width: 1.0),
-            //         ),
-            //
-            //         fillColor:
-            //         Color(0xff18191B),
-            //         filled: true,
-            //         prefixIcon: Padding(
-            //           padding: const EdgeInsets.all(12.0),
-            //           child: SvgPicture.asset('assets/Icons/Password.svg'),
-            //         ),
-            //         hintText: 'Password',
-            //         contentPadding: EdgeInsets.only(left: 5),
-            //         border: OutlineInputBorder(
-            //             borderRadius: BorderRadius.circular(12),
-            //             borderSide: BorderSide.none),
-            //         suffixIcon: GestureDetector(
-            //           onTap: () {
-            //             setState(() {
-            //               _obsecure = !_obsecure;
-            //             });
-            //           },
-            //           child: Icon(
-            //             _obsecure ? Icons.visibility_off : Icons.visibility,
-            //             color: Colors.black45,
-            //           ),
-            //         ),
-            //       ),
-            //       obscureText: _obsecure,
-            //     ),
-            //   ),
-            // ),
             SizedBox(
               height: 35,
             ),
-            ContinerTemplete(
-              BoxText: "Login",
+            GestureDetector(
+              onTap: () {
+                Get.to(ContinueWithPhone());
+              },
+              child: ContinerTemplete(
+                BoxText: "Login",
+              ),
             ),
             SizedBox(
               height: 15,
@@ -315,7 +320,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
