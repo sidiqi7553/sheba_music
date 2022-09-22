@@ -19,7 +19,6 @@ class Edit_Profile extends StatefulWidget {
 
 class _Edit_ProfileState extends State<Edit_Profile> {
   PlatformFile? temp;
-
   pickphoto() async {
     final image =
         // ignore: invalid_use_of_visible_for_testing_member
@@ -31,9 +30,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
       temp = image.files.first;
     });
   }
-
   PlatformFile? temp2;
-
   pickCoverphoto() async {
     final image =
         // ignore: invalid_use_of_visible_for_testing_member
