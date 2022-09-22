@@ -68,7 +68,7 @@ class Leadingtitle extends StatelessWidget {
           ),
           AppText(
             text: Welcome,
-            SizeofFont: 15,
+            SizeofFont: 14,
             textcolor: white,
           ),
         ],

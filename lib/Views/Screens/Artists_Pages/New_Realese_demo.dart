@@ -6,10 +6,10 @@ import 'package:sheba_music/const/App_Text.dart';
 import '../../Widgets/Songs.dart';
 
 
-class New_Releases extends StatelessWidget {
+class Artist_New_Releases extends StatelessWidget {
   String title;
   Widget? seeAll;
-   New_Releases({Key? key,this.title="New Releases",this.seeAll}) : super(key: key);
+  Artist_New_Releases({Key? key,this.title="New Releases",this.seeAll}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

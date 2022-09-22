@@ -5,7 +5,8 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Logo.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-import 'Select_Artist.dart';
+import '../Artists_Pages/artist_menu.dart';
+import '../Guest_Pages/Select_Artist.dart';
 
 class SelectType extends StatefulWidget {
 
@@ -125,7 +126,7 @@ class _SelectTypeState extends State<SelectType> {
                           setState(() {
                             current = 2;
                           });
-                          Get.to(Select_Artist());
+                          Get.to(Artist_Menu());
                         },
                         child: Container(
                           width: MediaQuery
