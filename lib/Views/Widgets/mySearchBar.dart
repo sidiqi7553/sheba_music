@@ -14,8 +14,8 @@ class mySearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: MediaQuery.of(context).size.width*0.8,
-      margin: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
+      width: MediaQuery.of(context).size.width*0.999,
+      margin: EdgeInsets.symmetric(horizontal: 20,vertical: 30),
       decoration: BoxDecoration(
           color: textformfieldColor,
           border: Border.all(color: primary,),

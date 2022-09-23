@@ -74,7 +74,7 @@ class customtextFormFieldOnlyHintText extends StatelessWidget {
     this.hintText,
     this.svgicon,
     this.svgicon1,
-    this.width = 0.8,
+    this.width = 0.9999,
 
     this.height = 50,
 

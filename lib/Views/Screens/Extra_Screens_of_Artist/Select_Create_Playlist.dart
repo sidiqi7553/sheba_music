@@ -5,37 +5,34 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigati
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
-import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-import 'Select_Album_2.dart';
+import 'Create_Playlist.dart';
 
-class Select_Album extends StatefulWidget {
-  const Select_Album({Key? key}) : super(key: key);
+class Select_Create_Playlist extends StatefulWidget {
+
+  const Select_Create_Playlist({Key? key}) : super(key: key);
 
   @override
-  State<Select_Album> createState() => _Select_AlbumState();
+  State<Select_Create_Playlist> createState() => _Select_Create_PlaylistState();
 }
 
-class _Select_AlbumState extends State<Select_Album> {
+class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
-          title: "Select Album",
+          title: "Playlist Name",
           action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
-        ),
+        )
+        ,
       ),
       body: BackGround_Container(child: SingleChildScrollView(
         child: Column(
           children: [
-
-            mySearchBar(
-              hinttext: "Search Album",
-            ),
 
             Container(
               height: MediaQuery
@@ -59,13 +56,15 @@ class _Select_AlbumState extends State<Select_Album> {
                     if (index == 0) {
                       return
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(Create_Playlist());
+                          },
                           child: Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, right: 10, top: 10),
                               child: Universal_Container(
 
-                                height: 120,
+                                height: 140,
                                 widht: 150,
 
                                 child: Column(
@@ -105,10 +104,12 @@ class _Select_AlbumState extends State<Select_Album> {
                                           child: Padding(
                                             padding: const EdgeInsets.only(
                                               left: 18.0, top: 8,),
-                                            child: AppText(
-                                              text: "Create Playlist",
-                                              SizeofFont: 16,
-                                              textcolor: white,
+                                            child: Center(
+                                              child: AppText(
+                                                text: "Create Playlist",
+                                                SizeofFont: 16,
+                                                textcolor: white,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -197,31 +198,7 @@ class _Select_AlbumState extends State<Select_Album> {
         ),
       )
       ),
-      bottomSheet: Container(
-        height: 60,
-        color: Colors.transparent,
-        child: Center(
-          child: GestureDetector(
-            onTap: (){
-              Get.to(Select_Album_2());
-            },
-            child: Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width*0.8,
-              margin: EdgeInsets.only(left: 70,right: 70,top: 00),
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(10),
 
-              ),
-              child: Center(
-                child: AppText(text: "ok", SizeofFont: 20,textcolor: white,),
-              ),
-            ),
-          ),
-        )
-        ,
-      ),
     );
   }
 }

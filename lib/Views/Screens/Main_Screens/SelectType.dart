@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Logo.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import '../../../const/appConstants.dart';
 import '../Artists_Pages/artist_menu.dart';
 import '../Guest_Pages/Select_Artist.dart';
 
@@ -79,10 +81,14 @@ class _SelectTypeState extends State<SelectType> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       GestureDetector(
-                        onTap: () {
+                        onTap: () async{
                           setState(() {
                             current = 1;
                           });
+                          final prefs = await SharedPreferences.getInstance();
+
+                          prefs.setString(AppConstant.usertype, AppConstant.userSongWriter);
+
                           Get.to(Select_Artist());
                         },
                         child: Container(
@@ -122,10 +128,13 @@ class _SelectTypeState extends State<SelectType> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {
+                        onTap: () async{
                           setState(() {
                             current = 2;
                           });
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.setString(AppConstant.usertype, AppConstant.userArtist);
+
                           Get.to(Artist_Menu());
                         },
                         child: Container(
@@ -145,7 +154,8 @@ class _SelectTypeState extends State<SelectType> {
 
                           ),
                           child: Center(
-                            child: AppText(text: "Artists",SizeofFont: 20,                          WeightofFont: FontWeight.w500,
+                            child: AppText(text: "Artists",SizeofFont: 20,
+                              WeightofFont: FontWeight.w500,
                               textcolor: white,),
                           ),
                         ),
@@ -156,10 +166,13 @@ class _SelectTypeState extends State<SelectType> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       GestureDetector(
-                        onTap: () {
+                        onTap: () async{
                           setState(() {
                             current = 3;
                           });
+                          final prefs = await SharedPreferences.getInstance();
+
+                          prefs.setString(AppConstant.usertype, AppConstant.userBeatProducers);
                           Get.to(Select_Artist());
                         },
                         child: Container(
@@ -199,10 +212,13 @@ class _SelectTypeState extends State<SelectType> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {
+                        onTap: () async{
                           setState(() {
                             current = 4;
                           });
+                          final prefs = await SharedPreferences.getInstance();
+
+                          prefs.setString(AppConstant.usertype, AppConstant.userInfluencers);
                           Get.to(Select_Artist());
                         },
                         child: Container(

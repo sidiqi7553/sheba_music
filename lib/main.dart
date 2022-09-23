@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Create_Playlist.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Start_LiveStreaming.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/LiveStreaminng.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
+import 'Views/Screens/Extra_Screens_of_Artist/Create_Ticket_1.dart';
 import 'Views/Screens/Login_pages/login_main_page.dart';
 import 'Views/Screens/Main_Screens/SplashScreen.dart';
 
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
 canvasColor: Colors.transparent,
         primarySwatch: Colors.red,
       ),
-      home:  Splash_1(),
+      home:  Create_Ticket_1(),
     );
   }
 }
