@@ -11,8 +11,6 @@ import 'Views/Screens/Extra_Screens_of_Artist/Create_Ticket_1.dart';
 import 'Views/Screens/Login_pages/login_main_page.dart';
 import 'Views/Screens/Main_Screens/SplashScreen.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,22 +18,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sheba Music',
       theme: ThemeData(
-canvasColor: Colors.transparent,
+        canvasColor: Colors.transparent,
         primarySwatch: Colors.red,
       ),
+<<<<<<< Updated upstream
       home:  Create_Ticket_1(),
+=======
+      home: Splash_1(),
+>>>>>>> Stashed changes
     );
   }
 }
-
 
 // class MyHomePage extends StatelessWidget {
 //   const MyHomePage({Key? key}) : super(key: key);
