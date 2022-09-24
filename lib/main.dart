@@ -28,11 +28,9 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
         primarySwatch: Colors.red,
       ),
-<<<<<<< Updated upstream
+
       home:  Create_Ticket_1(),
-=======
-      home: Splash_1(),
->>>>>>> Stashed changes
+
     );
   }
 }
