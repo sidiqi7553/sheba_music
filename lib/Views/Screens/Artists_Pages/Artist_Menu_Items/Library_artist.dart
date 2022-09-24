@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigati
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Following_Artist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/MyPlayaList.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Purchased%20song.dart';
+import 'package:sheba_music/Views/Widgets/Artist_Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
@@ -23,7 +24,7 @@ class LibraryArtist extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
             title: AppText(text: "Library", SizeofFont: 20, textcolor: white,)
         ),
       ),

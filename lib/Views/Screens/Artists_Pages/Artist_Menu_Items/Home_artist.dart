@@ -3,6 +3,7 @@ import 'package:flutter_image_slider/carousel.dart';
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/TEmp/models/music.dart';
+import 'package:sheba_music/Views/Widgets/Artist_Main_Pages_App_Bar.dart';
 
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
@@ -53,9 +54,9 @@ class _HomeState extends State<HomeArtist> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
 
-            title: Leadingtitle(
+            title: LeadingtitleArtist(
               leadingtext: "Hi Hamza,",
               Welcome: "Welcome Back",
             )),

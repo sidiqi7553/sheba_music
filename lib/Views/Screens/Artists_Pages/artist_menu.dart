@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Library.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Tickets.dart';
+import 'package:sheba_music/Views/songDetailsBottomSheet/songPlay.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
@@ -32,6 +33,15 @@ class Artist_Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Artist_Menu> {
+  miniPlayer(){
+    return AnimatedContainer(duration: const Duration(milliseconds: 500),
+    color: Colors.blue,
+      width: double.infinity,
+      height: 100,
+      child: songPlay(),
+
+    );
+  }
   // indexcontrollar cntrl = Get.put(indexcontrollar());
   @override
   Widget build(BuildContext context) {
@@ -39,28 +49,33 @@ class _MenuState extends State<Artist_Menu> {
 
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 60),
-            child: Builder(builder: (context) {
-              if (widget.selectedind == 0) {
-                return  HomeArtist();
-              }
-              if (widget.selectedind == 1) {
-                return DiscoverArtist();
-              }
-              if (widget.selectedind == 2) {
-                return SearchArtist();
-              }
-              if (widget.selectedind == 3) {
-                return TicketsArtist();
-              }
-              if (widget.selectedind == 4) {
-                return LibraryArtist();
-              }
-              else {
-                return MyProfileArtist();
-              }
-            }),
+          Column(
+            children: [
+
+              Padding(
+                padding: const EdgeInsets.only(bottom: 60),
+                child: Builder(builder: (context) {
+                  if (widget.selectedind == 0) {
+                    return  HomeArtist();
+                  }
+                  if (widget.selectedind == 1) {
+                    return DiscoverArtist();
+                  }
+                  if (widget.selectedind == 2) {
+                    return SearchArtist();
+                  }
+                  if (widget.selectedind == 3) {
+                    return TicketsArtist();
+                  }
+                  if (widget.selectedind == 4) {
+                    return LibraryArtist();
+                  }
+                  else {
+                    return MyProfileArtist();
+                  }
+                }),
+              ),
+            ],
           ),
 
           bottomNavigation(context),

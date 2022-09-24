@@ -69,6 +69,7 @@ dependencies:
   csc_picker: ^0.2.6
   dropdown_plus: ^0.0.9
   shared_preferences: ^2.0.15
+  miniplayer: ^1.0.1
 #  date_input_field: ^0.0.3
 
 
