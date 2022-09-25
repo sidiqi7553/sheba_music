@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../../const/App_Colors.dart';
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/DiscoverTabs_Items/Tabs/All_Discover.dart';
 
 class DiscoverProducer extends StatefulWidget {
@@ -45,7 +46,7 @@ class _DiscoverState extends State<DiscoverProducer> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
             title: AppText(text: "Discover", SizeofFont: 20,textcolor: white,)
         )
         ,

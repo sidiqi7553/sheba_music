@@ -6,6 +6,7 @@ import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import '../../../../const/App_Text.dart';
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/SearchTabs_Items/Tabs/All_Search.dart';
 
 class SearchSongWriter extends StatefulWidget {
@@ -50,7 +51,7 @@ class _SearchState extends State<SearchSongWriter> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
             title: AppText(text: "Search", SizeofFont: 20,textcolor: white,)
         )
         ,

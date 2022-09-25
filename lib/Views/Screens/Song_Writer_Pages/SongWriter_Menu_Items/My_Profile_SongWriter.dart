@@ -11,6 +11,7 @@ import 'package:sheba_music/Views/songDetailsBottomSheet/MyProfile_Expand_Sheet.
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../../Widgets/MyProfile_ListMenu.dart';
 import '../../Guest_Pages/MyProfile_Navigation_Items/Privacy_Policy.dart';
 import '../../Guest_Pages/MyProfile_Navigation_Items/Purchased_Tickets.dart';
@@ -31,7 +32,7 @@ class _MyProfileState extends State<MyProfileSongWriter> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(55),
-          child: Main_Pages_App_Bar(
+          child: Artist_Main_Pages_App_Bar(
               title: AppText(text: "Profile", SizeofFont: 20, textcolor: white,)
           ),
         ),

@@ -7,6 +7,7 @@ import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/TicketsTabe_Items/Tabs/All_Tickets.dart';
 
 
@@ -49,7 +50,7 @@ class _TicketsState extends State<TicketsSongWriter> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar_For_Tickets(
             title: Leadingtitle(
               leadingtext: "Tickets",
               Welcome: "",

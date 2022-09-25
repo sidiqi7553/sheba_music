@@ -9,6 +9,7 @@ import 'package:sheba_music/const/App_Colors.dart';
 
 import 'package:swipe_deck/swipe_deck.dart';
 
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../../Widgets/Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/HomeTabs_items/Tabs/All.dart';
 
@@ -53,7 +54,7 @@ class _HomeState extends State<HHomeSongWriter> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
 
             title: Leadingtitle(
               leadingtext: "Hi Hamza,",

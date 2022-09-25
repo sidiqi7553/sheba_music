@@ -12,6 +12,7 @@ import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/LibraryTabs_items/Navigation_Items/Liked_songs.dart';
 
 
@@ -23,7 +24,7 @@ class LibraryProducer extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Main_Pages_App_Bar(
+        child: Artist_Main_Pages_App_Bar(
             title: AppText(text: "Library", SizeofFont: 20, textcolor: white,)
         ),
       ),
