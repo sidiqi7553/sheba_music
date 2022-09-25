@@ -9,9 +9,11 @@ import 'package:sheba_music/const/App_Text.dart';
 import '../../../const/appConstants.dart';
 import '../Artists_Pages/artist_menu.dart';
 import '../Guest_Pages/Select_Artist.dart';
+import '../Producer_Writer_Pages/Producer_menu.dart';
+import '../Song_Writer_Pages/SongWrite_menu.dart';
+import '../influencer_Writer_Pages/influencer_menu.dart';
 
 class SelectType extends StatefulWidget {
-
   const SelectType({Key? key}) : super(key: key);
 
   @override
@@ -26,230 +28,219 @@ class _SelectTypeState extends State<SelectType> {
     return SafeArea(
       child: Scaffold(
         body: BackGround_Container(
-
-            child:
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: [
-                  SizedBox(height: 70,),
-                  App_Logo(
-                    height: 150,
-                    widht: 150,
-                    logoheight: 100,
+            child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 70,
+              ),
+              App_Logo(
+                height: 150,
+                widht: 150,
+                logoheight: 100,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              AppText(
+                text: "Log in as",
+                SizeofFont: 25,
+                WeightofFont: FontWeight.bold,
+                textcolor: white,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    current = 0;
+                  });
+                  Get.to(Select_Artist());
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
+                  margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: grey,
+                      border: current == 0
+                          ? Border.all(color: white)
+                          : Border.all(color: Colors.transparent)),
+                  child: Center(
+                    child: AppText(
+                      text: "Guests",
+                      SizeofFont: 20,
+                      WeightofFont: FontWeight.w500,
+                      textcolor: white,
+                    ),
                   ),
-                  SizedBox(height: 40,),
-                  AppText(text: "Log in as",
-                    SizeofFont: 25,
-                    WeightofFont: FontWeight.bold,
-                    textcolor: white,),
-                  SizedBox(height: 50,),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
                   GestureDetector(
-                    onTap: () {
+                    onTap: () async {
                       setState(() {
-                        current = 0;
-
+                        current = 1;
                       });
-                      Get.to(Select_Artist());
+                      final prefs = await SharedPreferences.getInstance();
+
+                      prefs.setString(
+                          AppConstant.usertype, AppConstant.userSongWriter);
+
+                      Get.to(Song_Writer_Menu());
                     },
                     child: Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width,
+                      width: MediaQuery.of(context).size.width * 0.4,
                       height: 100,
-                      margin: EdgeInsets.symmetric(
-                          horizontal: 35, vertical: 10),
+                      margin: EdgeInsets.only(
+                          left: 25, right: 5, top: 10, bottom: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: grey,
-                          border: current == 0
+                          border: current == 1
                               ? Border.all(color: white)
-                              : Border.all(color: Colors.transparent)
-
-                      ),
-                      child: Center(
-                        child: AppText(text: "Guests",
-                          SizeofFont: 20,
-                          WeightofFont: FontWeight.w500,
-                          textcolor: white,),
+                              : Border.all(color: Colors.transparent)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppText(
+                            text: "Song ",
+                            SizeofFont: 20,
+                            WeightofFont: FontWeight.w500,
+                            textcolor: white,
+                          ),
+                          AppText(
+                            text: "Writers ",
+                            SizeofFont: 20,
+                            WeightofFont: FontWeight.w500,
+                            textcolor: white,
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        onTap: () async{
-                          setState(() {
-                            current = 1;
-                          });
-                          final prefs = await SharedPreferences.getInstance();
+                  GestureDetector(
+                    onTap: () async {
+                      setState(() {
+                        current = 2;
+                      });
+                      final prefs = await SharedPreferences.getInstance();
+                      prefs.setString(
+                          AppConstant.usertype, AppConstant.userArtist);
 
-                          prefs.setString(AppConstant.usertype, AppConstant.userSongWriter);
-
-                          Get.to(Select_Artist());
-                        },
-                        child: Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.4,
-                          height: 100,
-                          margin: EdgeInsets.only(
-                              left: 25,right: 5,top: 10,bottom: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: grey,
-                              border: current == 1
-                                  ? Border.all(color: white)
-                                  : Border.all(color: Colors.transparent)
-
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center
-                            ,
-                            children: [
-                               AppText(text: "Song ",
-                                SizeofFont: 20,
-                                 WeightofFont: FontWeight.w500,
-
-                                 textcolor: white,),
-                               AppText(text: "Writers ",
-                                SizeofFont: 20,
-                                 WeightofFont: FontWeight.w500,
-
-                                 textcolor: white,),
-
-                            ],
-                          ),
+                      Get.to(Artist_Menu());
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      height: 100,
+                      margin: EdgeInsets.only(
+                          right: 25, left: 5, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: grey,
+                          border: current == 2
+                              ? Border.all(color: white)
+                              : Border.all(color: Colors.transparent)),
+                      child: Center(
+                        child: AppText(
+                          text: "Artists",
+                          SizeofFont: 20,
+                          WeightofFont: FontWeight.w500,
+                          textcolor: white,
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () async{
-                          setState(() {
-                            current = 2;
-                          });
-                          final prefs = await SharedPreferences.getInstance();
-                          prefs.setString(AppConstant.usertype, AppConstant.userArtist);
-
-                          Get.to(Artist_Menu());
-                        },
-                        child: Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.4,
-                          height: 100,
-                          margin: EdgeInsets.only(
-                              right: 25,left: 5,top: 10,bottom: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: grey,
-                              border: current == 2
-                                  ? Border.all(color: white)
-                                  : Border.all(color: Colors.transparent)
-
-                          ),
-                          child: Center(
-                            child: AppText(text: "Artists",SizeofFont: 20,
-                              WeightofFont: FontWeight.w500,
-                              textcolor: white,),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        onTap: () async{
-                          setState(() {
-                            current = 3;
-                          });
-                          final prefs = await SharedPreferences.getInstance();
-
-                          prefs.setString(AppConstant.usertype, AppConstant.userBeatProducers);
-                          Get.to(Select_Artist());
-                        },
-                        child: Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.4,
-                          height: 100,
-                          margin: EdgeInsets.only(
-                              left: 25,right: 5,top: 10,bottom: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: grey,
-                              border: current == 3
-                                  ? Border.all(color: white)
-                                  : Border.all(color: Colors.transparent)
-
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center
-                            ,
-                            children: [
-                               AppText(text: "Beat",
-                                SizeofFont: 20,
-                                 WeightofFont: FontWeight.w500,
-
-                                 textcolor: white,),
-                               AppText(text: "Producers ",
-                                SizeofFont: 20,
-                                 WeightofFont: FontWeight.w500,
-
-                                 textcolor: white,),
-
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () async{
-                          setState(() {
-                            current = 4;
-                          });
-                          final prefs = await SharedPreferences.getInstance();
-
-                          prefs.setString(AppConstant.usertype, AppConstant.userInfluencers);
-                          Get.to(Select_Artist());
-                        },
-                        child: Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.4,
-                          height: 100,
-                          margin: EdgeInsets.only(
-                              right: 25,left: 5,top: 10,bottom: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: grey,
-                              border: current == 4
-                                  ? Border.all(color: white)
-                                  : Border.all(color: Colors.transparent)
-
-                          ),
-                          child: Center(
-                            child: AppText(text: "Influencers",SizeofFont: 20,                          WeightofFont: FontWeight.w500,
-                              textcolor: white,),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
-            )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () async {
+                      setState(() {
+                        current = 3;
+                      });
+                      final prefs = await SharedPreferences.getInstance();
 
-        ),
+                      prefs.setString(
+                          AppConstant.usertype, AppConstant.userBeatProducers);
+                      Get.to(Producer_Menu());
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      height: 100,
+                      margin: EdgeInsets.only(
+                          left: 25, right: 5, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: grey,
+                          border: current == 3
+                              ? Border.all(color: white)
+                              : Border.all(color: Colors.transparent)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppText(
+                            text: "Beat",
+                            SizeofFont: 20,
+                            WeightofFont: FontWeight.w500,
+                            textcolor: white,
+                          ),
+                          AppText(
+                            text: "Producers",
+                            SizeofFont: 20,
+                            WeightofFont: FontWeight.w500,
+                            textcolor: white,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      setState(() {
+                        current = 4;
+                      });
+                      final prefs = await SharedPreferences.getInstance();
+
+                      prefs.setString(
+                          AppConstant.usertype, AppConstant.userInfluencers);
+                      Get.to(influencer_Menu());
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      height: 100,
+                      margin: EdgeInsets.only(
+                          right: 25, left: 5, top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: grey,
+                          border: current == 4
+                              ? Border.all(color: white)
+                              : Border.all(color: Colors.transparent)),
+                      child: Center(
+                        child: AppText(
+                          text: "Influencers",
+                          SizeofFont: 20,
+                          WeightofFont: FontWeight.w500,
+                          textcolor: white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )),
       ),
     );
   }

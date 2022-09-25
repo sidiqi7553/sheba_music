@@ -1,38 +1,34 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Library.dart';
-import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Tickets.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-import '../../../TEmp/screens/search.dart';
-import '../Guest_Pages/Menu_Items/Discover.dart';
-import '../Guest_Pages/Menu_Items/Home.dart';
-import '../Guest_Pages/Menu_Items/MyProfile.dart';
-import 'Producer_Menu_Items/Discover_Producer.dart';
-import 'Producer_Menu_Items/Home_Producer.dart';
-import 'Producer_Menu_Items/Library_Producer.dart';
-import 'Producer_Menu_Items/My_Profile_Producer.dart';
-import 'Producer_Menu_Items/Search_Producer.dart';
-import 'Producer_Menu_Items/Ticket_Producer.dart';
+
+import 'influencer_Menu_Items/Discover_influencer.dart';
+import 'influencer_Menu_Items/Home_influencer.dart';
+import 'influencer_Menu_Items/Library_influencer.dart';
+import 'influencer_Menu_Items/My_Profile_influencer.dart';
+import 'influencer_Menu_Items/Search_influencer.dart';
+import 'influencer_Menu_Items/Ticket_influencer.dart';
 
 
 
 
 
-class Producer_Menu extends StatefulWidget {
+
+class influencer_Menu extends StatefulWidget {
   int selectedind;
-  Producer_Menu({
+  influencer_Menu({
     this.selectedind = 0,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<Producer_Menu> createState() => _MenuState();
+  State<influencer_Menu> createState() => _MenuState();
 }
 
-class _MenuState extends State<Producer_Menu> {
+class _MenuState extends State<influencer_Menu> {
   // indexcontrollar cntrl = Get.put(indexcontrollar());
   @override
   Widget build(BuildContext context) {
@@ -44,22 +40,22 @@ class _MenuState extends State<Producer_Menu> {
             padding: const EdgeInsets.only(bottom: 60),
             child: Builder(builder: (context) {
               if (widget.selectedind == 0) {
-                return  HomeProducer();
+                return  Homeinfluencer();
               }
               if (widget.selectedind == 1) {
-                return DiscoverProducer();
+                return Discoverinfluencer();
               }
               if (widget.selectedind == 2) {
-                return SearchProducer();
+                return Searchinfluencer();
               }
               if (widget.selectedind == 3) {
-                return TicketsProducer();
+                return Ticketsinfluencer();
               }
               if (widget.selectedind == 4) {
-                return LibraryProducer();
+                return Libraryinfluencer();
               }
               else {
-                return MyProfileProducer();
+                return MyProfileinfluencer();
               }
             }),
           ),

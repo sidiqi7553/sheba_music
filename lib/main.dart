@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:sheba_music/Views/Screens/Artists_Pages/artist_menu.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Create_Playlist.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Start_LiveStreaming.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/LiveStreaminng.dart';
@@ -12,8 +11,6 @@ import 'Views/Screens/Extra_Screens_of_Artist/Create_Ticket_1.dart';
 import 'Views/Screens/Login_pages/login_main_page.dart';
 import 'Views/Screens/Main_Screens/SplashScreen.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -21,22 +18,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sheba Music',
       theme: ThemeData(
-canvasColor: Colors.transparent,
+        canvasColor: Colors.transparent,
         primarySwatch: Colors.red,
       ),
-      home:  Artist_Menu(),
+
+      home:  Splash_1(),
+
     );
   }
 }
-
 
 // class MyHomePage extends StatelessWidget {
 //   const MyHomePage({Key? key}) : super(key: key);

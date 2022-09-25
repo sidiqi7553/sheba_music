@@ -21,18 +21,18 @@ import 'SongWriter_Menu_Items/Ticket_SongWriter.dart';
 
 
 
-class Artist_Menu extends StatefulWidget {
+class Song_Writer_Menu extends StatefulWidget {
   int selectedind;
-  Artist_Menu({
+  Song_Writer_Menu({
     this.selectedind = 0,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<Artist_Menu> createState() => _MenuState();
+  State<Song_Writer_Menu> createState() => _MenuState();
 }
 
-class _MenuState extends State<Artist_Menu> {
+class _MenuState extends State<Song_Writer_Menu> {
   // indexcontrollar cntrl = Get.put(indexcontrollar());
   @override
   Widget build(BuildContext context) {
