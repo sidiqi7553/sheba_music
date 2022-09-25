@@ -33,7 +33,7 @@ class Artist_Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Artist_Menu> {
-  miniPlayer(){
+   Widget  miniPlayer(){
     return AnimatedContainer(duration: const Duration(milliseconds: 500),
     color: Colors.blue,
       width: double.infinity,
@@ -51,7 +51,7 @@ class _MenuState extends State<Artist_Menu> {
         children: [
           Column(
             children: [
-
+miniPlayer(),
               Padding(
                 padding: const EdgeInsets.only(bottom: 60),
                 child: Builder(builder: (context) {
