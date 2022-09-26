@@ -8,9 +8,24 @@ import '../songDetailsBottomSheet/song1Details.dart';
 import '../songDetailsBottomSheet/songPlay.dart';
 import 'SongListTile.dart';
 
-class Song1 extends StatelessWidget {
+class Song1 extends StatefulWidget {
   const Song1({Key? key}) : super(key: key);
 
+  @override
+  State<Song1> createState() => _Song1State();
+}
+
+class _Song1State extends State<Song1> {
+  Widget miniPlayer() {
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
+      color: Colors.transparent,
+      width: double.infinity,
+      height: 100,
+      child: songPlay(),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return SongListTile(
@@ -18,7 +33,7 @@ class Song1 extends StatelessWidget {
       songtitleimg: "assets/Images/Song1.png",
       songName: "Happier",
       songplay: (){
-        SongPlay(context);
+        miniPlayer();
       },
       details: (){
         backgroundsong1play(context);
