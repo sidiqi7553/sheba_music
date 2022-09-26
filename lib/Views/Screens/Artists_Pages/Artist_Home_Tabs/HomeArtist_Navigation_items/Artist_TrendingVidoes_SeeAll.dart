@@ -56,7 +56,8 @@ class ArtistTrendingVidoes_SeeAll extends StatelessWidget {
                                 videopage: ArtistVideopage(),
                               )),
                         );
-                      })),
+                      }),
+              ),
             ),
           ],
         ),

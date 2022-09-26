@@ -49,33 +49,28 @@ class _MenuState extends State<Artist_Menu> {
 
       body: Stack(
         children: [
-          Column(
-            children: [
-miniPlayer(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 60),
-                child: Builder(builder: (context) {
-                  if (widget.selectedind == 0) {
-                    return  HomeArtist();
-                  }
-                  if (widget.selectedind == 1) {
-                    return DiscoverArtist();
-                  }
-                  if (widget.selectedind == 2) {
-                    return SearchArtist();
-                  }
-                  if (widget.selectedind == 3) {
-                    return TicketsArtist();
-                  }
-                  if (widget.selectedind == 4) {
-                    return LibraryArtist();
-                  }
-                  else {
-                    return MyProfileArtist();
-                  }
-                }),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: 60),
+            child: Builder(builder: (context) {
+              if (widget.selectedind == 0) {
+                return  HomeArtist();
+              }
+              if (widget.selectedind == 1) {
+                return DiscoverArtist();
+              }
+              if (widget.selectedind == 2) {
+                return SearchArtist();
+              }
+              if (widget.selectedind == 3) {
+                return TicketsArtist();
+              }
+              if (widget.selectedind == 4) {
+                return LibraryArtist();
+              }
+              else {
+                return MyProfileArtist();
+              }
+            }),
           ),
 
           bottomNavigation(context),

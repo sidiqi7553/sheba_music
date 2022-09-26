@@ -21,6 +21,14 @@ class Upload_Songs extends StatefulWidget {
 }
 
 class _Upload_SongsState extends State<Upload_Songs> {
+  List<String> countries = ['USA', 'India'];
+  List<String> indiaProvince = ['New Delhi', 'Bihar', 'Rajasthan'];
+  List<String> usaProvince = ['Texas', 'Florida', 'California'];
+
+  List<String> provinces = [];
+  String? selectedCountry;
+  String? selectedProvince;
+
   List<String> catagory = [
     "All",
     "Podcast",
@@ -68,324 +76,316 @@ class _Upload_SongsState extends State<Upload_Songs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(55),
-        child: inner_Pages_App_Bar(
-          nextscreen: Wallet_Main(),
-          title: "Upload Song",
-          action: ActionIcon(
-            icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(55),
+          child: inner_Pages_App_Bar(
+            nextscreen: Wallet_Main(),
+            title: "Upload Song",
+            action: ActionIcon(
+              icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
+            ),
           ),
         ),
-      ),
-      body: BackGround_Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              InkWell(
-                onTap: () {
-                  pickCoverphoto();
-                },
+        body: BackGround_Container(
+            child: SingleChildScrollView(
+                child: Column(children: [
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            onTap: () {
+              pickCoverphoto();
+            },
+            child: Container(
+              height: 150,
+              margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              width: MediaQuery.of(context).size.width,
+              child: DottedBorder(
+                borderType: BorderType.RRect,
+                color: primary,
+                radius: Radius.circular(0),
+                strokeWidth: 1,
+                dashPattern: [8, 6],
+                strokeCap: StrokeCap.butt,
                 child: Container(
                   height: 150,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                   width: MediaQuery.of(context).size.width,
-                  child: DottedBorder(
-                    borderType: BorderType.RRect,
-                    color: primary,
-                    radius: Radius.circular(0),
-                    strokeWidth: 1,
-                    dashPattern: [8, 6],
-                    strokeCap: StrokeCap.butt,
-                    child: Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: temp2 == null
-                          ? BoxDecoration(
-                              color: textformfieldColor,
-                              borderRadius: BorderRadius.circular(5),
-                            )
-                          : BoxDecoration(
-                              color: Colors.transparent,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: FileImage(File(temp2!.path!)),
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                      child: temp2 == null
-                          ? Center(
-                              child: Container(
-                                height: 90,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/Icons/audio.svg',
-                                      color: white,
-                                      height: 50,
-                                    ),
-                                    Text(
-                                      'Select Audio',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        color: white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
-                          : Align(
-                              alignment: Alignment.topRight,
-                              child: IconButton(
-                                hoverColor: Colors.transparent,
-                                onPressed: (() {
-                                  setState(() {
-                                    temp2 = null;
-                                  });
-                                }),
-                                icon: Icon(
-                                  Icons.close,
-                                  color: white,
-                                ),
-                              ),
-                            ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              InkWell(
-                onTap: () {
-                  pickphoto();
-                },
-                child: Container(
-                  height: 150,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                  width: MediaQuery.of(context).size.width,
-                  child: DottedBorder(
-                    borderType: BorderType.RRect,
-                    color: primary,
-                    radius: Radius.circular(0),
-                    strokeWidth: 1,
-                    dashPattern: [8, 6],
-                    strokeCap: StrokeCap.butt,
-                    child: Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: temp == null
-                          ? BoxDecoration(
-                              color: textformfieldColor,
-                              borderRadius: BorderRadius.circular(5),
-                            )
-                          : BoxDecoration(
-                              color: Colors.transparent,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: FileImage(File(temp!.path!)),
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                      child: temp == null
-                          ? Center(
-                              child: Container(
-                                height: 90,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/Icons/Plus.svg',
-                                      color: white,
-                                      height: 50,
-                                    ),
-                                    Text(
-                                      'Upload Cover Art',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        color: white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
-                          : Align(
-                              alignment: Alignment.topRight,
-                              child: IconButton(
-                                hoverColor: Colors.transparent,
-                                onPressed: (() {
-                                  setState(() {
-                                    temp = null;
-                                  });
-                                }),
-                                icon: Icon(
-                                  Icons.close,
-                                  color: white,
-                                ),
-                              ),
-                            ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              customtextFormFieldOnlyHintText(
-                hintText: "Enter Song Title",
-                width: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 18.0),
-                child: ListTile(
-                  horizontalTitleGap: 20,
-                  title: AppText(
-                    text: "Select Mood",
-                    SizeofFont: 15,
-                    textcolor: white,
-                  ),
-                ),
-              ),
-              Container(
-                height: 35,
-                margin:
-                const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
-                decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(25)),
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  // controller: scrollController,
-                    itemCount: catagory.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (ctx, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            list = index;
-                          });
-                          print(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  decoration: temp2 == null
+                      ? BoxDecoration(
+                          color: textformfieldColor,
+                          borderRadius: BorderRadius.circular(5),
+                        )
+                      : BoxDecoration(
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: FileImage(File(temp2!.path!)),
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                  child: temp2 == null
+                      ? Center(
                           child: Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 00, vertical: 5),
-                            width: MediaQuery.of(context).size.width * 0.24,
-                            height: 25,
-                            decoration: BoxDecoration(
-                              color: containercolor,
-                              border: list == index
-                                  ? Border.all(color: primary)
-                                  : Border.all(color: Colors.transparent),
-                              borderRadius: list == index
-                                  ? BorderRadius.circular(25)
-                                  : BorderRadius.circular(25),
+                            height: 90,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/Icons/audio.svg',
+                                  color: white,
+                                  height: 50,
+                                ),
+                                Text(
+                                  'Select Audio',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: white,
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Neumorphic(
-                              style: NeumorphicStyle(
-                                  surfaceIntensity: 0.9,
-                                  shadowLightColorEmboss: black,
-                                  shape: NeumorphicShape.concave,
-                                  boxShape: NeumorphicBoxShape.roundRect(
-                                      BorderRadius.circular(12)),
-                                  depth: -3,
-                                  lightSource: LightSource.bottomRight,
-                                  color: containercolor),
-                              child: Center(
-                                  child: Text(
-                                    catagory[index],
-                                    style: TextStyle(fontSize: 13, color: white),
-                                  )),
+                          ),
+                        )
+                      : Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            hoverColor: Colors.transparent,
+                            onPressed: (() {
+                              setState(() {
+                                temp2 = null;
+                              });
+                            }),
+                            icon: Icon(
+                              Icons.close,
+                              color: white,
                             ),
                           ),
                         ),
-                      );
-                    }),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 18.0),
-                child: ListTile(
-                  horizontalTitleGap: 20,
-                  title: AppText(
-                    text: "Select Genre",
-                    SizeofFont: 15,
-                    textcolor: white,
-                  ),
                 ),
               ),
-              Container(
-                height: 35,
-                margin:
-                const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
-                decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(25)),
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  // controller: scrollController,
-                    itemCount: catagory.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (ctx, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            list2 = index;
-                          });
-                          print(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          InkWell(
+            onTap: () {
+              pickphoto();
+            },
+            child: Container(
+              height: 150,
+              margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              width: MediaQuery.of(context).size.width,
+              child: DottedBorder(
+                borderType: BorderType.RRect,
+                color: primary,
+                radius: Radius.circular(0),
+                strokeWidth: 1,
+                dashPattern: [8, 6],
+                strokeCap: StrokeCap.butt,
+                child: Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: temp == null
+                      ? BoxDecoration(
+                          color: textformfieldColor,
+                          borderRadius: BorderRadius.circular(5),
+                        )
+                      : BoxDecoration(
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: FileImage(File(temp!.path!)),
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                  child: temp == null
+                      ? Center(
                           child: Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 00, vertical: 5),
-                            width: MediaQuery.of(context).size.width * 0.24,
-                            height: 25,
-                            decoration: BoxDecoration(
-                              color: containercolor,
-                              border: list2 == index
-                                  ? Border.all(color: primary)
-                                  : Border.all(color: Colors.transparent),
-                              borderRadius: list2 == index
-                                  ? BorderRadius.circular(25)
-                                  : BorderRadius.circular(25),
+                            height: 90,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/Icons/Plus.svg',
+                                  color: white,
+                                  height: 50,
+                                ),
+                                Text(
+                                  'Upload Cover Art',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: white,
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Neumorphic(
-                              style: NeumorphicStyle(
-                                  surfaceIntensity: 0.9,
-                                  shadowLightColorEmboss: black,
-                                  shape: NeumorphicShape.concave,
-                                  boxShape: NeumorphicBoxShape.roundRect(
-                                      BorderRadius.circular(12)),
-                                  depth: -3,
-                                  lightSource: LightSource.bottomRight,
-                                  color: containercolor),
-                              child: Center(
-                                  child: Text(
-                                    genre[index],
-                                    style: TextStyle(fontSize: 13, color: white),
-                                  )),
+                          ),
+                        )
+                      : Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            hoverColor: Colors.transparent,
+                            onPressed: (() {
+                              setState(() {
+                                temp = null;
+                              });
+                            }),
+                            icon: Icon(
+                              Icons.close,
+                              color: white,
                             ),
                           ),
                         ),
-                      );
-                    }),
+                ),
               ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          customtextFormFieldOnlyHintText(
+            hintText: "Enter Song Title",
+            width: 1,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: ListTile(
+              horizontalTitleGap: 20,
+              title: AppText(
+                text: "Select Mood",
+                SizeofFont: 15,
+                textcolor: white,
+              ),
+            ),
+          ),
+          Container(
+            height: 35,
+            margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+            decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(25)),
+            width: MediaQuery.of(context).size.width,
+            child: ListView.builder(
+                // controller: scrollController,
+                itemCount: catagory.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (ctx, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        list = index;
+                      });
+                      print(context);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 00, vertical: 5),
+                        width: MediaQuery.of(context).size.width * 0.24,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: containercolor,
+                          border: list == index
+                              ? Border.all(color: primary)
+                              : Border.all(color: Colors.transparent),
+                          borderRadius: list == index
+                              ? BorderRadius.circular(25)
+                              : BorderRadius.circular(25),
+                        ),
+                        child: Neumorphic(
+                          style: NeumorphicStyle(
+                              surfaceIntensity: 0.9,
+                              shadowLightColorEmboss: black,
+                              shape: NeumorphicShape.concave,
+                              boxShape: NeumorphicBoxShape.roundRect(
+                                  BorderRadius.circular(12)),
+                              depth: -3,
+                              lightSource: LightSource.bottomRight,
+                              color: containercolor),
+                          child: Center(
+                              child: Text(
+                            catagory[index],
+                            style: TextStyle(fontSize: 13, color: white),
+                          )),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: ListTile(
+              horizontalTitleGap: 20,
+              title: AppText(
+                text: "Select Genre",
+                SizeofFont: 15,
+                textcolor: white,
+              ),
+            ),
+          ),
+          Container(
+            height: 35,
+            margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+            decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(25)),
+            width: MediaQuery.of(context).size.width,
+            child: ListView.builder(
+                // controller: scrollController,
+                itemCount: catagory.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (ctx, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        list2 = index;
+                      });
+                      print(context);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 00, vertical: 5),
+                        width: MediaQuery.of(context).size.width * 0.24,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: containercolor,
+                          border: list2 == index
+                              ? Border.all(color: primary)
+                              : Border.all(color: Colors.transparent),
+                          borderRadius: list2 == index
+                              ? BorderRadius.circular(25)
+                              : BorderRadius.circular(25),
+                        ),
+                        child: Neumorphic(
+                          style: NeumorphicStyle(
+                              surfaceIntensity: 0.9,
+                              shadowLightColorEmboss: black,
+                              shape: NeumorphicShape.concave,
+                              boxShape: NeumorphicBoxShape.roundRect(
+                                  BorderRadius.circular(12)),
+                              depth: -3,
+                              lightSource: LightSource.bottomRight,
+                              color: containercolor),
+                          child: Center(
+                              child: Text(
+                            genre[index],
+                            style: TextStyle(fontSize: 13, color: white),
+                          )),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+                  
 
-            ],
-          ),
-        ),
-      ),
-    );
+        ]))));
   }
 }

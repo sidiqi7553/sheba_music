@@ -62,13 +62,13 @@ class Video extends StatelessWidget {
                           children: [
                             AppText(
                               text: title,
-                              SizeofFont: 12,
+                              SizeofFont: 10,
                               textcolor: white,
                             ),
                             AppText(
                               text:
                               subtitle,
-                              SizeofFont: 10,
+                              SizeofFont: 8,
                               textcolor:
                               whiteforsubtitle,
                             ),
@@ -81,7 +81,7 @@ class Video extends StatelessWidget {
               ],
             ),
             Positioned(
-                top: 40,
+                top: 20,
                 right: 0,
                 left: 0,
                 child: SvgPicture.asset(
