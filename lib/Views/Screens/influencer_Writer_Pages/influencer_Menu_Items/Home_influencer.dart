@@ -5,6 +5,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/TEmp/models/music.dart';
 
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/Influencer_Main_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import 'package:swipe_deck/swipe_deck.dart';
@@ -54,7 +55,7 @@ class _HomeState extends State<Homeinfluencer> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Artist_Main_Pages_App_Bar(
+        child: Influencer_Main_Pages_App_Bar(
 
             title: Leadingtitle(
               leadingtext: "Hi Hamza,",

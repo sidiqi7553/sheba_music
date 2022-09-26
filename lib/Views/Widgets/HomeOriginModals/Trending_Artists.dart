@@ -39,7 +39,7 @@ class Trending_Artists extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 0.0, right: 0),
               child: Container(
-                height: 100,
+                height: 120,
                 child: ListView.builder(
                     itemCount: 30,
                     scrollDirection: Axis.horizontal,
@@ -49,8 +49,8 @@ class Trending_Artists extends StatelessWidget {
                           Get.to(profilePage);
                         },
                         child: Container(
-                          height: 100,
-                          width: 100,
+                          height: 115,
+                          width: 115,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -68,7 +68,7 @@ class Trending_Artists extends StatelessWidget {
                               Text(
                                 name,
                                 style: GoogleFonts.poppins(
-                                  fontSize: 12,
+                                  fontSize: 11,
                                   fontWeight: FontWeight.w400,
                                   color: white,
                                 ),

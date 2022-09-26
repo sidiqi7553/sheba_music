@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Support.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/Influencer_Main_Pages_App_Bar.dart';
 
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/MyProfile_Expand_Sheet.dart';
@@ -32,7 +33,7 @@ class _MyProfileState extends State<MyProfileinfluencer> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(55),
-          child: Artist_Main_Pages_App_Bar(
+          child: Influencer_Main_Pages_App_Bar(
               title: AppText(text: "Profile", SizeofFont: 20, textcolor: white,)
           ),
         ),

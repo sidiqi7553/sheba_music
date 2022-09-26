@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
-import 'package:sheba_music/Views/Widgets/Influencer_Main_Pages_App_Bar.dart';
-import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
+import 'package:sheba_music/Views/Widgets/HomeOriginModals/Trending_Artists.dart';
+import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
-import '../../../../const/App_Text.dart';
-import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
-import '../../Guest_Pages/SearchTabs_Items/Tabs/All_Search.dart';
+import '../Guest_Pages/HomeTabs_items/Tabs/All.dart';
+import 'Influencer_ArtistProfile_For_SendTag.dart';
 
-class Searchinfluencer extends StatefulWidget {
-  const Searchinfluencer({Key? key}) : super(key: key);
+class Send_Tags extends StatefulWidget {
+  const Send_Tags({Key? key}) : super(key: key);
 
   @override
-  State<Searchinfluencer> createState() => _SearchState();
+  State<Send_Tags> createState() => _Send_TagsState();
 }
 
-class _SearchState extends State<Searchinfluencer> {
+class _Send_TagsState extends State<Send_Tags> {
   List<String> catagory = [
     "All",
-    "Podcast",
-    "Afrobeats",
-    "Life-time",
+    "Artist",
+    "Song Writer",
+    "Producers"
   ];
-
   List<String> IMAGES = [
     "Homepic1",
     "Homepic2",
     "Homepic3",
     "Homepic4",
   ];
-
   List<Widget> page = [
-    All_Search(),
+    SendTags_All(),
     Container(
       color: grey,
     ),
@@ -44,31 +42,28 @@ class _SearchState extends State<Searchinfluencer> {
       color: white,
     ),
   ];
-
   int list = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: Influencer_Main_Pages_App_Bar(
-            title: AppText(text: "Search", SizeofFont: 20,textcolor: white,)
-        )
-        ,
+        child: inner_Pages_App_Bar(
+          title: "Send Tags",
+          action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
+        ),
       ),
       body: BackGround_Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               mySearchBar(
-                hinttext: "Search, songs, artists, songwriters",
+                hinttext: "Search, artists, producers, songwriters",
               ),
-
               Container(
                 height: 35,
                 margin:
-                const EdgeInsets.symmetric(horizontal: 00, vertical: 10),
+                const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(25)),
@@ -128,9 +123,41 @@ class _SearchState extends State<Searchinfluencer> {
               Container(
                   height: MediaQuery.of(context).size.height * 0.75,
                   child: page[list]),
+
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+class SendTags_All extends StatelessWidget {
+  const SendTags_All({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Trending_Artists(
+            profilePage: Influencer_ArtistProfile_For_SendTag(),
+          ),
+          Trending_Artists(
+            title: "Trending Song Writers",
+            name: "Song Writer\n Name",
+            profilePage: Influencer_ArtistProfile_For_SendTag(),
+
+
+          ),
+          Trending_Artists(
+            title: "Trending Producers",
+            name: "Producer\n Name",
+            profilePage: Influencer_ArtistProfile_For_SendTag(),
+
+          ),
+        ],
       ),
     );
   }

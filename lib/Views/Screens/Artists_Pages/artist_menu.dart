@@ -34,12 +34,17 @@ class Artist_Menu extends StatefulWidget {
 
 class _MenuState extends State<Artist_Menu> {
    Widget  miniPlayer(){
-    return AnimatedContainer(duration: const Duration(milliseconds: 500),
-    color: Colors.blue,
-      width: double.infinity,
-      height: 100,
-      child: songPlay(),
+    return Dismissible(
+      direction: DismissDirection.down,
+      key: const Key('key'),
+      onDismissed: (_) => Navigator.of(context).pop(),
+      child: AnimatedContainer(duration: const Duration(milliseconds: 500),
+      color: Colors.transparent,
+        width: double.infinity,
+        height: 100,
+        child: songPlay(),
 
+      ),
     );
   }
   // indexcontrollar cntrl = Get.put(indexcontrollar());
@@ -83,26 +88,32 @@ class _MenuState extends State<Artist_Menu> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: SizedBox(
-        height: 90,
+        height: 160,
         child: Stack(
           children: [
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: primary,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
+            Column(
+              children: [
+                miniPlayer(),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height:60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: primary,
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
+                height: 85,
                 width: double.infinity,
                 color: Colors.transparent,
                 child: Padding(
