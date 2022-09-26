@@ -66,7 +66,7 @@ class LeadingtitleArtist extends StatelessWidget {
         children: [
           AppText(
             text: leadingtext,
-            SizeofFont: 20,
+            SizeofFont: 15,
             WeightofFont: FontWeight.bold,
             textcolor: white,
           ),
