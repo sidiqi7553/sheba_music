@@ -15,6 +15,7 @@ import 'package:sheba_music/const/App_Text.dart';
 import '../../../Widgets/MyProfile_ListMenu.dart';
 import '../../Guest_Pages/MyProfile_Navigation_Items/Privacy_Policy.dart';
 import '../../Guest_Pages/MyProfile_Navigation_Items/Purchased_Tickets.dart';
+import '../Artist_Profile_Navigation_Items/Messenger_Tabs/artist_tags.dart';
 import '../Artist_Profile_Navigation_Items/artist_youtube_links.dart';
 
 class MyProfileArtist extends StatefulWidget {
@@ -229,7 +230,7 @@ class _MyProfileState extends State<MyProfileArtist> {
               MyProfile_ListMenu(
                 title: "Tags",
                 svgicon: "assets/Icons/Ticket Star.svg",
-                nextpage: Notifications(),
+                nextpage: Artist_Tags(),
               ),
               MyProfile_ListMenu(
                 title: "Reports",
