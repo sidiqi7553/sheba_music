@@ -40,7 +40,7 @@ class _MenuState extends State<Artist_Menu> {
       height: 100,
       child: songPlay(),
 
-    );
+    );   
   }
   // indexcontrollar cntrl = Get.put(indexcontrollar());
   @override
