@@ -8,6 +8,7 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
+import 'Start_LiveStreaming.dart';
 import 'Upload_Songs.dart';
 
 class Create_Screen extends StatefulWidget {
@@ -84,7 +85,7 @@ class _Create_ScreenState extends State<Create_Screen> {
                   current = 1;
 
                 });
-                Get.to(Select_Artist());
+                Get.to(Start_LiveStreaming());
               },
               child: Container(
                 width: MediaQuery

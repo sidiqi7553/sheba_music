@@ -7,9 +7,11 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../Widgets/customtextformfield.dart';
+import 'start_live_streaming.dart';
 import 'Select_Album_2.dart';
 
 class Start_LiveStreaming extends StatefulWidget {
+
   const Start_LiveStreaming({Key? key}) : super(key: key);
 
   @override
@@ -17,6 +19,7 @@ class Start_LiveStreaming extends StatefulWidget {
 }
 
 class _Start_LiveStreamingState extends State<Start_LiveStreaming> {
+  int current = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +55,7 @@ class _Start_LiveStreamingState extends State<Start_LiveStreaming> {
         child: Center(
           child: GestureDetector(
             onTap: (){
-              Get.to(Select_Album_2());
+              Get.to(StartLiveStream());
             },
             child: Container(
               height: 40,
