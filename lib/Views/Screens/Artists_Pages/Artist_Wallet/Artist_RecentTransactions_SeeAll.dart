@@ -178,7 +178,7 @@ class _WeekState extends State<Week> {
   int current = 0;
   List<String> catagory = [
     "Deposit",
-    "WithDraw",
+    "Withdrawl",
   ];
 
   List<Widget> page = [

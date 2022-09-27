@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Create_Playlist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Downloads_song.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Following_Artist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/MyPlayaList.dart';
@@ -52,7 +53,9 @@ class LibraryArtist extends StatelessWidget {
                         if (index == 0) {
                           return
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Playlist());
+                              },
                               child: Padding(
                                   padding: const EdgeInsets.only(
                                       left: 10.0, right: 10, top: 10),

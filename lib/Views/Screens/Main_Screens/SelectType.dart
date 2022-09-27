@@ -71,7 +71,7 @@ class _SelectTypeState extends State<SelectType> {
                           : Border.all(color: Colors.transparent)),
                   child: Center(
                     child: AppText(
-                      text: "Guests",
+                      text: "Guest",
                       SizeofFont: 20,
                       WeightofFont: FontWeight.w500,
                       textcolor: white,
@@ -110,13 +110,13 @@ class _SelectTypeState extends State<SelectType> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AppText(
-                            text: "Song ",
+                            text: "Song",
                             SizeofFont: 20,
                             WeightofFont: FontWeight.w500,
                             textcolor: white,
                           ),
                           AppText(
-                            text: "Writers ",
+                            text: "Writer",
                             SizeofFont: 20,
                             WeightofFont: FontWeight.w500,
                             textcolor: white,
@@ -149,7 +149,7 @@ class _SelectTypeState extends State<SelectType> {
                               : Border.all(color: Colors.transparent)),
                       child: Center(
                         child: AppText(
-                          text: "Artists",
+                          text: "Artist",
                           SizeofFont: 20,
                           WeightofFont: FontWeight.w500,
                           textcolor: white,
@@ -195,7 +195,7 @@ class _SelectTypeState extends State<SelectType> {
                             textcolor: white,
                           ),
                           AppText(
-                            text: "Producers",
+                            text: "Producer",
                             SizeofFont: 20,
                             WeightofFont: FontWeight.w500,
                             textcolor: white,
@@ -228,7 +228,7 @@ class _SelectTypeState extends State<SelectType> {
                               : Border.all(color: Colors.transparent)),
                       child: Center(
                         child: AppText(
-                          text: "Influencers",
+                          text: "Influencer",
                           SizeofFont: 20,
                           WeightofFont: FontWeight.w500,
                           textcolor: white,

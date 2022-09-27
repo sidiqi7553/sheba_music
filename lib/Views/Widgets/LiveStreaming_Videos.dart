@@ -64,24 +64,24 @@ class LiveStreaming_Videos extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 8.0),
-                        // child: Column(
-                        //   crossAxisAlignment:
-                        //   CrossAxisAlignment.start,
-                        //   children: [
-                        //     AppText(
-                        //       text: title,
-                        //       SizeofFont: 12,
-                        //       textcolor: white,
-                        //     ),
-                        //     AppText(
-                        //       text:
-                        //       subtitle,
-                        //       SizeofFont: 10,
-                        //       textcolor:
-                        //       whiteforsubtitle,
-                        //     ),
-                        //   ],
-                        // ),
+                        child: Column(
+                          crossAxisAlignment:
+                          CrossAxisAlignment.start,
+                          children: [
+                            AppText(
+                              text: title,
+                              SizeofFont: 12,
+                              textcolor: white,
+                            ),
+                            AppText(
+                              text:
+                              subtitle,
+                              SizeofFont: 10,
+                              textcolor:
+                              whiteforsubtitle,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

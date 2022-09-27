@@ -106,7 +106,7 @@ class _Wallet_MainState extends State<Wallet_Main> {
                                       SvgPicture.asset("assets/Icons/Send.svg"),
                                 )),
                             AppText(
-                              text: "Withdraw",
+                              text: "Withdrawl",
                               SizeofFont: 15,
                               textcolor: white,
                             )

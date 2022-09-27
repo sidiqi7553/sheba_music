@@ -35,6 +35,7 @@ class Trending_Artists extends StatelessWidget {
             ),
           ),
         ),
+          SizedBox(height: 10,),
           Container(
             child: Padding(
               padding: const EdgeInsets.only(left: 0.0, right: 0),

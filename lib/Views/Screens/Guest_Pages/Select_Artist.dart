@@ -41,14 +41,14 @@ class _Select_ArtistState extends State<Select_Artist> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                child: AppText(
-                  text: "Your Favorite Artists?",
-                  SizeofFont: 18,
-                  textcolor: white,
-                  WeightofFont: FontWeight.w600,
-                ),
-              ),
+              // Container(
+              //   child: AppText(
+              //     text: "Your Favorite Artists?",
+              //     SizeofFont: 18,
+              //     textcolor: white,
+              //     WeightofFont: FontWeight.w600,
+              //   ),
+              // ),
               SizedBox(
                 height: 20,
               ),

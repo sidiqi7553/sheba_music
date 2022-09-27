@@ -22,7 +22,7 @@ class _Tickets_pricingState extends State<SongWrite_Tickets_pricing> {
     "VVIP",
     "VIP",
     "Regular",
-    "Populer",
+    "Popular",
   ];
   List<String> IMAGES = [
     "Homepic1",
