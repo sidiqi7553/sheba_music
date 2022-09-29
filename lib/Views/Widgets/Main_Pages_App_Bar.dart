@@ -55,20 +55,23 @@ class Leadingtitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AppText(
             text: leadingtext,
-            SizeofFont: 20,
+            SizeofFont: 17,
             WeightofFont: FontWeight.bold,
             textcolor: white,
           ),
-          AppText(
-            text: Welcome,
-            SizeofFont: 14,
-            textcolor: white,
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: AppText(
+              text: Welcome,
+              SizeofFont: 12,
+              textcolor: white,
+            ),
           ),
         ],
       ),

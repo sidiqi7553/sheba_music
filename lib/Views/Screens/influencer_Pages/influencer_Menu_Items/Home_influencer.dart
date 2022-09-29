@@ -3,6 +3,7 @@ import 'package:flutter_image_slider/carousel.dart';
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/TEmp/models/music.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Home_Tabs/Home_influencer_Tabs/Artist_All.dart';
 
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Influencer_Main_Pages_App_Bar.dart';
@@ -37,7 +38,7 @@ class _HomeState extends State<Homeinfluencer> {
     "Homepic4",
   ];
   List<Widget> page = [
-    All(),
+    InfluencerAll(),
     Container(
       color: grey,
     ),

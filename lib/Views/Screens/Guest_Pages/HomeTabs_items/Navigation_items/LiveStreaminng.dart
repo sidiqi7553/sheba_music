@@ -48,40 +48,44 @@ class _LiveStreaminngState extends State<LiveStreaminng> {
             ),
             child: AllClips(),
           ),
-          // Positioned(
-          //
-          //   bottom: 0,
-          //
-          //   child: Container(
-          //     height: 200,
-          //     child: Padding(
-          //       padding: const EdgeInsets.only(left: 0.0, right: 0),
-          //       child: Container(
-          //         height: 100,
-          //         child: ListView.builder(
-          //             itemCount: 6,
-          //
-          //             itemBuilder: (ctx, index) {
-          //               return ListTile(
-          //                 leading: Container(
-          //                   height: 35,
-          //                   width: 35,
-          //                   decoration: const BoxDecoration(
-          //                     shape: BoxShape.circle,
-          //                     image: DecorationImage(
-          //                         image: AssetImage('assets/Images/Livestreamingartist.png'),
-          //                         fit: BoxFit.cover
-          //                     ),
-          //                   ),
-          //                 ),
-          //                 title:
-          //                 AppText(text: "User Name", SizeofFont: 15,textcolor: white,WeightofFont: FontWeight.w600,),
-          //                 subtitle:AppText(text: "Lorem Ipsum is simply dummy. ", SizeofFont: 12,textcolor: whiteforsubtitle,) ,
-          //               );
-          //             }),
-          //       ),
-          //     ),
-          //   ),),
+          Positioned(
+
+            bottom: 80,
+
+            child: Container(
+              height: 200,
+              width: MediaQuery.of(context).size.width*0.7,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 0.0, right: 0),
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+
+
+                  child: ListView.builder(
+                      itemCount: 6,
+
+                      itemBuilder: (ctx, index) {
+                        return ListTile(
+                          leading: Container(
+                            height: 35,
+                            width: 35,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage('assets/Images/Livestreamingartist.png'),
+                                  fit: BoxFit.cover
+                              ),
+                            ),
+                          ),
+                          title:
+                          AppText(text: "User Name", SizeofFont: 15,textcolor: white,WeightofFont: FontWeight.w600,),
+                          subtitle:AppText(text: "Lorem Ipsum is simply dummy. ", SizeofFont: 12,textcolor: whiteforsubtitle,) ,
+                        );
+                      }),
+                ),
+              ),
+            ),),
 
           ListTile(
             leading:  Container(
@@ -98,8 +102,8 @@ class _LiveStreaminngState extends State<LiveStreaminng> {
             ),
             title: Row(
               children: [
-                AppText(text: "Streamer Name.", SizeofFont: 15,textcolor: white,WeightofFont: FontWeight.w700,),
-                AppText(text: " Streaming from 20 mins.", SizeofFont: 12,textcolor: white,),
+                AppText(text: "Streamer Name.", SizeofFont: 12,textcolor: white,WeightofFont: FontWeight.w700,),
+                AppText(text: " Streaming from 20 mins.", SizeofFont: 10,textcolor: white,),
               ],
             ),
             subtitle:     AppText(text: " Live", SizeofFont: 15,textcolor: white,WeightofFont: FontWeight.w700,),

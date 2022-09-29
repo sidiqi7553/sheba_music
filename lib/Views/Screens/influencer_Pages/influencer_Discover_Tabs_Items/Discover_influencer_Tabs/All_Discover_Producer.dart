@@ -31,7 +31,7 @@ class All_Discover_influencer extends StatelessWidget {
               title: "What’s New",
             ),
             Top_Playlists(
-              title: "Mood",
+              title: "Moods",
             ),
             SizedBox(
               height: 20,

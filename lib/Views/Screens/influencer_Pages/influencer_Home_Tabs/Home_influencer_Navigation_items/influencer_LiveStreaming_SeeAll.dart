@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Influencer/Create_Screen_Influencer.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/LiveStreaming_Videos.dart';
@@ -16,11 +17,11 @@ class influencerLiveStreaming_SeeAll  extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: inner_Pages_App_Bar(
+        child: inner_Pages_App_Bar_For_Live_Streaming(
           nextscreen: Wallet_Main(),
 
           title: "Live Streaming",
-          action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
+          action: ActionIconFor_Live_Streaming(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),upload: Create_Screen_Influencer(),),
         )
         ,
       ),
@@ -43,7 +44,7 @@ class influencerLiveStreaming_SeeAll  extends StatelessWidget {
                           gridDelegate:
                           const SliverGridDelegateWithMaxCrossAxisExtent(
                               maxCrossAxisExtent: 200,
-                              childAspectRatio: 8 / 6,
+                              childAspectRatio: 9 / 7,
                               crossAxisSpacing: 0,
                               mainAxisSpacing: 0),
                           itemCount: 40,

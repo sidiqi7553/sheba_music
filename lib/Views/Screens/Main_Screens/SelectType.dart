@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sheba_music/Views/Screens/Producer_Pages/Producer_menu.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_menu.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Logo.dart';
@@ -9,9 +11,9 @@ import 'package:sheba_music/const/App_Text.dart';
 import '../../../const/appConstants.dart';
 import '../Artists_Pages/artist_menu.dart';
 import '../Guest_Pages/Select_Artist.dart';
-import '../Producer_Writer_Pages/Producer_menu.dart';
+
 import '../Song_Writer_Pages/SongWrite_menu.dart';
-import '../influencer_Writer_Pages/influencer_menu.dart';
+
 
 class SelectType extends StatefulWidget {
   const SelectType({Key? key}) : super(key: key);

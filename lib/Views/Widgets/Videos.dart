@@ -81,7 +81,7 @@ class Video extends StatelessWidget {
               ],
             ),
             Positioned(
-                top: 20,
+                top: 30,
                 right: 0,
                 left: 0,
                 child: SvgPicture.asset(

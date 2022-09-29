@@ -21,17 +21,14 @@ import '../Home_influencer_Navigation_items/influencer_TrendingVidoes_SeeAll.dar
 import '../Home_influencer_Navigation_items/influencer_Videopage.dart';
 import '../Home_influencer_Navigation_items/influencer_in_Producers_SeeAll.dart';
 
-
-
-
-class All extends StatefulWidget {
-  const All({Key? key}) : super(key: key);
+class  InfluencerAll extends StatefulWidget {
+  const InfluencerAll({Key? key}) : super(key: key);
 
   @override
-  State<All> createState() => _AllState();
+  State<InfluencerAll> createState() => _InfluencerAllState();
 }
 
-class _AllState extends State<All> {
+class _InfluencerAllState extends State<InfluencerAll> {
   @override
   Widget build(BuildContext context) {
     return BackGround_Container(
@@ -65,7 +62,7 @@ class _AllState extends State<All> {
                   ),
                   SingleChildScrollView(
                     child: SizedBox(
-                        height: 330,
+                        height: 200,
                         width: MediaQuery.of(context).size.width,
                         child: GridView.builder(
                             gridDelegate:
@@ -95,14 +92,14 @@ class _AllState extends State<All> {
               profilePage: Artist_Profile(),
               seeAll: Producers_SeeAll(),
               title: "Trending producers",
+              name: "Producer Name",
             ),
             SingleChildScrollView(
               child: Container(
                 height: 280,
                 width: double.infinity,
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                decoration: BoxDecoration(
-                    ),
+                decoration: BoxDecoration(),
                 child: New_Releases(
                   title: "Promoted By Influencers",
                 ),
@@ -111,18 +108,18 @@ class _AllState extends State<All> {
             Trending_Beats(),
             Trending_Artists(
               title: "Trending Song Writers",
-              name: "song Writers",
+              name: "song Writer",
             ),
             Trending_Videos(
               videopage: influencerVideopage(),
               seeAll: influencerTrendingVidoes_SeeAll(),
             ),
             Trending_Artists(
-              title: "Trending Influencer",
+              title: "Trending Influencers",
               name: "Influencer",
             ),
             Trending_Beats(
-              title: "Mood",
+              title: "Moods",
             ),
             Trending_Videos(
               title: "Recently Played Videos",

@@ -37,7 +37,7 @@ class SongListTile extends StatelessWidget {
           ),
         ),
         title: AppText(text: songName, SizeofFont: 18,textcolor: white,),
-        subtitle: AppText(text: singerName, SizeofFont: 12,textcolor: whiteforsubtitle,),
+        subtitle: AppText(text: singerName, SizeofFont: 11,textcolor: whiteforsubtitle,),
         trailing:  GestureDetector(
             onTap: details,
             child: Icon(Icons.more_vert,color: white,)),
@@ -96,7 +96,7 @@ class SongListTilePaid extends StatelessWidget {
             ))
           ],
         ),
-        title: AppText(text: songName, SizeofFont: 18,textcolor: white,),
+        title: AppText(text: songName, SizeofFont: 14,textcolor: white,),
         subtitle: AppText(text: singerName, SizeofFont: 12,textcolor: whiteforsubtitle,),
         trailing: GestureDetector(
             onTap: details,

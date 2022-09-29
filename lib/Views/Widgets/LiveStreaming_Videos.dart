@@ -30,7 +30,7 @@ class LiveStreaming_Videos extends StatelessWidget {
       },
       child: Universal_Container(
 
-        height: 100,
+        height: 120,
         widht: 200,
 
         child: Stack(
@@ -70,13 +70,13 @@ class LiveStreaming_Videos extends StatelessWidget {
                           children: [
                             AppText(
                               text: title,
-                              SizeofFont: 12,
+                              SizeofFont: 10,
                               textcolor: white,
                             ),
                             AppText(
                               text:
                               subtitle,
-                              SizeofFont: 10,
+                              SizeofFont: 8,
                               textcolor:
                               whiteforsubtitle,
                             ),
@@ -89,7 +89,7 @@ class LiveStreaming_Videos extends StatelessWidget {
               ],
             ),
             Positioned(
-                top: 40,
+                top: 20,
                 right: 0,
                 left: 0,
                 child: SvgPicture.asset(

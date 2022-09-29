@@ -18,6 +18,7 @@ import '../../../../Widgets/HomeOriginModals/Trending_Beats.dart';
 import '../../../../Widgets/HomeOriginModals/Trending_Videos.dart';
 import '../../../../Widgets/LiveStreaming_Videos.dart';
 import '../Navigation_items/NewReleases_SeeAll.dart';
+import '../Navigation_items/SongWriter_SeeAll.dart';
 import '../Navigation_items/TrendingVidoes_SeeAll.dart';
 import '../Navigation_items/Videopage.dart';
 
@@ -101,19 +102,22 @@ class _AllState extends State<All> {
                 width: double.infinity,
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    // border: Border.all(color: primary)
+                  borderRadius: BorderRadius.circular(10),
+                  // border: Border.all(color: primary)
                   // \
-                  ),
+                ),
                 child: New_Releases(
                   title: "Promoted By Influencers",
                 ),
               ),
             ),
-            Trending_Beats(),
+            Trending_Beats(
+              title: "Recently Played Beats",
+            ),
             Trending_Artists(
               title: "Trending Song Writers",
               name: "song Writers",
+              seeAll: SongWriter_SeeAll(),
             ),
             Trending_Videos(
               videopage: Videopage(),

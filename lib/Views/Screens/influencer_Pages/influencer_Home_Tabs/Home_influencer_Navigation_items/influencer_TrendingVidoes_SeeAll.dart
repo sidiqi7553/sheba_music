@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
+import 'package:sheba_music/Views/Screens/Producer_Pages/Producer_Home_Tabs/Home_Producer_Navigation_items/Producer_Videopage.dart';
 import 'package:sheba_music/Views/Widgets/LiveStreaming_Videos.dart';
 import 'package:sheba_music/Views/Widgets/Videos.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
@@ -8,7 +9,7 @@ import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../../Widgets/BackGround_Container.dart';
-import '../../../Producer_Writer_Pages/Producer_Home_Tabs/Home_Producer_Navigation_items/Producer_Videopage.dart';
+
 import 'influencer_Videopage.dart';
 
 class influencerTrendingVidoes_SeeAll extends StatelessWidget {

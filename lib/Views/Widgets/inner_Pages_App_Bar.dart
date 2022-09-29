@@ -138,62 +138,7 @@ class ActionIcon extends StatelessWidget {
   }
 }
 
-// Container(
-//
-//         height: 35,
-//         width: 35,
-//         alignment: Alignment.center,
-//         decoration: BoxDecoration(
-//           shape: BoxShape.circle,
-//           gradient: LinearGradient(
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomRight,
-//             colors: [
-//               Colors.black.withOpacity(0.45),
-//               Colors.white,
-//             ],
-//           ),
-//         ),
-//         child: Container(
-//           height: 33,
-//           width: 33,
-//           decoration: BoxDecoration(
-//             shape: BoxShape.circle,
-//             color: primary,
-//           ),child: Padding(
-//             padding: const EdgeInsets.only(left: 8.0),
-//             child: Icon(Icons.arrow_back_ios,color: white,size: 20,),
-//           ),
-//         ),)
 
-
-
-
-
-
-
-
-
-
-
-////////////////
-
-
-
-//Neumorphic(
-//       style: NeumorphicStyle(
-//
-//       shape: NeumorphicShape.flat,
-//     boxShape: NeumorphicBoxShape.stadium(),
-//     depth:1,
-//     lightSource: LightSource.bottomRight,
-//     color: primary
-//       ),
-//         child: Padding(
-//           padding: const EdgeInsets.only(left: 8.0),
-//           child: Icon(Icons.arrow_back_ios,color: white,size: 20,),
-//         ),
-//       )
 
 
 class Influencer_inner_Pages_App_Bar_For_send_Tag extends StatelessWidget {
@@ -313,5 +258,176 @@ class ActionIconSendTag extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+
+class inner_Pages_App_Bar_For_Live_Streaming extends StatelessWidget {
+  String title;
+  Widget? action, leading,nextscreen;
+  PreferredSizeWidget? bottom;
+  Color? bgcolor;
+
+  inner_Pages_App_Bar_For_Live_Streaming({
+    Key? key,
+    this.nextscreen,
+    this.title = 'Title',
+    this.action,
+    this.leading = const LeadingIcon(),
+    this.bottom,
+    this.bgcolor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      centerTitle: true,
+      elevation: 0,
+      backgroundColor: primary,
+      leading: InkWell(
+        onTap: (() => Navigator.pop(context)),
+        child: leading,
+      ),
+      title: Text(
+        title,
+        style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w800,
+            fontSize: 17,
+            color: white
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: InkWell(
+              onTap: (){
+                Get.to(nextscreen);
+              },
+              child: action),
+        ),
+      ],
+      bottom: bottom,
+    );
+  }
+}
+
+
+class LeadingIconFor_Live_Streaming extends StatelessWidget {
+  const LeadingIconFor_Live_Streaming({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return
+      Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          height: 35,
+          width: 35,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(0.45),
+                Colors.white,
+              ],
+            ),
+          ),
+          child: Container(
+            height: 33,
+            width: 33,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: primary,
+            ),child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Icon(Icons.arrow_back_ios,color: white,size: 20,),
+          ),
+          ),),
+      );
+  }
+}
+
+class ActionIconFor_Live_Streaming extends StatelessWidget {
+  Widget icon;
+  Widget? upload;
+  ActionIconFor_Live_Streaming({
+    Key? key,
+    required this.icon,
+     this.upload,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return
+
+      Row(
+        children: [
+          InkWell(
+            onTap: () {
+              Get.to(upload);
+            },
+            child: Container(
+              height: 35,
+              width: 35,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.black.withOpacity(0.45),
+                    Colors.white,
+                  ],
+                ),
+              ),
+              child: Container(
+                  height: 33,
+                  width: 33,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: primary,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: SvgPicture.asset("assets/Icons/upload.svg"),
+                  )),
+            ),
+          ),
+          SizedBox(width: 10,),
+          Container(
+          height: 35,
+          width: 35,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(0.45),
+                Colors.white,
+              ],
+            ),
+          ),
+          child: Container(
+              height: 33,
+              width: 33,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: primary,
+              ),child: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: icon,
+          )
+          ),),
+
+        ],
+      );
   }
 }

@@ -11,7 +11,7 @@ class Trending_Artists extends StatelessWidget {
   String name;
   Widget? seeAll;
   Widget? profilePage;
-  Trending_Artists({Key? key,this.title="Trending Artist",this.seeAll,this.profilePage,this.name="Artist Name"}): super(key: key);
+  Trending_Artists({Key? key,this.title="Trending Artists",this.seeAll,this.profilePage,this.name="Artist Name"}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
