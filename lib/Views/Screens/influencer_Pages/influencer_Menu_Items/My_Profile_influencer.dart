@@ -1,9 +1,19 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
+import 'package:sheba_music/Views/Screens/Artists_Pages/Artist_Profile_Navigation_Items/Messenger_Tabs/artist_tags.dart';
+import 'package:sheba_music/Views/Screens/Artists_Pages/Artist_Profile_Navigation_Items/artist_youtube_links.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Reports.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Change_Password.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Support.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Edit_Profile.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Messenger.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Notifications.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Privacy_Policy.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Purchased_Tickets.dart';
+import 'package:sheba_music/Views/Screens/influencer_Pages/influencer_Profile_Navigation_Items/influencer_Support.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Influencer_Main_Pages_App_Bar.dart';
 
@@ -202,17 +212,60 @@ class _MyProfileState extends State<MyProfileinfluencer> {
               ),
 
 
-              MyProfile_ListMenu(title: "Edit Profile", svgicon: "assets/Icons/Profile.svg",nextpage: Edit_Profile(),),
-              MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg"),
-              MyProfile_ListMenu(title: "Notifications", svgicon: "assets/Icons/Notification.svg",nextpage: Notifications(),),
-              MyProfile_ListMenuformessenger(title: "Messenger", svgicon: "assets/Icons/Chat.svg",nextpage: Messenger(),),
-              MyProfile_ListMenu(title: "Delete Account", svgicon: "assets/Icons/Delete.svg"),
-              MyProfile_ListMenu(title: "Purchased Tickets", svgicon: "assets/Icons/Ticket.svg",nextpage: Purchased_Tickets(),),
-              MyProfile_ListMenu(title: "Support", svgicon: "assets/Icons/Chat.svg",nextpage: Support(),),
-              MyProfile_ListMenu(title: "Permissions", svgicon: "assets/Icons/Permission.svg"),
-              MyProfile_ListMenu(title: "Privacy Policy", svgicon: "assets/Icons/PrivacyPolicy.svg",nextpage: Privacy_Policy(),),
-              MyProfile_ListMenu(title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
-              MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
+              MyProfile_ListMenu(
+                title: "Edit Profile",
+                svgicon: "assets/Icons/Profile.svg",
+                nextpage: influencer_Edit_Profile(),
+              ),
+              MyProfile_ListMenu(
+                title: "Youtube Links",
+                svgicon: "assets/Icons/youtube.svg",
+                nextpage: Youtube_Links(),
+              ),
+              MyProfile_ListMenu(
+                title: "Tags",
+                svgicon: "assets/Icons/Ticket Star.svg",
+                nextpage: Artist_Tags(),
+              ),
+              MyProfile_ListMenu(
+                title: "Reports",
+                svgicon: "assets/Icons/reports.svg",
+                nextpage: Reports(),
+              ),
+              MyProfile_ListMenuformessenger(
+                title: "Messenger",
+                svgicon: "assets/Icons/Chat.svg",
+                nextpage: Messenger(),
+              ),
+              MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg",nextpage: Change_Password(),),
+              MyProfile_ListMenu(
+                title: "Notifications",
+                svgicon: "assets/Icons/Notification.svg",
+                nextpage: influencer_Notifications(),
+              ),
+              MyProfile_ListMenu(
+                  title: "Delete Account", svgicon: "assets/Icons/Delete.svg"),
+              MyProfile_ListMenu(
+                title: "Tickets",
+                svgicon: "assets/Icons/Ticket.svg",
+                nextpage: influencer_Purchased_Tickets(),
+              ),
+              MyProfile_ListMenu(
+                title: "Support",
+                svgicon: "assets/Icons/Chat.svg",
+                nextpage: influencer_Support(),
+              ),
+              MyProfile_ListMenu(
+                  title: "Permissions", svgicon: "assets/Icons/Permission.svg"),
+              MyProfile_ListMenu(
+                title: "Privacy Policy",
+                svgicon: "assets/Icons/PrivacyPolicy.svg",
+                nextpage: influencer_Privacy_Policy(),
+              ),
+              MyProfile_ListMenu(
+                  title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
+              MyProfile_ListMenu(
+                  title: "Share This App", svgicon: "assets/Icons/Send.svg"),
 
               Container(
                 height: 50,

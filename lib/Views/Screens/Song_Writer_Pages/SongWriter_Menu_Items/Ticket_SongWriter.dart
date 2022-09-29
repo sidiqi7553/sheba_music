@@ -51,6 +51,7 @@ class _TicketsState extends State<TicketsSongWriter> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Artist_Main_Pages_App_Bar_For_Tickets(
+
             title: Leadingtitle(
               leadingtext: "Tickets",
               Welcome: "",

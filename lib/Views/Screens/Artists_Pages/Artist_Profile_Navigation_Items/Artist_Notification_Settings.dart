@@ -40,12 +40,12 @@ class _Notification_SettingsState extends State<Artist_Notification_Settings> {
                 padding: const EdgeInsets.only(left: 8.0),
                 child: ListTile(
                   leading: AppText(text: "New Song / Album Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
-                    trailing:   Container(
-                      height: 50,
-                      width: 50,
-                      child: flutterswitch(),
+                  trailing:   Container(
+                    height: 50,
+                    width: 50,
+                    child: flutterswitch(),
 
-                    ),
+                  ),
                 ),
               ),
               Padding(
@@ -99,7 +99,7 @@ class _Notification_SettingsState extends State<Artist_Notification_Settings> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: ListTile(
-                  leading: AppText(text: "Artists Message Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  leading: AppText(text: "Transaction Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
                   trailing:   Container(
                     height: 50,
                     width: 50,
@@ -111,7 +111,7 @@ class _Notification_SettingsState extends State<Artist_Notification_Settings> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: ListTile(
-                  leading: AppText(text: "Artists Message Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  leading: AppText(text: "Purchase Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
                   trailing:   Container(
                     height: 50,
                     width: 50,
@@ -135,6 +135,42 @@ class _Notification_SettingsState extends State<Artist_Notification_Settings> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: ListTile(
+                  leading: AppText(text: "Report Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  trailing:   Container(
+                    height: 50,
+                    width: 50,
+                    child: flutterswitch(),
+
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: ListTile(
+                  leading: AppText(text: "Play Milestones", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  trailing:   Container(
+                    height: 50,
+                    width: 50,
+                    child: flutterswitch(),
+
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: ListTile(
+                  leading: AppText(text: "New Supporter", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  trailing:   Container(
+                    height: 50,
+                    width: 50,
+                    child: flutterswitch(),
+
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: ListTile(
                   leading: AppText(text: "Live Stream Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
                   trailing:   Container(
                     height: 50,
@@ -144,22 +180,43 @@ class _Notification_SettingsState extends State<Artist_Notification_Settings> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: ListTile(
+                  leading: AppText(text: "Tag Notifications", SizeofFont: 16,textcolor: white,WeightofFont: FontWeight.w600,),
+                  trailing:   Container(
+                    height: 50,
+                    width: 50,
+                    child: flutterswitch(),
 
-              Container(
-                height: 40,
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(left: 70,right: 70,top: 150),
-                decoration: BoxDecoration(
-                  color: primary,
-                  borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
 
-                ),
-                child: Center(
-                  child: AppText(text: "Update", SizeofFont: 20,textcolor: white,),
-                ),
-              )
+              SizedBox(height: 40,)
 
             ],
+          ),
+        ),
+      ),
+      bottomSheet:   SizedBox(
+        height: 50,
+        width: double.infinity,
+
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 20,
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.only(left: 70,right: 70,top: 0),
+            decoration: BoxDecoration(
+              color: primary,
+              borderRadius: BorderRadius.circular(10),
+
+            ),
+            child: Center(
+              child: AppText(text: "Update", SizeofFont: 20,textcolor: white,),
+            ),
           ),
         ),
       ),

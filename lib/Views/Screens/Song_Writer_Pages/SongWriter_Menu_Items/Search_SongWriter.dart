@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:sheba_music/Views/Screens/Extra_screens_of_Songwriter/SongWriter_Create_Screen.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
@@ -52,6 +53,7 @@ class _SearchState extends State<SearchSongWriter> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Artist_Main_Pages_App_Bar(
+            upload: SongWriter_Create_Screen(),
             title: AppText(text: "Search", SizeofFont: 20,textcolor: white,)
         )
         ,

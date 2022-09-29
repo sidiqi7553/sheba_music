@@ -3,6 +3,7 @@ import 'package:flutter_image_slider/carousel.dart';
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/TEmp/models/music.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Create_Screen.dart';
 import 'package:sheba_music/Views/Widgets/Artist_Main_Pages_App_Bar.dart';
 
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
@@ -55,6 +56,7 @@ class _HomeState extends State<HomeArtist> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Artist_Main_Pages_App_Bar(
+          upload: Create_Screen(),
 
             title: LeadingtitleArtist(
               leadingtext: "Hi Hamza,",

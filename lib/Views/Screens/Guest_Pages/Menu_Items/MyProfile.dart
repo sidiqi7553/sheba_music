@@ -1,5 +1,6 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Change_Password.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
@@ -200,7 +201,7 @@ body: BackGround_Container(child: SingleChildScrollView(
 
 
       MyProfile_ListMenu(title: "Edit Profile", svgicon: "assets/Icons/Profile.svg",nextpage: Edit_Profile(),),
-      MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg"),
+      MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg",nextpage: Change_Password(),),
       MyProfile_ListMenu(title: "Notifications", svgicon: "assets/Icons/Notification.svg",nextpage: Notifications(),),
       MyProfile_ListMenuformessenger(title: "Messenger", svgicon: "assets/Icons/Chat.svg",nextpage: Messenger(),),
       MyProfile_ListMenu(title: "Delete Account", svgicon: "assets/Icons/Delete.svg"),

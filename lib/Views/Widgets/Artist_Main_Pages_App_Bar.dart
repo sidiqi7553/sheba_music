@@ -14,13 +14,14 @@ import '../Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 
 class Artist_Main_Pages_App_Bar extends StatelessWidget {
   Widget? title;
-  Widget? action, leading, nextscreen;
+  Widget? action, leading, nextscreen,upload;
   PreferredSizeWidget? bottom;
   Color? bgcolor;
 
   Artist_Main_Pages_App_Bar({
     Key? key,
     this.nextscreen,
+    this.upload,
     this.title,
     this.action,
     this.leading,
@@ -40,7 +41,7 @@ class Artist_Main_Pages_App_Bar extends StatelessWidget {
           padding: const EdgeInsets.only(right: 5.0),
           child: ActionIcon(
             notification: Notifications(),
-            upload: Create_Screen(),
+            upload: upload,
           ),
         ),
       ],

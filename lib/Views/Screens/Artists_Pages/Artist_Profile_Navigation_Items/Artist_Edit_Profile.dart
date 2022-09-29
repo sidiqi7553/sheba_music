@@ -240,6 +240,7 @@ class _Edit_ProfileState extends State<Artist_Edit_Profile> {
                   ),
                 ],
               ),
+
               SizedBox(
                 height: 25,
               ),
