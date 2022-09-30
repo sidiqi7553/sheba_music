@@ -31,7 +31,7 @@ class _All_TicketsState extends State<All_Tickets> {
                       itemCount: 30,
                       itemBuilder: (ctx, index) {
                         return Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.only(left: 20.0,right: 20),
                           child: GestureDetector(
                             onTap: () {
                               Get.to(Tickets_Details());

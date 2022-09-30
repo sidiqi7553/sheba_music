@@ -105,7 +105,7 @@ class _MyProfileState extends State<MyProfileSongWriter> {
                         top: 230,
                         child: Container(
                           height: 25,
-                          width: 100,
+                          width: 60,
                           decoration: BoxDecoration(
                             color: primary,
                             boxShadow: [
@@ -126,17 +126,17 @@ class _MyProfileState extends State<MyProfileSongWriter> {
                             child: AppText(
                               text: "Following",
                               textcolor: white,
-                              SizeofFont: 15,
+                              SizeofFont: 10,
                             ),
                           ),
                         ),
                       ),
                       Positioned(
-                        right: 150,
+                        right: 100,
                         top: 230,
                         child: Container(
                           height: 25,
-                          width: 100,
+                          width: 60,
                           decoration: BoxDecoration(
                             color: primary,
                             boxShadow: [
@@ -157,7 +157,7 @@ class _MyProfileState extends State<MyProfileSongWriter> {
                             child: AppText(
                               text: "Followers",
                               textcolor: white,
-                              SizeofFont: 15,
+                              SizeofFont: 10,
                             ),
                           ),
                         ),

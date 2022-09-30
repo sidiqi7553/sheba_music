@@ -94,16 +94,8 @@ class _InfluencerAllState extends State<InfluencerAll> {
               title: "Trending producers",
               name: "Producer Name",
             ),
-            SingleChildScrollView(
-              child: Container(
-                height: 280,
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                decoration: BoxDecoration(),
-                child: New_Releases(
-                  title: "Promoted By Influencers",
-                ),
-              ),
+            New_Releases(
+              title: "Promoted By Influencers",
             ),
             Trending_Beats(),
             Trending_Artists(

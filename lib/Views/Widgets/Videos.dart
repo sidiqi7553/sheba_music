@@ -57,18 +57,19 @@ class Video extends StatelessWidget {
                         padding: const EdgeInsets.only(
                             left: 8.0),
                         child: Column(
-                          crossAxisAlignment:
-                          CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+
                           children: [
                             AppText(
                               text: title,
-                              SizeofFont: 10,
+                              SizeofFont: 12,
                               textcolor: white,
                             ),
                             AppText(
                               text:
                               subtitle,
-                              SizeofFont: 8,
+                              SizeofFont: 9,
                               textcolor:
                               whiteforsubtitle,
                             ),

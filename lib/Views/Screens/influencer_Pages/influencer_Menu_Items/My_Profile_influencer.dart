@@ -102,64 +102,64 @@ class _MyProfileState extends State<MyProfileinfluencer> {
                   Positioned(
                     right: 30,
                     top: 230,
-                    child:Container(
+                    child: Container(
                       height: 25,
-                      width: 100,
+                      width: 60,
                       decoration: BoxDecoration(
                         color: primary,
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(-6,-6),
+                            offset: Offset(-6, -6),
                             color: Colors.white.withOpacity(0.1),
                             blurRadius: 12,
-
-
                           ),
                           BoxShadow(
-                            offset: Offset(6,6),
+                            offset: Offset(6, 6),
                             color: Colors.black.withOpacity(0.25),
                             blurRadius: 12,
-
                           )
                         ],
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Center(
-                        child: AppText(text: "Following",textcolor: white,SizeofFont: 15,),
+                        child: AppText(
+                          text: "Following",
+                          textcolor: white,
+                          SizeofFont: 10,
+                        ),
                       ),
                     ),
-
                   ),
                   Positioned(
-                    right: 150,
+                    right: 100,
                     top: 230,
-                    child:Container(
+                    child: Container(
                       height: 25,
-                      width: 100,
+                      width: 60,
                       decoration: BoxDecoration(
                         color: primary,
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(-6,-6),
+                            offset: Offset(-6, -6),
                             color: Colors.white.withOpacity(0.1),
                             blurRadius: 12,
-
-
                           ),
                           BoxShadow(
-                            offset: Offset(6,6),
+                            offset: Offset(6, 6),
                             color: Colors.black.withOpacity(0.25),
                             blurRadius: 12,
-
                           )
                         ],
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Center(
-                        child: AppText(text: "Followers",textcolor: white,SizeofFont: 15,),
+                        child: AppText(
+                          text: "Followers",
+                          textcolor: white,
+                          SizeofFont: 10,
+                        ),
                       ),
                     ),
-
                   ),
                 ],
               ),

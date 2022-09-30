@@ -66,7 +66,7 @@ class LiveStreaming_Videos extends StatelessWidget {
                             left: 8.0),
                         child: Column(
                           crossAxisAlignment:
-                          CrossAxisAlignment.start,
+                          CrossAxisAlignment.center,
                           children: [
                             AppText(
                               text: title,

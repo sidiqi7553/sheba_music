@@ -57,7 +57,7 @@ class _SelectTypeState extends State<SelectType> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    current = 0;
+                    current = 6;
                   });
                   Get.to(Select_Artist());
                 },
@@ -68,7 +68,7 @@ class _SelectTypeState extends State<SelectType> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: grey,
-                      border: current == 0
+                      border: current == 6
                           ? Border.all(color: white)
                           : Border.all(color: Colors.transparent)),
                   child: Center(

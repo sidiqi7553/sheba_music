@@ -91,14 +91,14 @@ class _Select_ArtistState extends State<Select_Artist> {
                                     GestureDetector(
                                       onTap: () {
                                         setState((){
-                                          current = index;
+                                          current = 2;
                                         });
                                       },
                                       child: Container(
                                         height: 70,
                                         width: 70,
                                         decoration: BoxDecoration(
-                                            border: current==index? Border.all(width: 4,color: primary):null,
+                                            border: current==2? Border.all(width: 4,color: primary):null,
                                             shape: BoxShape.circle,
                                             image: DecorationImage(
 
@@ -107,7 +107,7 @@ class _Select_ArtistState extends State<Select_Artist> {
                                         ),
                                       ),
                                     ),
-                                    current==index? Positioned(
+                                    current==2? Positioned(
                                       top: 0,
                                       right: 0,
                                       child: Container(

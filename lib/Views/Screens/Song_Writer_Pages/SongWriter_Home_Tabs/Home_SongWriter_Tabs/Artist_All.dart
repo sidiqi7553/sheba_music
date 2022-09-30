@@ -94,19 +94,8 @@ class _AllState extends State<All> {
               seeAll: Producers_SeeAll(),
               title: "Trending producers",
             ),
-            SingleChildScrollView(
-              child: Container(
-                height: 280,
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                decoration: BoxDecoration(
-                    // borderRadius: BorderRadius.circular(10),
-                    // border: Border.all(color: primary)
-                ),
-                child: New_Releases(
-                  title: "Promoted By Influencers",
-                ),
-              ),
+            New_Releases(
+              title: "Promoted By Influencers",
             ),
             Trending_Beats(),
             Trending_Artists(
