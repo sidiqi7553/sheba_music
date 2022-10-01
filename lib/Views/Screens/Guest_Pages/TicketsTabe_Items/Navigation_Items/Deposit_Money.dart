@@ -6,7 +6,6 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigati
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Deposit_Money_wallet.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
-import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
@@ -81,8 +80,13 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                             Icon_Container1(
                                 height: 60,
                                 width: 60,
+<<<<<<< Updated upstream
                                 svgicon: "assets/Icons/Mobile_Money.png",
                                 iconsize: 35),
+=======
+                                svgicon: "assets/Icons/mc_symbol.svg",
+                            ),
+>>>>>>> Stashed changes
                             AppText(
                               text: "Mobile Money",
                               SizeofFont: 15,

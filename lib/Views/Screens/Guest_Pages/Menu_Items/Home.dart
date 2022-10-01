@@ -12,8 +12,6 @@ import 'package:swipe_deck/swipe_deck.dart';
 import '../../../Widgets/Main_Pages_App_Bar.dart';
 import '../HomeTabs_items/Tabs/All.dart';
 
-
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -54,7 +52,6 @@ class _HomeState extends State<Home> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: Main_Pages_App_Bar(
-
             title: Leadingtitle(
           leadingtext: "Hi Hamza,",
           Welcome: "Welcome Back",
@@ -69,50 +66,17 @@ class _HomeState extends State<Home> {
           ),
           child: Column(
             children: [
-              // SwipeDeck(
-              //   startIndex: 3,
-              //   emptyIndicator: Container(
-              //     child: Center(
-              //       child: Text("Nothing Here"),
-              //     ),
-              //   ),
-              //   cardSpreadInDegrees: 5,
-              //   // Change the Spread of Background Cards
-              //   onSwipeLeft: () {
-              //     print("USER SWIPED LEFT -> GOING TO NEXT WIDGET");
-              //   },
-              //   onSwipeRight: () {
-              //     print("USER SWIPED RIGHT -> GOING TO PREVIOUS WIDGET");
-              //   },
-              //   onChange: (index) {
-              //     print(IMAGES[index]);
-              //   },
-              //   widgets: IMAGES
-              //       .map((e) => GestureDetector(
-              //             onTap: () {
-              //               print(e);
-              //             },
-              //             child: ClipRRect(
-              //                 borderRadius: BorderRadius.circular(20),
-              //                 child: Image(
-              //                   image: AssetImage(
-              //                     "assets/Images/Homepic1.png",
-              //                   ),
-              //                   fit: BoxFit.cover,
-              //                 )),
-              //           ))
-              //       .toList(),
-              // ),
               Container(
                 child: Container(
                     height: 180,
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
-                    child:  Carousel(
+                    child: Carousel(
                       indicatorWidth: 0,
                       indicatorHeight: 0,
                       indicatorBarWidth: 0,
-                      indicatorBarHeight: 0,indicatorBarColor: Colors.transparent,
+                      indicatorBarHeight: 0,
+                      indicatorBarColor: Colors.transparent,
                       autoScroll: true,
                       // widgets
                       items: [
