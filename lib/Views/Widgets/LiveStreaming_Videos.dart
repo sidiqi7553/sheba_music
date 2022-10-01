@@ -30,8 +30,8 @@ class LiveStreaming_Videos extends StatelessWidget {
       },
       child: Universal_Container(
 
-        height: 120,
-        widht: 200,
+        height: 100,
+        widht: MediaQuery.of(context).size.width*0.4,
 
         child: Stack(
           children: [

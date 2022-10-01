@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Tickets_pricing.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Deposit_Money_wallet.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
 import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
@@ -52,10 +53,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  Get.to(Tickets_pricing());
-                  payment(context);
-                },
+
                 child: Container(
                     margin: EdgeInsets.symmetric(vertical: 15),
                     height: 90,
@@ -80,10 +78,11 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon_Container(
+                            Icon_Container1(
                                 height: 60,
                                 width: 60,
-                                svgicon: "assets/Icons/Mobile_Money.svg"),
+                                svgicon: "assets/Icons/Mobile_Money.png",
+                                iconsize: 35),
                             AppText(
                               text: "Mobile Money",
                               SizeofFont: 15,
@@ -118,10 +117,11 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/CardVisa.svg"),
+                              svgicon: "assets/Icons/Master_Card.png",
+                              iconsize: 45),
                           AppText(
                             text: "Visa/Mastercard ",
                             SizeofFont: 15,
@@ -130,7 +130,8 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -155,10 +156,11 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/Paypal.svg"),
+                              svgicon: "assets/Icons/Paypal_.png",
+                              iconsize: 45),
                           AppText(
                             text: "Paypal",
                             SizeofFont: 15,
@@ -167,7 +169,8 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -192,10 +195,12 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/G_pay.svg"),
+                              svgicon: "assets/Icons/google-pay.png",
+                              iconsize: 45
+                          ),
                           AppText(
                             text: "Google Pay ",
                             SizeofFont: 15,
@@ -204,7 +209,8 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
             ],
           ),
         ),

@@ -12,7 +12,11 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:sheba_music/const/App_Colors.dart';
 
 
 
@@ -80,10 +84,11 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon_Container(
+                            Icon_Container1(
                                 height: 60,
                                 width: 60,
-                                svgicon: "assets/Icons/Mobile_Money.svg"),
+                                svgicon: "assets/Icons/Mobile_Money.png",
+                                iconsize: 35),
                             AppText(
                               text: "Mobile Money",
                               SizeofFont: 15,
@@ -118,10 +123,11 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/CardVisa.svg"),
+                              svgicon: "assets/Icons/Master_Card.png",
+                              iconsize: 45),
                           AppText(
                             text: "Visa/Mastercard ",
                             SizeofFont: 15,
@@ -155,10 +161,11 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/Paypal.svg"),
+                              svgicon: "assets/Icons/Paypal_.png",
+                              iconsize: 45),
                           AppText(
                             text: "Paypal",
                             SizeofFont: 15,
@@ -192,10 +199,12 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/G_pay.svg"),
+                              svgicon: "assets/Icons/google-pay.png",
+                          iconsize: 45
+                          ),
                           AppText(
                             text: "Google Pay ",
                             SizeofFont: 15,
@@ -237,4 +246,50 @@ void payment(BuildContext context) {
               note: "Click on the button to complete your ticket purchase.Payment will be deducted from your wallet."),
         );
       });
+}
+
+
+
+
+class Icon_Container1 extends StatelessWidget {
+  String svgicon;
+  double height ,width,iconsize;
+  Icon_Container1({Key? key,
+    required this.svgicon,
+    this.height=35,
+    this.width=35,
+    this.iconsize=20,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Neumorphic(
+      style: NeumorphicStyle(
+
+        shadowDarkColor: black,
+        shadowLightColor: white,
+        shape: NeumorphicShape.flat,
+        boxShape: NeumorphicBoxShape.circle(),
+        depth:1,
+        lightSource: LightSource.topLeft,
+        color: black.withOpacity(0.1),
+      ),
+      child: Center(
+        child: Container(
+          height: height,
+          width: width,
+
+          child: Center(
+            child: Stack(
+              children: [
+                Image.asset(svgicon,height: iconsize,
+                ),
+              ],
+            ),
+
+          ),
+        ),
+      ),
+    );
+  }
 }

@@ -84,6 +84,7 @@ class _Deposit_Money_walletState extends State<Deposit_Money_wallet> {
                                 height: 60,
                                 width: 60,
                                 svgicon: "assets/Icons/Mobile_Money.svg"),
+
                             AppText(
                               text: "Mobile Money",
                               SizeofFont: 15,

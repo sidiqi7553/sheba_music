@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Artist_SeeAll.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/LiveStreaming_SeeAll.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Producers_SeeAll.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Tabs/All.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 
@@ -64,28 +65,7 @@ class _AllState extends State<All> {
                       ),
                     ),
                   ),
-                  SingleChildScrollView(
-                    child: SizedBox(
-                        height: 330,
-                        width: MediaQuery.of(context).size.width,
-                        child: GridView.builder(
-                            gridDelegate:
-                                const SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent: 200,
-                                    childAspectRatio: 8 / 6,
-                                    crossAxisSpacing: 0,
-                                    mainAxisSpacing: 0),
-                            itemCount: 4,
-                            itemBuilder: (BuildContext ctx, index) {
-                              return GestureDetector(
-                                onTap: () {},
-                                child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0, right: 10, top: 10),
-                                    child: LiveStreaming_Videos()),
-                              );
-                            })),
-                  ),
+                  livestreamgridview()
                 ],
               ),
             ),

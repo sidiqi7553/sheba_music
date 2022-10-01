@@ -9,6 +9,7 @@ import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
 import '../MyProfile_Navigation_Items/Notifications.dart';
+import 'Deposit_Money_wallet.dart';
 
 class Withdraw_Money_wallet extends StatelessWidget {
   const Withdraw_Money_wallet({Key? key}) : super(key: key);
@@ -19,9 +20,9 @@ class Withdraw_Money_wallet extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
+          title: "Deposit Money",
           nextscreen: Notifications(),
 
-          title: "Withdraw Money",
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Notification.svg"),
           ),
@@ -69,10 +70,11 @@ class Withdraw_Money_wallet extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon_Container(
+                            Icon_Container1(
                                 height: 60,
                                 width: 60,
-                                svgicon: "assets/Icons/Mobile_Money.svg"),
+                                svgicon: "assets/Icons/Mobile_Money.png",
+                                iconsize: 35),
                             AppText(
                               text: "Mobile Money",
                               SizeofFont: 15,
@@ -107,10 +109,11 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/CardVisa.svg"),
+                              svgicon: "assets/Icons/Master_Card.png",
+                              iconsize: 45),
                           AppText(
                             text: "Visa/Mastercard ",
                             SizeofFont: 15,
@@ -119,7 +122,8 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -144,10 +148,11 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/Paypal.svg"),
+                              svgicon: "assets/Icons/Paypal_.png",
+                              iconsize: 45),
                           AppText(
                             text: "Paypal",
                             SizeofFont: 15,
@@ -156,7 +161,8 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -181,10 +187,12 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon_Container(
+                          Icon_Container1(
                               height: 60,
                               width: 60,
-                              svgicon: "assets/Icons/G_pay.svg"),
+                              svgicon: "assets/Icons/google-pay.png",
+                              iconsize: 45
+                          ),
                           AppText(
                             text: "Google Pay ",
                             SizeofFont: 15,
@@ -193,7 +201,8 @@ class Withdraw_Money_wallet extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )),
+                  )
+              ),
 
               Container(
                 margin: EdgeInsets.all(30),

@@ -3,6 +3,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Artist_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Producers_SeeAll.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Tabs/All.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 
 import 'package:sheba_music/const/App_Colors.dart';
@@ -60,28 +61,8 @@ class _InfluencerAllState extends State<InfluencerAll> {
                       ),
                     ),
                   ),
-                  SingleChildScrollView(
-                    child: SizedBox(
-                        height: 200,
-                        width: MediaQuery.of(context).size.width,
-                        child: GridView.builder(
-                            gridDelegate:
-                                const SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent: 200,
-                                    childAspectRatio: 8 / 6,
-                                    crossAxisSpacing: 0,
-                                    mainAxisSpacing: 0),
-                            itemCount: 4,
-                            itemBuilder: (BuildContext ctx, index) {
-                              return GestureDetector(
-                                onTap: () {},
-                                child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0, right: 10, top: 10),
-                                    child: LiveStreaming_Videos()),
-                              );
-                            })),
-                  ),
+                  livestreamgridview()
+
                 ],
               ),
             ),

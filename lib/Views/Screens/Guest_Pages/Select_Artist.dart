@@ -25,6 +25,11 @@ class Select_Artist extends StatefulWidget {
 
 class _Select_ArtistState extends State<Select_Artist> {
   int current = 1;
+  int current2 = 2;
+  int current3 = 3;
+
+  List selectedItems = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,10 +80,34 @@ class _Select_ArtistState extends State<Select_Artist> {
                       itemBuilder: (BuildContext context, int index) {
                         return GestureDetector(
                           onTap: () {
+                            if(selectedItems.isEmpty){
+                              selectedItems.add(index);
+                            }else{
+                              if(selectedItems.length<3){
+                                if(selectedItems.contains(index)){
+                                  selectedItems.remove(index);
+                                }else{
+                                  selectedItems.add(index);
+
+                                }
+
+                              }
+                              else{
+                                if(selectedItems.contains(index)){
+                                  selectedItems.remove(index);
+                                }
+                              }
+                            }
+
+
                             setState(() {
                               // ontap of each card, set the defined int to the grid view index
                               current = index;
+                              current2 = index;
+                              current3 = index;
                             });
+
+
                           },
                           child: Container(
                             height: 100,
@@ -88,26 +117,24 @@ class _Select_ArtistState extends State<Select_Artist> {
                               children: [
                                 Stack(
                                   children: [
-                                    GestureDetector(
-                                      onTap: () {
-                                        setState((){
-                                          current = 2;
-                                        });
-                                      },
-                                      child: Container(
-                                        height: 70,
-                                        width: 70,
-                                        decoration: BoxDecoration(
-                                            border: current==2? Border.all(width: 4,color: primary):null,
-                                            shape: BoxShape.circle,
-                                            image: DecorationImage(
+                                    Container(
+                                      height: 70,
+                                      width: 70,
+                                      decoration: BoxDecoration(
 
-                                                image: AssetImage("assets/Images/victoria.png",),fit: BoxFit.cover
-                                            )
-                                        ),
+                                        border: selectedItems.contains(index)?Border.all(width: 4,color: primary):Border.all(width: 0,color: primary),
+
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+
+                                              image: AssetImage("assets/Images/victoria.png",),fit: BoxFit.cover
+                                          )
                                       ),
                                     ),
-                                    current==2? Positioned(
+                                    selectedItems.contains(index)?
+
+
+                                    Positioned(
                                       top: 0,
                                       right: 0,
                                       child: Container(
@@ -128,7 +155,10 @@ class _Select_ArtistState extends State<Select_Artist> {
                                         child: Container(
                                           height: 20,
                                           width: 20,
-                                        )),
+                                        )
+                                    )
+                                       ,
+
                                   ],
                                 ),
                                 Text(
@@ -228,17 +258,23 @@ class _Select_ArtistState extends State<Select_Artist> {
           child: Center(
             child: GestureDetector(
               onTap: (){
-                Get.to(Menu());
+
+                  if(selectedItems.length>=3){
+                    Get.to(Menu());
+                }else{
+
+                  }
+
               },
               child: Container(
                 height: 40,
                 width: MediaQuery.of(context).size.width*0.7,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: primary
+                  color: selectedItems.length<3? primary.withOpacity(0.3):primary
                 ),
                 child: Center(
-                  child: AppText(text: "Next", SizeofFont: 20,textcolor: white,),
+                  child: AppText(text: "Next", SizeofFont: 20,textcolor: selectedItems.length<3? whiteforsubtitle:white,),
                 ),
               ),
             )

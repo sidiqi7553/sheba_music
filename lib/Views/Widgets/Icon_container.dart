@@ -37,7 +37,8 @@ class Icon_Container extends StatelessWidget {
           child: Center(
             child: Stack(
               children: [
-                SvgPicture.asset(svgicon,height: iconsize,),
+                SvgPicture.asset(svgicon,height: iconsize,
+                ),
               ],
             ),
 

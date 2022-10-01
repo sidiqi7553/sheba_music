@@ -63,28 +63,7 @@ class _AllState extends State<All> {
                       ),
                     ),
                   ),
-                  SingleChildScrollView(
-                    child: SizedBox(
-                        height: 330,
-                        width: MediaQuery.of(context).size.width,
-                        child: GridView.builder(
-                            gridDelegate:
-                                const SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent: 200,
-                                    childAspectRatio: 8 / 6,
-                                    crossAxisSpacing: 0,
-                                    mainAxisSpacing: 0),
-                            itemCount: 4,
-                            itemBuilder: (BuildContext ctx, index) {
-                              return GestureDetector(
-                                onTap: () {},
-                                child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0, right: 10, top: 10),
-                                    child: LiveStreaming_Videos()),
-                              );
-                            })),
-                  ),
+                  livestreamgridview()
                 ],
               ),
             ),
@@ -180,3 +159,40 @@ class _AllState extends State<All> {
     );
   }
 }
+
+class livestreamgridview extends StatelessWidget {
+  const livestreamgridview({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: SizedBox(
+          height: 330,
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  LiveStreaming_Videos(),
+                  LiveStreaming_Videos(),
+
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  LiveStreaming_Videos(),
+                  LiveStreaming_Videos(),
+
+                ],
+              ),
+            ],
+          ),
+
+      ),
+    );
+  }
+}
+
