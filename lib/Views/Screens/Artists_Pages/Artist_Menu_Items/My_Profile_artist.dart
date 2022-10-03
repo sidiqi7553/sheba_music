@@ -2,6 +2,7 @@ import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sheba_music/Views/Screens/Artists_Pages/Artist_Profile_Navigation_Items/Artist_Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Reports.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/pic_gradinet_color.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Change_Password.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger.dart';
@@ -74,22 +75,23 @@ class _MyProfileState extends State<MyProfileArtist> {
                   Positioned(
                     bottom: -20,
                     left: 40,
-                    child: AvatarView(
-                      radius: 45,
-                      borderColor: Colors.yellow,
-                      avatarType: AvatarType.CIRCLE,
-                      backgroundColor: Colors.red,
-                      imagePath: "assets/Images/victoria.png",
-                      placeHolder: Container(
-                        child: Icon(
-                          Icons.person,
-                          size: 50,
-                        ),
-                      ),
-                      errorWidget: Container(
-                        child: Icon(
-                          Icons.error,
-                          size: 50,
+                    child: Container(
+                      padding: EdgeInsets.all(8), // Border width
+                      decoration: BoxDecoration(
+
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Colors.white.withOpacity(0.90),
+                                Colors.black.withOpacity(0.77),
+                              ]),
+                          shape: BoxShape.circle),
+                      child: ClipOval(
+                        child: SizedBox.fromSize(
+                          size: Size.fromRadius(48), // Image radius
+                          child: Image.asset('assets/Images/victoria.png',
+                              fit: BoxFit.cover),
                         ),
                       ),
                     ),
@@ -245,7 +247,11 @@ class _MyProfileState extends State<MyProfileArtist> {
                 svgicon: "assets/Icons/Chat.svg",
                 nextpage: Messenger(),
               ),
-              MyProfile_ListMenu(title: "Change Password", svgicon: "assets/Icons/Lock.svg",nextpage: Change_Password(),),
+              MyProfile_ListMenu(
+                title: "Change Password",
+                svgicon: "assets/Icons/Lock.svg",
+                nextpage: Change_Password(),
+              ),
               MyProfile_ListMenu(
                 title: "Notifications",
                 svgicon: "assets/Icons/Notification.svg",

@@ -11,10 +11,7 @@ import 'Views/Screens/Extra_Screens_of_Artist/start_live_streaming.dart';
 import 'Views/Screens/Extra_Screens_of_Artist/Create_Ticket_1.dart';
 import 'Views/Screens/Login_pages/login_main_page.dart';
 import 'Views/Screens/Main_Screens/SplashScreen.dart';
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 
 
 void main() {

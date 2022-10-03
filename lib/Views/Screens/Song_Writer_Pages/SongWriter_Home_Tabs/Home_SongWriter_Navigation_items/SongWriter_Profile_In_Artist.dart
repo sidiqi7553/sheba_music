@@ -24,6 +24,7 @@ class SongWriterProfileInArtist extends StatefulWidget {
 
 class _Artist_ProfileState extends State<SongWriterProfileInArtist> {
   var check = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +33,13 @@ class _Artist_ProfileState extends State<SongWriterProfileInArtist> {
         child: inner_Pages_App_Bar(
           nextscreen: Wallet_Main(),
           title: "Artist Name",
-          action: ActionIcon(icon: SvgPicture.asset("assets/Icons/Wallet.svg"),),
+          action: ActionIcon(
+            icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
+          ),
         ),
       ),
-      body: BackGround_Container(child: SingleChildScrollView(
+      body: BackGround_Container(
+          child: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
@@ -46,9 +50,8 @@ class _Artist_ProfileState extends State<SongWriterProfileInArtist> {
                       horizontal: 20.0, vertical: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: primary,width: 2),
+                      border: Border.all(color: primary, width: 2),
                       borderRadius: BorderRadius.circular(20),
-
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
@@ -66,30 +69,27 @@ class _Artist_ProfileState extends State<SongWriterProfileInArtist> {
                 Positioned(
                   bottom: -20,
                   left: 40,
-                  child: AvatarView(
-                    radius: 45,
-                    borderColor: Colors.yellow,
-                    avatarType: AvatarType.CIRCLE,
-                    backgroundColor: Colors.red,
-                    imagePath: "assets/Images/victoria.png",
-                    placeHolder: Container(
-                      child: Icon(
-                        Icons.person,
-                        size: 50,
-                      ),
-                    ),
-                    errorWidget: Container(
-                      child: Icon(
-                        Icons.error,
-                        size: 50,
+                  child: Container(
+                    padding: EdgeInsets.all(8), // Border width
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.white.withOpacity(0.90),
+                              Colors.black.withOpacity(0.77),
+                            ]),
+                        shape: BoxShape.circle),
+                    child: ClipOval(
+                      child: SizedBox.fromSize(
+                        size: Size.fromRadius(48), // Image radius
+                        child: Image.asset('assets/Images/victoria.png',
+                            fit: BoxFit.cover),
                       ),
                     ),
                   ),
                 ),
-                Positioned(
-                    right: 30,
-top: 230,
-                    child: followbtn())
+                Positioned(right: 30, top: 230, child: followbtn())
               ],
             ),
             SizedBox(height: 30),
@@ -107,17 +107,32 @@ top: 230,
                       leading: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppText(text: "Artist Name", SizeofFont: 20,WeightofFont: FontWeight.bold,textcolor: white,),
-                          AppText(text: "Contact Email For Bookings", SizeofFont: 11,textcolor: yellow,),
-
+                          AppText(
+                            text: "Artist Name",
+                            SizeofFont: 20,
+                            WeightofFont: FontWeight.bold,
+                            textcolor: white,
+                          ),
+                          AppText(
+                            text: "Contact Email For Bookings",
+                            SizeofFont: 11,
+                            textcolor: yellow,
+                          ),
                         ],
                       ),
                       title: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppText(text: "@username", SizeofFont: 13,textcolor: white,),
-                          AppText(text: "info@gmailemail.com", SizeofFont: 11,textcolor: white,),
-
+                          AppText(
+                            text: "@username",
+                            SizeofFont: 13,
+                            textcolor: white,
+                          ),
+                          AppText(
+                            text: "info@gmailemail.com",
+                            SizeofFont: 11,
+                            textcolor: white,
+                          ),
                         ],
                       ),
                       trailing: Icon(
@@ -145,7 +160,6 @@ top: 230,
               title: "Recent Albums",
               name: "Album Name",
               artistname: "Artist Name",
-
             ),
             Trending_Artists(
               title: "Followers",

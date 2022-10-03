@@ -80,22 +80,23 @@ class _MyProfileState extends State<MyProfileSongWriter> {
                       Positioned(
                         bottom: -20,
                         left: 40,
-                        child: AvatarView(
-                          radius: 45,
-                          borderColor: Colors.yellow,
-                          avatarType: AvatarType.CIRCLE,
-                          backgroundColor: Colors.red,
-                          imagePath: "assets/Images/victoria.png",
-                          placeHolder: Container(
-                            child: Icon(
-                              Icons.person,
-                              size: 50,
-                            ),
-                          ),
-                          errorWidget: Container(
-                            child: Icon(
-                              Icons.error,
-                              size: 50,
+                        child: Container(
+                          padding: EdgeInsets.all(8), // Border width
+                          decoration: BoxDecoration(
+
+                              gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Colors.white.withOpacity(0.90),
+                                    Colors.black.withOpacity(0.77),
+                                  ]),
+                              shape: BoxShape.circle),
+                          child: ClipOval(
+                            child: SizedBox.fromSize(
+                              size: Size.fromRadius(48), // Image radius
+                              child: Image.asset('assets/Images/victoria.png',
+                                  fit: BoxFit.cover),
                             ),
                           ),
                         ),
