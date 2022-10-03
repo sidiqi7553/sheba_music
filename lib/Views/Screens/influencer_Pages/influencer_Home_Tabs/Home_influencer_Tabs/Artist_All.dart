@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Album.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Create_Playlist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Artist_Profile.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Influencer_SeeAll.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/NewReleases_SeeAll.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/Producers_SeeAll.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Tabs/All.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
@@ -15,6 +19,7 @@ import '../../../../Widgets/HomeOriginModals/Trending_Artists.dart';
 import '../../../../Widgets/HomeOriginModals/Trending_Beats.dart';
 import '../../../../Widgets/HomeOriginModals/Trending_Videos.dart';
 import '../../../../Widgets/LiveStreaming_Videos.dart';
+import '../../../Guest_Pages/Select_Artist.dart';
 import '../../New_Realese_demo.dart';
 import '../Home_influencer_Navigation_items/influencer_LiveStreaming_SeeAll.dart';
 import '../Home_influencer_Navigation_items/influencer_Profile_In_Artist.dart';
@@ -68,41 +73,57 @@ class _InfluencerAllState extends State<InfluencerAll> {
             ),
             New_Releases(
               title: "Trending Beats",
+              seeAll: NewReleases_SeeAll(
+                newtitle: "Trending Beats",
+              ),
             ),
             Trending_Artists(
               profilePage: Artist_Profile(),
               seeAll: Producers_SeeAll(),
-              title: "Trending producers",
-              name: "Producer Name",
+              title: "Trending Producers",
             ),
             New_Releases(
               title: "Promoted By Influencers",
+              seeAll: NewReleases_SeeAll(
+                newtitle: "Promoted",
+              ),
             ),
-            Trending_Beats(),
-            Trending_Artists(
-              title: "Trending Song Writers",
-              name: "song Writer",
+            Trending_Beats(
+              title: "Recently Played Beats",
+              seeAll: NewReleases_SeeAll(
+                newtitle: "Recently Played Beats",
+              ),
             ),
             Trending_Videos(
               videopage: influencerVideopage(),
               seeAll: influencerTrendingVidoes_SeeAll(),
             ),
             Trending_Artists(
-              title: "Trending Influencers",
+              title: "Trending Influencer",
               name: "Influencer",
+              seeAll: Influencer_SeeAll(),
             ),
             Trending_Beats(
-              title: "Moods",
+              title: "Mood",
+              seeAll: NewReleases_SeeAll(
+                newtitle: "Mood",
+              ),
             ),
             Trending_Videos(
               title: "Recently Played Videos",
             ),
             Trending_Beats(
               title: "Purchased Beats",
+              seeAll: NewReleases_SeeAll(
+                newtitle: "Purchased beats",
+              ),
             ),
-            Top_Playlists(),
+            Top_Playlists(
+              seeAll: Select_Create_Playlist(),
+            ),
             Top_Playlists(
               title: "Trending Albums",
+              seeAll: Select_Album(),
             ),
             ListTile(
               title: AppText(
@@ -111,7 +132,9 @@ class _InfluencerAllState extends State<InfluencerAll> {
                 textcolor: white,
               ),
               trailing: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.to(Select_Artist());
+                },
                 child: AppText(
                   text: "See All",
                   SizeofFont: 15,

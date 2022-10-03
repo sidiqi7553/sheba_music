@@ -79,13 +79,17 @@ Color? color;
           ),
           child: Center(
             child: TextFormField(
+
               maxLength: maxlength,
               maxLines: maxlines,
+
               focusNode: focusnode,
               style: GoogleFonts.poppins(
                 fontSize: 14,
+                color: white
               ),
               decoration: InputDecoration(
+
                 labelText: labletext,
                 contentPadding: contentpadding,
                 suffixIcon: suffixicon,

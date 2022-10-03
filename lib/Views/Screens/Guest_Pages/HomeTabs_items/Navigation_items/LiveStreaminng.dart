@@ -29,6 +29,7 @@ class _LiveStreaminngState extends State<LiveStreaminng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(

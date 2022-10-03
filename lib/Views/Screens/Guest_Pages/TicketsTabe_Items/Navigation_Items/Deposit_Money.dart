@@ -80,10 +80,24 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                             Icon_Container1(
                                 height: 60,
                                 width: 60,
+<<<<<<< Updated upstream
                                 svgicon: "assets/Icons/Mobile_Money.png",
                                 iconsize: 35),
 
                             AppText(
+=======
+
+
+
+
+                                svgicon: "assets/Icons/Mobile_Money.png",
+                                iconsize: 35),
+
+
+
+
+  AppText(
+>>>>>>> Stashed changes
                               text: "Mobile Money",
                               SizeofFont: 15,
                               textcolor: white,
