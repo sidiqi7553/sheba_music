@@ -16,6 +16,8 @@ import 'SelectType.dart';
 class Splash_1 extends StatefulWidget {
   const Splash_1({Key? key}) : super(key: key);
 
+
+
   @override
   State<Splash_1> createState() => _Splash_1State();
 }
