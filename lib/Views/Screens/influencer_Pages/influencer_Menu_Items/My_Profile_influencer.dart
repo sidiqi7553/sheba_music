@@ -223,7 +223,7 @@ class _MyProfileState extends State<MyProfileinfluencer> {
                 nextpage: Youtube_Links(),
               ),
               MyProfile_ListMenu(
-                title: "Tags",
+                title: "Taged Users",
                 svgicon: "assets/Icons/Ticket Star.svg",
                 nextpage: Artist_Tags(),
               ),

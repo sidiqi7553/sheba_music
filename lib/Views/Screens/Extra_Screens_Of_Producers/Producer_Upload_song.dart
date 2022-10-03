@@ -7,6 +7,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Album.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/start_live_streaming.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
@@ -508,7 +509,7 @@ SizedBox(height: 160,)
         child: Center(
           child: GestureDetector(
             onTap: (){
-              Get.to(StartLiveStream());
+              Get.to(Select_Album());
             },
             child: Container(
               height: 40,
@@ -520,7 +521,7 @@ SizedBox(height: 160,)
 
               ),
               child: Center(
-                child: AppText(text: "Start Live Stream", SizeofFont: 20,textcolor: white,),
+                child: AppText(text: "Upload Songs", SizeofFont: 20,textcolor: white,),
               ),
             ),
           ),

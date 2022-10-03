@@ -8,11 +8,8 @@ import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-
-
 import '../../Widgets/GlassBox.dart';
 import '../../Widgets/inner_Pages_App_Bar.dart';
-
 
 import 'Menu.dart';
 
@@ -33,253 +30,256 @@ class _Select_ArtistState extends State<Select_Artist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(55),
-          child: inner_Pages_App_Bar(
-            title: "Select Artists",
-            action: Container(),
-          )),
-      body: BackGround_Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              // Container(
-              //   child: AppText(
-              //     text: "Your Favorite Artists?",
-              //     SizeofFont: 18,
-              //     textcolor: white,
-              //     WeightofFont: FontWeight.w600,
-              //   ),
-              // ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                child: AppText(
-                  text: "Select At Least 3",
-                  SizeofFont: 16,
-                  textcolor: white,
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(55),
+            child: inner_Pages_App_Bar(
+              title: "Select Artists",
+              action: Container(),
+            )),
+        body: BackGround_Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
                 ),
-              ),SizedBox(height: 8,),
+                // Container(
+                //   child: AppText(
+                //     text: "Your Favorite Artists?",
+                //     SizeofFont: 18,
+                //     textcolor: white,
+                //     WeightofFont: FontWeight.w600,
+                //   ),
+                // ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  child: AppText(
+                    text: "Select At Least 3",
+                    SizeofFont: 16,
+                    textcolor: white,
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
 
-              Container(
-                  height: MediaQuery.of(context).size.height * 0.75,
-                  width: MediaQuery.of(context).size.width,
-                  child: GridView.builder(
-                      shrinkWrap: false,
-                      scrollDirection: Axis.vertical,
-                      itemCount: 30,
-                      gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        childAspectRatio: MediaQuery.of(context).size.width/2 /
-                            (MediaQuery.of(context).size.height / 4),
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return GestureDetector(
-                          onTap: () {
-                            if(selectedItems.isEmpty){
-                              selectedItems.add(index);
-                            }else{
-                              if(selectedItems.length<3){
-                                if(selectedItems.contains(index)){
-                                  selectedItems.remove(index);
-                                }else{
-                                  selectedItems.add(index);
-
+                Container(
+                    height: MediaQuery.of(context).size.height * 0.75,
+                    width: MediaQuery.of(context).size.width,
+                    child: GridView.builder(
+                        shrinkWrap: false,
+                        scrollDirection: Axis.vertical,
+                        itemCount: 30,
+                        gridDelegate:
+                            new SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: MediaQuery.of(context).size.width /
+                              2 /
+                              (MediaQuery.of(context).size.height / 4),
+                        ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {
+                              if (selectedItems.isEmpty) {
+                                selectedItems.add(index);
+                              } else {
+                                if (selectedItems.isNotEmpty) {
+                                  if (selectedItems.contains(index)) {
+                                    selectedItems.remove(index);
+                                  } else {
+                                    selectedItems.add(index);
+                                  }
+                                } else {
+                                  if (selectedItems.contains(index)) {
+                                    selectedItems.remove(index);
+                                  }
                                 }
-
                               }
-                              else{
-                                if(selectedItems.contains(index)){
-                                  selectedItems.remove(index);
-                                }
-                              }
-                            }
 
-
-                            setState(() {
-                              // ontap of each card, set the defined int to the grid view index
-                              current = index;
-                              current2 = index;
-                              current3 = index;
-                            });
-
-
-                          },
-                          child: Container(
-                            height: 100,
-                            width: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Stack(
-                                  children: [
-                                    Container(
-                                      height: 70,
-                                      width: 70,
-                                      decoration: BoxDecoration(
-
-                                        border: selectedItems.contains(index)?Border.all(width: 4,color: primary):Border.all(width: 0,color: primary),
-
-                                          shape: BoxShape.circle,
-                                          image: DecorationImage(
-
-                                              image: AssetImage("assets/Images/victoria.png",),fit: BoxFit.cover
-                                          )
-                                      ),
-                                    ),
-                                    selectedItems.contains(index)?
-
-
-                                    Positioned(
-                                      top: 0,
-                                      right: 0,
-                                      child: Container(
-                                        height: 20,
-                                        width: 20,
+                              setState(() {
+                                // ontap of each card, set the defined int to the grid view index
+                                current = index;
+                                current2 = index;
+                                current3 = index;
+                              });
+                            },
+                            child: Container(
+                              height: 100,
+                              width: 100,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        height: 70,
+                                        width: 70,
                                         decoration: BoxDecoration(
-                                          color: primary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Center(
-                                            child: SvgPicture.asset("assets/Icons/Heart.svg",color: white,)
-                                        ),
+                                            border:
+                                                selectedItems.contains(index)
+                                                    ? Border.all(
+                                                        width: 4,
+                                                        color: primary)
+                                                    : Border.all(
+                                                        width: 0,
+                                                        color: primary),
+                                            shape: BoxShape.circle,
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                  "assets/Images/victoria.png",
+                                                ),
+                                                fit: BoxFit.cover)),
                                       ),
-                                    )
-                                        :Positioned(
-                                        top: 0,
-                                        right: 0,
-                                        child: Container(
-                                          height: 20,
-                                          width: 20,
-                                        )
-                                    )
-                                       ,
-
-                                  ],
-                                ),
-                                Text(
-                                  "Artist Name",
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: white,
+                                      selectedItems.contains(index)
+                                          ? Positioned(
+                                              top: 0,
+                                              right: 0,
+                                              child: Container(
+                                                height: 20,
+                                                width: 20,
+                                                decoration: BoxDecoration(
+                                                  color: primary,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                child: Center(
+                                                    child: SvgPicture.asset(
+                                                  "assets/Icons/Heart.svg",
+                                                  color: white,
+                                                )),
+                                              ),
+                                            )
+                                          : Positioned(
+                                              top: 0,
+                                              right: 0,
+                                              child: Container(
+                                                height: 20,
+                                                width: 20,
+                                              )),
+                                    ],
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    "Artist Name",
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: white,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),);
-                      })
-                // GridView.builder(
-                //     gridDelegate:
-                //         const SliverGridDelegateWithMaxCrossAxisExtent(
-                //             maxCrossAxisExtent: 150,
-                //             childAspectRatio: 4 / 3,
-                //             crossAxisSpacing: 0,
-                //             mainAxisSpacing: 30),
-                //     itemCount: 21,
-                //     itemBuilder: (BuildContext ctx, index) {
-                //
-                //       return
-                //       Container(
-                //         height: 100,
-                //         width: 100,
-                //         child: Column(
-                //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //           children: [
-                //             Stack(
-                //               children: [
-                //                 GestureDetector(
-                //                   onTap: () {
-                //                     setState((){
-                //                       current = index;
-                //                     });
-                //                   },
-                //                   child: Container(
-                //                     height: 70,
-                //                     width: 70,
-                //                     decoration: BoxDecoration(
-                //                       border: current==index? Border.all(width: 4,color: primary):null,
-                //                       shape: BoxShape.circle,
-                //                       image: DecorationImage(
-                //
-                //                         image: AssetImage("assets/Images/victoria.png",),fit: BoxFit.cover
-                //                       )
-                //                     ),
-                //                   ),
-                //                 ),
-                //                 current==index? Positioned(
-                //                   top: 0,
-                //                   right: 0,
-                //                   child: Container(
-                //                   height: 20,
-                //                   width: 20,
-                //                   decoration: BoxDecoration(
-                //                     color: primary,
-                //                     shape: BoxShape.circle,
-                //                   ),
-                //                   child: Center(
-                //                     child: SvgPicture.asset("assets/Icons/Heart.svg",color: white,)
-                //                   ),
-                //                 ),
-                //                 )
-                //                     :Positioned(
-                //                     top: 0,
-                //                     right: 0,
-                //                     child: Container(
-                //                   height: 20,
-                //                   width: 20,
-                //                 )),
-                //               ],
-                //             ),
-                //             Text(
-                //               "Artist Name",
-                //               style: GoogleFonts.poppins(
-                //                 fontSize: 12,
-                //                 fontWeight: FontWeight.w400,
-                //                 color: white,
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       );
-                //     }),
-              ),
-            ],
+                          );
+                        })
+                    // GridView.builder(
+                    //     gridDelegate:
+                    //         const SliverGridDelegateWithMaxCrossAxisExtent(
+                    //             maxCrossAxisExtent: 150,
+                    //             childAspectRatio: 4 / 3,
+                    //             crossAxisSpacing: 0,
+                    //             mainAxisSpacing: 30),
+                    //     itemCount: 21,
+                    //     itemBuilder: (BuildContext ctx, index) {
+                    //
+                    //       return
+                    //       Container(
+                    //         height: 100,
+                    //         width: 100,
+                    //         child: Column(
+                    //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //           children: [
+                    //             Stack(
+                    //               children: [
+                    //                 GestureDetector(
+                    //                   onTap: () {
+                    //                     setState((){
+                    //                       current = index;
+                    //                     });
+                    //                   },
+                    //                   child: Container(
+                    //                     height: 70,
+                    //                     width: 70,
+                    //                     decoration: BoxDecoration(
+                    //                       border: current==index? Border.all(width: 4,color: primary):null,
+                    //                       shape: BoxShape.circle,
+                    //                       image: DecorationImage(
+                    //
+                    //                         image: AssetImage("assets/Images/victoria.png",),fit: BoxFit.cover
+                    //                       )
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //                 current==index? Positioned(
+                    //                   top: 0,
+                    //                   right: 0,
+                    //                   child: Container(
+                    //                   height: 20,
+                    //                   width: 20,
+                    //                   decoration: BoxDecoration(
+                    //                     color: primary,
+                    //                     shape: BoxShape.circle,
+                    //                   ),
+                    //                   child: Center(
+                    //                     child: SvgPicture.asset("assets/Icons/Heart.svg",color: white,)
+                    //                   ),
+                    //                 ),
+                    //                 )
+                    //                     :Positioned(
+                    //                     top: 0,
+                    //                     right: 0,
+                    //                     child: Container(
+                    //                   height: 20,
+                    //                   width: 20,
+                    //                 )),
+                    //               ],
+                    //             ),
+                    //             Text(
+                    //               "Artist Name",
+                    //               style: GoogleFonts.poppins(
+                    //                 fontSize: 12,
+                    //                 fontWeight: FontWeight.w400,
+                    //                 color: white,
+                    //               ),
+                    //             ),
+                    //           ],
+                    //         ),
+                    //       );
+                    //     }),
+                    ),
+              ],
+            ),
           ),
         ),
-      ),
-      bottomSheet: GlassBox(
-          width: double.infinity,
-          height: 80.0,
-          child: Center(
-            child: GestureDetector(
-              onTap: (){
-
-                  if(selectedItems.length>=3){
+        bottomSheet: GlassBox(
+            width: double.infinity,
+            height: 80.0,
+            child: Center(
+              child: GestureDetector(
+                onTap: () {
+                  if (selectedItems.length >= 3) {
                     Get.to(Menu());
-                }else{
-
-                  }
-
-              },
-              child: Container(
-                height: 40,
-                width: MediaQuery.of(context).size.width*0.7,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: selectedItems.length<3? primary.withOpacity(0.3):primary
-                ),
-                child: Center(
-                  child: AppText(text: "Next", SizeofFont: 20,textcolor: selectedItems.length<3? whiteforsubtitle:white,),
+                  } else {}
+                },
+                child: Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: selectedItems.length < 3
+                          ? primary.withOpacity(0.3)
+                          : primary),
+                  child: Center(
+                    child: AppText(
+                      text: "Next",
+                      SizeofFont: 20,
+                      textcolor:
+                          selectedItems.length < 3 ? whiteforsubtitle : white,
+                    ),
+                  ),
                 ),
               ),
-            )
-            ,
-          ))
-    );
+            )));
   }
 }
