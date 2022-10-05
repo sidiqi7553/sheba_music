@@ -13,7 +13,6 @@ import 'package:sheba_music/const/App_Text.dart';
 import '../../../../Widgets/inner_Pages_App_Bar.dart';
 import 'Going.dart';
 
-
 class Deposit_Money extends StatefulWidget {
   const Deposit_Money({Key? key}) : super(key: key);
 
@@ -52,7 +51,6 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                 ),
               ),
               GestureDetector(
-
                 child: Container(
                     margin: EdgeInsets.symmetric(vertical: 15),
                     height: 90,
@@ -80,24 +78,9 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                             Icon_Container1(
                                 height: 60,
                                 width: 60,
-<<<<<<< Updated upstream
                                 svgicon: "assets/Icons/Mobile_Money.png",
                                 iconsize: 35),
-
                             AppText(
-=======
-
-
-
-
-                                svgicon: "assets/Icons/Mobile_Money.png",
-                                iconsize: 35),
-
-
-
-
-  AppText(
->>>>>>> Stashed changes
                               text: "Mobile Money",
                               SizeofFont: 15,
                               textcolor: white,
@@ -144,8 +127,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )
-              ),
+                  )),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -183,8 +165,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )
-              ),
+                  )),
               Container(
                   margin: EdgeInsets.symmetric(vertical: 15),
                   height: 90,
@@ -213,8 +194,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                               height: 60,
                               width: 60,
                               svgicon: "assets/Icons/google-pay.png",
-                              iconsize: 45
-                          ),
+                              iconsize: 45),
                           AppText(
                             text: "Google Pay ",
                             SizeofFont: 15,
@@ -223,8 +203,7 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
                         ],
                       ),
                     ),
-                  )
-              ),
+                  )),
             ],
           ),
         ),
@@ -234,7 +213,6 @@ class _Deposit_MoneyState extends State<Deposit_Money> {
 }
 
 void payment(BuildContext context) {
-
   showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -242,9 +220,10 @@ void payment(BuildContext context) {
         return FractionallySizedBox(
           heightFactor: 0.8,
           child: purchasedPaidSongs(
-              nextpage:Going(),
+              nextpage: Going(),
               title: "Payment Details",
-              note: "Click on the button to complete your ticket purchase.Payment will be deducted from your wallet."),
+              note:
+                  "Click on the button to complete your ticket purchase.Payment will be deducted from your wallet."),
         );
       });
 }

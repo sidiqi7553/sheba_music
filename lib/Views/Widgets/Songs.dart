@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
+import 'package:sheba_music/controllers/MiniPlayer_Artist_Controller/MiniPlayer_Artist_Controller.dart';
 
 import '../../const/App_Colors.dart';
 import '../../const/App_Text.dart';
@@ -16,6 +18,8 @@ class Song1 extends StatefulWidget {
 }
 
 class _Song1State extends State<Song1> {
+  MiniPlayerController miniplayercontroller = Get.put(MiniPlayerController());
+
   Widget miniPlayer() {
 
     return AnimatedContainer(
@@ -33,7 +37,10 @@ class _Song1State extends State<Song1> {
       songtitleimg: "assets/Images/Song1.png",
       songName: "Happier",
       songplay: (){
-        miniPlayer();
+       miniplayercontroller.mini.value=true;
+       setState((){
+         miniplayercontroller.mini;
+       });
       },
       details: (){
         backgroundsong1play(context);

@@ -23,7 +23,9 @@ class SongListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: songplay,
+      onTap:
+
+      songplay,
       child: ListTile(
         leading: Container(
           height: 50,

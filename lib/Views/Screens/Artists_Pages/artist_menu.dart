@@ -1,11 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Library.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu_Items/Tickets.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/songPlay.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
+import 'package:sheba_music/controllers/MiniPlayer_Artist_Controller/MiniPlayer_Artist_Controller.dart';
 
 import '../../../TEmp/screens/search.dart';
 import '../Guest_Pages/Menu_Items/Discover.dart';
@@ -18,11 +19,9 @@ import 'Artist_Menu_Items/My_Profile_artist.dart';
 import 'Artist_Menu_Items/Search_artist.dart';
 import 'Artist_Menu_Items/Ticket_artist.dart';
 
-
-
-
 class Artist_Menu extends StatefulWidget {
   int selectedind;
+
   Artist_Menu({
     this.selectedind = 0,
     Key? key,
@@ -33,32 +32,34 @@ class Artist_Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Artist_Menu> {
-   Widget  miniPlayer(){
+  MiniPlayerController miniplayercontroller = Get.put(MiniPlayerController());
+
+  Widget miniPlayer() {
     return Dismissible(
       direction: DismissDirection.down,
       key: const Key('key'),
-      onDismissed: (_) => Navigator.of(context).pop(),
-      child: AnimatedContainer(duration: const Duration(milliseconds: 500),
-      color: Colors.transparent,
+      onDismissed: (_) {},
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 500),
+        color: Colors.transparent,
         width: double.infinity,
         height: 100,
         child: songPlay(),
-
       ),
     );
   }
+
   // indexcontrollar cntrl = Get.put(indexcontrollar());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Stack(
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 60),
             child: Builder(builder: (context) {
               if (widget.selectedind == 0) {
-                return  HomeArtist();
+                return HomeArtist();
               }
               if (widget.selectedind == 1) {
                 return DiscoverArtist();
@@ -71,13 +72,11 @@ class _MenuState extends State<Artist_Menu> {
               }
               if (widget.selectedind == 4) {
                 return LibraryArtist();
-              }
-              else {
+              } else {
                 return MyProfileArtist();
               }
             }),
           ),
-
           bottomNavigation(context),
         ],
       ),
@@ -94,10 +93,13 @@ class _MenuState extends State<Artist_Menu> {
             Column(
               children: [
                 miniPlayer(),
+                // if (miniplayercontroller.mini.value == true) miniPlayer(),
+                // if(miniplayercontroller.mini.value==false)SizedBox(height: 100,),
+
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height:60,
+                    height: 60,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: primary,
@@ -121,12 +123,18 @@ class _MenuState extends State<Artist_Menu> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      bottomItems("assets/Icons/Home.svg", 'assets/Icons/Home.svg', 'Home', 0),
-                      bottomItems("assets/Icons/Discover.svg", 'assets/Icons/Discover.svg', 'Discover', 1),
-                      bottomItems('assets/Icons/Search.svg', 'assets/Icons/Search.svg', 'Search', 2),
-                      bottomItems('assets/Icons/Ticket.svg', 'assets/Icons/Ticket.svg', 'Tickets', 3),
-                      bottomItems('assets/Icons/Library.svg', 'assets/Icons/Library.svg', 'Library', 4),
-                      bottomItems('assets/Icons/Profile.svg', 'assets/Icons/Profile.svg', 'Profile', 5),
+                      bottomItems("assets/Icons/Home.svg",
+                          'assets/Icons/Home.svg', 'Home', 0),
+                      bottomItems("assets/Icons/Discover.svg",
+                          'assets/Icons/Discover.svg', 'Discover', 1),
+                      bottomItems('assets/Icons/Search.svg',
+                          'assets/Icons/Search.svg', 'Search', 2),
+                      bottomItems('assets/Icons/Ticket.svg',
+                          'assets/Icons/Ticket.svg', 'Tickets', 3),
+                      bottomItems('assets/Icons/Library.svg',
+                          'assets/Icons/Library.svg', 'Library', 4),
+                      bottomItems('assets/Icons/Profile.svg',
+                          'assets/Icons/Profile.svg', 'Profile', 5),
                     ],
                   ),
                 ),
@@ -151,9 +159,9 @@ class _MenuState extends State<Artist_Menu> {
   }
 
   Widget bottomSelectorIcon(
-      String icon,
-      int index,
-      ) {
+    String icon,
+    int index,
+  ) {
     return InkWell(
       onTap: (() {
         onindchange(index);
@@ -161,21 +169,23 @@ class _MenuState extends State<Artist_Menu> {
       child: widget.selectedind == index
           ? Container()
           : Padding(
-          padding: const EdgeInsets.only(
-            top: 30.0,
-            left: 10,
-            right: 10,
-          ),
-          child: SvgPicture.asset(icon,color:white,)
-      ),
+              padding: const EdgeInsets.only(
+                top: 30.0,
+                left: 10,
+                right: 10,
+              ),
+              child: SvgPicture.asset(
+                icon,
+                color: white,
+              )),
     );
   }
 
   Widget bottomSelector(
-      String svgpath,
-      String title,
-      int index,
-      ) {
+    String svgpath,
+    String title,
+    int index,
+  ) {
     if (widget.selectedind == index) {
       return Column(
         children: [
@@ -191,8 +201,8 @@ class _MenuState extends State<Artist_Menu> {
             child: Center(
               child: SvgPicture.asset(
                 svgpath,
-                color:
-                primary,height: 25,
+                color: primary,
+                height: 25,
               ),
             ),
           ),
