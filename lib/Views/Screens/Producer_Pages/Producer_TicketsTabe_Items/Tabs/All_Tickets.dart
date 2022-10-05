@@ -284,7 +284,7 @@ class _All_TicketsState extends State<All_Tickets> {
                                                         SvgPicture.asset(
                                                           "assets/Icons/Bookmark.svg",
                                                           color: white,
-                                                          height: 15,
+                                                          height: 22,
                                                         ),
                                                       ],
                                                     ),

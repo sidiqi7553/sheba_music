@@ -19,7 +19,7 @@ class Top_Playlists extends StatelessWidget {
         children: [ ListTile(
           title: AppText(
             text: title,
-            SizeofFont: 20,
+            SizeofFont: 18,
             textcolor: white,
           ),
           trailing: InkWell(
@@ -34,7 +34,7 @@ class Top_Playlists extends StatelessWidget {
           ),
         ),
           Container(
-            height: 150,
+            height: 190,
             width: MediaQuery.of(context).size.width,
             margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 20),
             decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class Top_Playlists extends StatelessWidget {
                     onTap: () {},
                     child: Padding(
                         padding: const EdgeInsets.only(
-                            left: 10.0, right: 10, top: 10),
+                            left: 10.0, right: 10, top: 0),
                         child: Universal_Container(
 
                           child: Column(
@@ -84,6 +84,7 @@ class Top_Playlists extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                         CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           AppText(
                                             text: name,

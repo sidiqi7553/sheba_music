@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Deposit_Money.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Tickets_pricing.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/GlassBox.dart';
@@ -31,16 +32,7 @@ class _Tickets_pricingState extends State<Producer_Tickets_pricing> {
     "Homepic4",
   ];
   List<Widget> page = [
-    VVIP(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    VVIP(), VIP(), Regular(), Popular()
   ];
   int list = 0;
 

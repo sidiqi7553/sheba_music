@@ -60,7 +60,7 @@ class _Create_PlaylistState extends State<Create_Playlist> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           nextscreen: Wallet_Main(),
-          title: "Select Playlist",
+          title: "Create Playlist",
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
           ),

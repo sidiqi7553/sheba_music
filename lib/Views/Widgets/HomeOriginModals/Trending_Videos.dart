@@ -21,7 +21,7 @@ class Trending_Videos extends StatelessWidget {
           ListTile(
           title: AppText(
             text: title,
-            SizeofFont: 20,
+            SizeofFont: 18,
             textcolor: white,
           ),
           trailing: InkWell(
@@ -51,7 +51,7 @@ class Trending_Videos extends StatelessWidget {
 
                     child: Padding(
                         padding: const EdgeInsets.only(
-                            left: 10.0, right: 10, top: 10),
+                            left: 10.0, right: 10, top: 0),
                         child: Video(
                           videopage: Videopage(),
                         )),

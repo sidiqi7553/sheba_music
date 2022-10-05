@@ -89,11 +89,11 @@ body: BackGround_Container(child: SingleChildScrollView(
             ),
           ),
           Positioned(
-            right: 30,
+            right: MediaQuery.of(context).size.width*0.08,
             top: 230,
             child: Container(
-              height: 25,
-              width: 60,
+              height: 30,
+              width: 80,
               decoration: BoxDecoration(
                 color: primary,
                 boxShadow: [
@@ -114,17 +114,18 @@ body: BackGround_Container(child: SingleChildScrollView(
                 child: AppText(
                   text: "Following",
                   textcolor: white,
-                  SizeofFont: 10,
+                  SizeofFont: 11,
                 ),
               ),
             ),
           ),
           Positioned(
-            right: 100,
+            right: MediaQuery.of(context).size.width*0.35 ,
+
             top: 230,
             child: Container(
-              height: 25,
-              width: 60,
+              height: 30,
+              width: 80,
               decoration: BoxDecoration(
                 color: primary,
                 boxShadow: [
@@ -145,7 +146,7 @@ body: BackGround_Container(child: SingleChildScrollView(
                 child: AppText(
                   text: "Followers",
                   textcolor: white,
-                  SizeofFont: 10,
+                  SizeofFont: 11,
                 ),
               ),
             ),

@@ -126,7 +126,7 @@ class _LiveStreaminngState extends State<ArtistLiveStreaminng> {
                 ),
               ),
             ),
-            MyInputfield(
+            MyInputfieldforwhitetext(
               color: containercolor,
               height: 40,
               width: 0.75,

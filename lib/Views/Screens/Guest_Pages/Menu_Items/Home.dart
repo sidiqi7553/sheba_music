@@ -77,11 +77,15 @@ class _HomeState extends State<Home> {
                       autoScroll: true,
                       // widgets
                       items: [
-                        Image(image: AssetImage("assets/Images/Homepic1.png")),
-                        Image(image: AssetImage("assets/Images/Homepic2.png")),
-                        Image(image: AssetImage("assets/Images/Homepic3.png")),
-                        Image(image: AssetImage("assets/Images/Homepic4.png")),
-                      ],
+                        Container(height:150,width: MediaQuery.of(context).size.width*0.8,
+                            child: Image(image: AssetImage("assets/Images/Homepic1.png"),fit: BoxFit.cover,)),
+                        Container(height:150,width: MediaQuery.of(context).size.width*0.8,
+                            child: Image(image: AssetImage("assets/Images/Homepic2.png"),fit: BoxFit.cover,)),
+                        Container(height:100,width: MediaQuery.of(context).size.width*0.8,
+                            child: Image(image: AssetImage("assets/Images/Homepic3.png"),fit: BoxFit.cover,)),
+                        Container(height:100,width: MediaQuery.of(context).size.width*0.8,
+                            child: Image(image: AssetImage("assets/Images/Homepic4.png"),fit: BoxFit.cover,)),
+                       ],
                     )),
               ),
               Container(

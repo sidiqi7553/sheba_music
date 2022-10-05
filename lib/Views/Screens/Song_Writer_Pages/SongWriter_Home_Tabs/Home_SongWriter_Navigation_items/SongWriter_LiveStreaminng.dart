@@ -136,7 +136,7 @@ class _LiveStreaminngState extends State<SongWriterLiveStreaminng> {
                     fit: BoxFit.cover),
               ),
             ),
-            MyInputfield(
+            MyInputfieldforwhitetext(
               color: containercolor,
               height: 40,
               width: 0.75,

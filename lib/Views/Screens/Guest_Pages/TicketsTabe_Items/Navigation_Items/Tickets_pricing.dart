@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/TicketsTabe_Items/Navigation_Items/Deposit_Money.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
@@ -9,6 +10,8 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/songDetailsBottomSheet/purchasedPaidSongs.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
+
+import 'Going.dart';
 
 class Tickets_pricing extends StatefulWidget {
   const Tickets_pricing({Key? key}) : super(key: key);
@@ -30,18 +33,7 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
     "Homepic3",
     "Homepic4",
   ];
-  List<Widget> page = [
-    VVIP(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
-  ];
+  List<Widget> page = [VVIP(), VIP(), Regular(), Popular()];
   int list = 0;
 
   @override
@@ -51,7 +43,6 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
         preferredSize: Size.fromHeight(55),
         child: inner_Pages_App_Bar(
           nextscreen: Wallet_Main(),
-
           title: "Ticket Name",
           action: ActionIcon(
             icon: SvgPicture.asset("assets/Icons/Wallet.svg"),
@@ -92,94 +83,99 @@ class _Tickets_pricingState extends State<Tickets_pricing> {
                     textcolor: white,
                     WeightofFont: FontWeight.w700,
                   ),
-                  trailing: Container(
-                    width: 150,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10, left: 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(
-                                      left: 0,
-                                    ),
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.blue,
-                                      image: const DecorationImage(
-                                        image: AssetImage(
-                                            "assets/Images/victoria.png"),
-                                        fit: BoxFit.cover,
+                  trailing: GestureDetector(
+                    onTap: () {
+                      Get.to(Going());
+                    },
+                    child: Container(
+                      width: 150,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10, left: 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Stack(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        left: 0,
                                       ),
-                                      border: Border.all(
-                                        color: white,
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: const EdgeInsets.only(
-                                      left: 10,
-                                    ),
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: white,
-                                        width: 1.5,
-                                      ),
-                                      shape: BoxShape.circle,
-                                      image: const DecorationImage(
-                                        image: AssetImage(
-                                            "assets/Images/victoria.png"),
-                                        fit: BoxFit.cover,
+                                      height: 30,
+                                      width: 30,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.blue,
+                                        image: const DecorationImage(
+                                          image: AssetImage(
+                                              "assets/Images/victoria.png"),
+                                          fit: BoxFit.cover,
+                                        ),
+                                        border: Border.all(
+                                          color: white,
+                                          width: 1.5,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Container(
-                                    margin: const EdgeInsets.only(
-                                      left: 20,
-                                    ),
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: white,
-                                        width: 1.5,
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        left: 10,
                                       ),
-                                      shape: BoxShape.circle,
-                                      image: const DecorationImage(
-                                        image: AssetImage(
-                                            "assets/Images/victoria.png"),
-                                        fit: BoxFit.cover,
+                                      height: 30,
+                                      width: 30,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: white,
+                                          width: 1.5,
+                                        ),
+                                        shape: BoxShape.circle,
+                                        image: const DecorationImage(
+                                          image: AssetImage(
+                                              "assets/Images/victoria.png"),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              AppText(
-                                text: "2k+ going",
-                                SizeofFont: 12,
-                                textcolor: whiteforsubtitle,
-                              )
-                            ],
+                                    Container(
+                                      margin: const EdgeInsets.only(
+                                        left: 20,
+                                      ),
+                                      height: 30,
+                                      width: 30,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: white,
+                                          width: 1.5,
+                                        ),
+                                        shape: BoxShape.circle,
+                                        image: const DecorationImage(
+                                          image: AssetImage(
+                                              "assets/Images/victoria.png"),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                AppText(
+                                  text: "2k+ going",
+                                  SizeofFont: 12,
+                                  textcolor: whiteforsubtitle,
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: whiteforsubtitle,
-                          size: 15,
-                        )
-                      ],
+                          Icon(
+                            Icons.arrow_forward,
+                            color: whiteforsubtitle,
+                            size: 15,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -305,10 +301,10 @@ class VVIP extends StatefulWidget {
 }
 
 class _VVIPState extends State<VVIP> {
-  double productprice = 17.60;
+  double productprice = 17.50;
   double? price;
 
-  int _counter = 1;
+  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -324,7 +320,505 @@ class _VVIPState extends State<VVIP> {
 
   void _priceCounter() {
     setState(() {
-      price = (productprice) * _counter;
+      price = (productprice.toPrecision(2)) * _counter;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.transparent,
+        child: Column(
+          children: [
+            ListTile(
+              horizontalTitleGap: -25,
+              leading: Text(''),
+              title: AppText(
+                text: "Select Persons",
+                SizeofFont: 15,
+                textcolor: white,
+                WeightofFont: FontWeight.bold,
+              ),
+            ),
+            Container(
+              height: 60,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              decoration: BoxDecoration(
+                  color: containercolor,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: primary)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      if (_counter > 1) {
+                        _decreamentCounter();
+                      }
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(2, 2),
+                                blurRadius: 4,
+                                color: black.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "-",
+                          style: TextStyle(color: white, fontSize: 50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  AppText(
+                    text: '$_counter',
+                    SizeofFont: 30,
+                    textcolor: white,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _incrementCounter();
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(-2, -2),
+                                blurRadius: 4,
+                                color: white.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "+",
+                          style: TextStyle(color: white, fontSize: 40),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomSheet: GlassBox(
+        width: double.infinity,
+        height: 80.0,
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: ListTile(
+            title: AppText(
+              text: "TOTAL PRICE",
+              SizeofFont: 15,
+              textcolor: yellow,
+            ),
+            subtitle: AppText(
+              text: "\$" + (price).toString(),
+              SizeofFont: 20,
+              textcolor: white,
+            ),
+            trailing: GestureDetector(
+              onTap: () {
+                buyticket(context);
+              },
+              child: Container(
+                height: 40,
+                width: 140,
+                decoration: BoxDecoration(
+                  color: primary,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(
+                  child: AppText(
+                    text: "Continue",
+                    SizeofFont: 20,
+                    textcolor: white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class VIP extends StatefulWidget {
+  const VIP({Key? key}) : super(key: key);
+
+  @override
+  State<VIP> createState() => _VIPState();
+}
+
+class _VIPState extends State<VIP> {
+  double productprice = 15;
+  double? price;
+
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decreamentCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _priceCounter() {
+    setState(() {
+      price = (productprice.toPrecision(2)) * _counter;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.transparent,
+        child: Column(
+          children: [
+            ListTile(
+              horizontalTitleGap: -25,
+              leading: Text(''),
+              title: AppText(
+                text: "Select Persons",
+                SizeofFont: 15,
+                textcolor: white,
+                WeightofFont: FontWeight.bold,
+              ),
+            ),
+            Container(
+              height: 60,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              decoration: BoxDecoration(
+                  color: containercolor,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: primary)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      if (_counter > 1) {
+                        _decreamentCounter();
+                      }
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(2, 2),
+                                blurRadius: 4,
+                                color: black.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "-",
+                          style: TextStyle(color: white, fontSize: 50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  AppText(
+                    text: '$_counter',
+                    SizeofFont: 30,
+                    textcolor: white,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _incrementCounter();
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(-2, -2),
+                                blurRadius: 4,
+                                color: white.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "+",
+                          style: TextStyle(color: white, fontSize: 40),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomSheet: GlassBox(
+        width: double.infinity,
+        height: 80.0,
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: ListTile(
+            title: AppText(
+              text: "TOTAL PRICE",
+              SizeofFont: 15,
+              textcolor: yellow,
+            ),
+            subtitle: AppText(
+              text: "\$" + (price).toString(),
+              SizeofFont: 20,
+              textcolor: white,
+            ),
+            trailing: GestureDetector(
+              onTap: () {
+                buyticket(context);
+              },
+              child: Container(
+                height: 40,
+                width: 140,
+                decoration: BoxDecoration(
+                  color: primary,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(
+                  child: AppText(
+                    text: "Continue",
+                    SizeofFont: 20,
+                    textcolor: white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Regular extends StatefulWidget {
+  const Regular({Key? key}) : super(key: key);
+
+  @override
+  State<Regular> createState() => _RegularState();
+}
+
+class _RegularState extends State<Regular> {
+  double productprice = 12.50;
+  double? price;
+
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decreamentCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _priceCounter() {
+    setState(() {
+      price = (productprice.toPrecision(2)) * _counter;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.transparent,
+        child: Column(
+          children: [
+            ListTile(
+              horizontalTitleGap: -25,
+              leading: Text(''),
+              title: AppText(
+                text: "Select Persons",
+                SizeofFont: 15,
+                textcolor: white,
+                WeightofFont: FontWeight.bold,
+              ),
+            ),
+            Container(
+              height: 60,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              decoration: BoxDecoration(
+                  color: containercolor,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: primary)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      if (_counter > 1) {
+                        _decreamentCounter();
+                      }
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(2, 2),
+                                blurRadius: 4,
+                                color: black.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "-",
+                          style: TextStyle(color: white, fontSize: 50),
+                        ),
+                      ),
+                    ),
+                  ),
+                  AppText(
+                    text: '$_counter',
+                    SizeofFont: 30,
+                    textcolor: white,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _incrementCounter();
+                      _priceCounter();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: containercolor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(-2, -2),
+                                blurRadius: 4,
+                                color: white.withOpacity(0.25)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "+",
+                          style: TextStyle(color: white, fontSize: 40),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomSheet: GlassBox(
+        width: double.infinity,
+        height: 80.0,
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: ListTile(
+            title: AppText(
+              text: "TOTAL PRICE",
+              SizeofFont: 15,
+              textcolor: yellow,
+            ),
+            subtitle: AppText(
+              text: "\$" + (price).toString(),
+              SizeofFont: 20,
+              textcolor: white,
+            ),
+            trailing: GestureDetector(
+              onTap: () {
+                buyticket(context);
+              },
+              child: Container(
+                height: 40,
+                width: 140,
+                decoration: BoxDecoration(
+                  color: primary,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(
+                  child: AppText(
+                    text: "Continue",
+                    SizeofFont: 20,
+                    textcolor: white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Popular extends StatefulWidget {
+  const Popular({Key? key}) : super(key: key);
+
+  @override
+  State<Popular> createState() => _PopularState();
+}
+
+class _PopularState extends State<Popular> {
+  double productprice = 10;
+  double? price;
+
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decreamentCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _priceCounter() {
+    setState(() {
+      price = (productprice.toPrecision(2)) * _counter;
     });
   }
 
@@ -474,7 +968,8 @@ void buyticket(BuildContext context) {
             nextpage: Deposit_Money(),
             btntext: "Deposit Payment",
             title: "Payment Details",
-            note:  "You do not have sufficient funds to purchase this ticket. Deposit Money into your wallet to continue.",
+            note:
+                "You do not have sufficient funds to purchase this ticket. Deposit Money into your wallet to continue.",
           ),
         );
       });

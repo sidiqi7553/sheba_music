@@ -12,6 +12,7 @@ import 'package:sheba_music/const/App_Text.dart';
 
 import '../../../../Widgets/inner_Pages_App_Bar.dart';
 import '../../Wallet/Wallet_Main.dart';
+import 'Going.dart';
 import 'Maps.dart';
 import 'Tickets_pricing.dart';
 
@@ -71,94 +72,99 @@ class _Tickets_DetailsState extends State<Tickets_Details> {
                   textcolor: white,
                   WeightofFont: FontWeight.w700,
                 ),
-                trailing: Container(
-                  width: 150,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10, left: 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 0,
-                                  ),
-                                  height: 30,
-                                  width: 30,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.blue,
-                                    image: const DecorationImage(
-                                      image: AssetImage(
-                                          "assets/Images/victoria.png"),
-                                      fit: BoxFit.cover,
+                trailing: GestureDetector(
+                  onTap: (){
+                    Get.to(Going());
+                  },
+                  child: Container(
+                    width: 150,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10, left: 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 0,
                                     ),
-                                    border: Border.all(
-                                      color: white,
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 10,
-                                  ),
-                                  height: 30,
-                                  width: 30,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: white,
-                                      width: 1.5,
-                                    ),
-                                    shape: BoxShape.circle,
-                                    image: const DecorationImage(
-                                      image: AssetImage(
-                                          "assets/Images/victoria.png"),
-                                      fit: BoxFit.cover,
+                                    height: 30,
+                                    width: 30,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.blue,
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/Images/victoria.png"),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      border: Border.all(
+                                        color: white,
+                                        width: 1.5,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 20,
-                                  ),
-                                  height: 30,
-                                  width: 30,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: white,
-                                      width: 1.5,
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 10,
                                     ),
-                                    shape: BoxShape.circle,
-                                    image: const DecorationImage(
-                                      image: AssetImage(
-                                          "assets/Images/victoria.png"),
-                                      fit: BoxFit.cover,
+                                    height: 30,
+                                    width: 30,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: white,
+                                        width: 1.5,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/Images/victoria.png"),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            AppText(
-                              text: "2k+ going",
-                              SizeofFont: 12,
-                              textcolor: whiteforsubtitle,
-                            )
-                          ],
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 20,
+                                    ),
+                                    height: 30,
+                                    width: 30,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: white,
+                                        width: 1.5,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/Images/victoria.png"),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              AppText(
+                                text: "2k+ going",
+                                SizeofFont: 12,
+                                textcolor: whiteforsubtitle,
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: whiteforsubtitle,
-                        size: 15,
-                      )
-                    ],
+                        Icon(
+                          Icons.arrow_forward,
+                          color: whiteforsubtitle,
+                          size: 15,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

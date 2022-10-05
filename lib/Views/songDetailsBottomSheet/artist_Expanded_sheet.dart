@@ -10,12 +10,13 @@ class artist_Expanded_sheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(25.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,11 +54,9 @@ class artist_Expanded_sheet extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.only(left: 25.0, right: 89, top: 5, bottom: 5),
+            padding: const EdgeInsets.all(25.0),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +91,7 @@ class artist_Expanded_sheet extends StatelessWidget {
                   ],
                 ),
               ],
-            ),
+              ),
           ),
           Row(
             children: [

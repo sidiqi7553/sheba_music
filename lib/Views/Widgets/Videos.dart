@@ -63,13 +63,13 @@ class Video extends StatelessWidget {
                           children: [
                             AppText(
                               text: title,
-                              SizeofFont: 12,
+                              SizeofFont: 13,
                               textcolor: white,
                             ),
                             AppText(
                               text:
                               subtitle,
-                              SizeofFont: 9,
+                              SizeofFont: 10,
                               textcolor:
                               whiteforsubtitle,
                             ),

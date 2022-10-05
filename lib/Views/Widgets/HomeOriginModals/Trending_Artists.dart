@@ -21,7 +21,7 @@ class Trending_Artists extends StatelessWidget {
           ListTile(
           title: AppText(
             text: title,
-            SizeofFont: 20,
+            SizeofFont: 18,
             textcolor: white,
           ),
           trailing: InkWell(
