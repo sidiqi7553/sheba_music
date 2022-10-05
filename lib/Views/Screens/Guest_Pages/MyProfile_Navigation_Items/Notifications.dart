@@ -62,7 +62,7 @@ class Notifications extends StatelessWidget {
                                   ),
                                   title: AppText(
                                     text: "Payment Request From User",
-                                    SizeofFont: 15, textcolor: white,WeightofFont: FontWeight.w800,
+                                    SizeofFont: 13, textcolor: white,WeightofFont: FontWeight.w600,
                                   ),
                                   subtitle: AppText(
                                     text: "1 Feb 22 • #123467",

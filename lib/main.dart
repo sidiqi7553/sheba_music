@@ -5,6 +5,7 @@ import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Create_
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Start_LiveStreaming.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/LiveStreaminng.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Menu.dart';
+import 'package:sheba_music/Views/Widgets/HomeOriginModals/tickets.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import 'Views/Screens/Extra_Screens_of_Artist/start_live_streaming.dart';

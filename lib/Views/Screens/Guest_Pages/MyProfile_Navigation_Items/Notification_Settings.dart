@@ -148,7 +148,7 @@ class _Notification_SettingsState extends State<Notification_Settings> {
               Container(
                 height: 40,
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(left: 70,right: 70,top: 150),
+                margin: EdgeInsets.only(left: 70,right: 70,top: 110 , bottom: 60),
                 decoration: BoxDecoration(
                   color: primary,
                   borderRadius: BorderRadius.circular(10),

@@ -30,8 +30,8 @@ class LiveStreaming_Videos extends StatelessWidget {
       },
       child: Universal_Container(
 
-        height: 100,
-        widht: MediaQuery.of(context).size.width*0.4,
+        height: 120,
+        widht: MediaQuery.of(context).size.width*0.45,
 
         child: Stack(
           children: [
@@ -89,7 +89,7 @@ class LiveStreaming_Videos extends StatelessWidget {
               ],
             ),
             Positioned(
-                top: 20,
+                top: 25,
                 right: 0,
                 left: 0,
                 child: SvgPicture.asset(

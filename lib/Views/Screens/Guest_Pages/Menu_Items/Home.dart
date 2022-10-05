@@ -3,6 +3,9 @@ import 'package:flutter_image_slider/carousel.dart';
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/TEmp/models/music.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/afrobeats.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/life_time.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/podcast_tab.dart';
 
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
@@ -34,15 +37,9 @@ class _HomeState extends State<Home> {
   ];
   List<Widget> page = [
     All(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    Podcast_Tab(),
+    Afrobeats_Tab(),
+    LifeTime_Tab(),
   ];
   int list = 0;
 

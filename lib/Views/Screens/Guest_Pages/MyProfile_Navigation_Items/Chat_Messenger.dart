@@ -5,8 +5,6 @@ import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:avatar_view/avatar_view.dart';
-
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sheba_music/const/App_Text.dart';
