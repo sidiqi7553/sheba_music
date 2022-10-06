@@ -1,10 +1,12 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Change_Password.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Edit_Profile.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Support.dart';
+import 'package:sheba_music/Views/Screens/Main_Screens/SelectType.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
@@ -214,19 +216,24 @@ body: BackGround_Container(child: SingleChildScrollView(
       MyProfile_ListMenu(title: "Rate This App", svgicon: "assets/Icons/Star1.svg"),
       MyProfile_ListMenu(title: "Share This App", svgicon: "assets/Icons/Send.svg"),
 
-      Container(
-        height: 50,
-        width: MediaQuery.of(context).size.width*0.4,
-        margin: EdgeInsets.symmetric(horizontal:100,vertical: 50 ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: primary,
-        ),
-        child: Center(
-          child: AppText(
-            text: "Log out",
-            SizeofFont: 20,
-            textcolor: white,
+      GestureDetector(
+        onTap: (){
+          Get.to(SelectType());
+        },
+        child: Container(
+          height: 50,
+          width: MediaQuery.of(context).size.width * 0.4,
+          margin: EdgeInsets.symmetric(horizontal: 100, vertical: 50),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: primary,
+          ),
+          child: Center(
+            child: AppText(
+              text: "Log out",
+              SizeofFont: 20,
+              textcolor: white,
+            ),
           ),
         ),
       )

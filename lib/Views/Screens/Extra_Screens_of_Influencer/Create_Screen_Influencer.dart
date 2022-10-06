@@ -73,8 +73,8 @@ class _Create_Screen_InfluencerState extends State<Create_Screen_Influencer> {
                 ),
                 child: Center(
                   child: AppText(text: "Send Tags",
-                    SizeofFont: 25,
-                    WeightofFont: FontWeight.w500,
+                    SizeofFont: 20,
+                    WeightofFont: FontWeight.w300,
                     textcolor: white,),
                 ),
               ),
@@ -105,8 +105,8 @@ class _Create_Screen_InfluencerState extends State<Create_Screen_Influencer> {
                 ),
                 child: Center(
                   child: AppText(text: "Share Link To Users",
-                    SizeofFont: 25,
-                    WeightofFont: FontWeight.w500,
+                    SizeofFont: 20,
+                    WeightofFont: FontWeight.w300,
                     textcolor: white,),
                 ),
               ),
@@ -137,8 +137,8 @@ class _Create_Screen_InfluencerState extends State<Create_Screen_Influencer> {
                 ),
                 child: Center(
                   child: AppText(text: "Start Live Streaming",
-                    SizeofFont: 25,
-                    WeightofFont: FontWeight.w500,
+                    SizeofFont: 20,
+                    WeightofFont: FontWeight.w300,
                     textcolor: white,),
                 ),
               ),

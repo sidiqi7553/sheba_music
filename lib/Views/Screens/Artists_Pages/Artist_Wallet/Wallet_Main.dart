@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Reports.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Notifications.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Deposit_Money_wallet.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Request_Send_Money.dart';
@@ -135,22 +136,27 @@ class _Wallet_MainState extends State<Wallet_Main> {
                           ],
                         ),
                       ),
-                      Column(
-                        children: [
-                          Universal_Container(
-                              height: 50,
-                              border: Border.all(color: primary),
-                              widht: 50,
-                              child: Center(
-                                child: SvgPicture.asset(
-                                    "assets/Icons/reports.svg"),
-                              )),
-                          AppText(
-                            text: "Reports",
-                            SizeofFont: 15,
-                            textcolor: white,
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(Reports());
+                        },
+                        child: Column(
+                          children: [
+                            Universal_Container(
+                                height: 50,
+                                border: Border.all(color: primary),
+                                widht: 50,
+                                child: Center(
+                                  child: SvgPicture.asset(
+                                      "assets/Icons/reports.svg"),
+                                )),
+                            AppText(
+                              text: "Reports",
+                              SizeofFont: 15,
+                              textcolor: white,
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   )),

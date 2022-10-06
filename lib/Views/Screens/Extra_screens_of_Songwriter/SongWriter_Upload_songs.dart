@@ -149,7 +149,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SvgPicture.asset(
-                              'assets/Icons/audio.svg',
+                              'assets/Icons/audio(2).svg',
                               color: white,
                               height: 50,
                             ),
@@ -303,7 +303,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SvgPicture.asset(
-                              'assets/Icons/audio.svg',
+                              'assets/Icons/Plus.svg',
                               color: white,
                               height: 50,
                             ),
@@ -359,7 +359,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
             ),
             Container(
               height: 35,
-              margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(25)),
@@ -426,7 +426,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
             ),
             Container(
               height: 35,
-              margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(25)),
@@ -484,7 +484,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
               children: [
                 SizedBox(height: 20,),
                 customtextFormFieldOnlyHintText(
-                  hintText: "Live Stream Title",
+                  hintText: "Enter BPM of Beat`",
                 ),
                 SizedBox(height: 20,),
 

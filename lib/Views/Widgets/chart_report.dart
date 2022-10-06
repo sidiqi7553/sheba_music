@@ -15,15 +15,8 @@ class _ChartReportState extends State<ChartReport> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        AspectRatio(
-          aspectRatio: 0.98,
-          child: LineChart(
-            mainData(),
-          ),
-        ),
-      ],
+    return LineChart(
+      mainData(),
     );
   }
 
@@ -101,7 +94,7 @@ class _ChartReportState extends State<ChartReport> {
           drawBehindEverything: true,
           sideTitles: SideTitles(
             showTitles: true,
-            reservedSize: 60,
+            reservedSize: 50,
             interval: 1,
             getTitlesWidget: bottomTitleWidgets,
           ),
@@ -118,7 +111,7 @@ class _ChartReportState extends State<ChartReport> {
       minX: 0,
       maxX: 8,
       minY: 0,
-      maxY: 13000,
+      maxY: 15000,
       lineBarsData: [
         LineChartBarData(
           spots: const [

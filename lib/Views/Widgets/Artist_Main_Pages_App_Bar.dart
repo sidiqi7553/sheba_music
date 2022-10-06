@@ -270,6 +270,7 @@ class ActionIconforTickets extends StatelessWidget {
               width: 90,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(6),
                 color: white,
               ),
               child: Center(

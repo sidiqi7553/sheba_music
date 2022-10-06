@@ -55,12 +55,12 @@ class _ReportsState extends State<Reports> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: ListTile(
-                    title: AppText(text: "Taged Users", SizeofFont: 20,textcolor: white,),
-                    subtitle:AppText(text: "Number of Tagged Artists, Producers and Songwriters.", SizeofFont: 11,textcolor: whiteforsubtitle,) ,
-                    trailing: AppText(
-                      text: "20",
-                      SizeofFont: 35,
-                      textcolor: white,)
+                      title: AppText(text: "Taged Users", SizeofFont: 20,textcolor: white,),
+                      subtitle:AppText(text: "Number of Tagged Artists, Producers and Songwriters.", SizeofFont: 11,textcolor: whiteforsubtitle,) ,
+                      trailing: AppText(
+                        text: "20",
+                        SizeofFont: 35,
+                        textcolor: white,)
                   ),
                 ),
               ),
@@ -111,7 +111,7 @@ class _ReportsState extends State<Reports> {
                 WeightofFont: FontWeight.bold,
               ),
             ),
-SizedBox(height: 20,),
+            SizedBox(height: 20,),
             Container(
               height: 50,
               margin: const EdgeInsets.symmetric(

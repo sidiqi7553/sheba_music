@@ -4,6 +4,7 @@ import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Icon_container.dart';
 import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
+import 'package:sheba_music/Views/Widgets/chart_report.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
@@ -26,8 +27,9 @@ class _RecentTransactions_SeeAllState extends State<influencer_RecentTransaction
 
   List<Widget> page = [
     Week(),
-    Container(color: white,),
-    Container(color: black,),
+    Week(),
+    Week(),
+
 
   ];
   int list = 0;
@@ -182,8 +184,8 @@ class _WeekState extends State<Week> {
   ];
 
   List<Widget> page = [
-    Container(),
-    Container(),
+    Container(height: 100, child: ChartReport()),
+    Container(height: 100, child: ChartReport()),
 
   ];
   int list = 0;

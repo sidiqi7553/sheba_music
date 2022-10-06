@@ -59,8 +59,27 @@ class Library extends StatelessWidget {
                               widht: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
                                 children: [
+<<<<<<< Updated upstream
 
 
+=======
+                                  Flexible(
+                                      flex: 4,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: containercolor,
+                                            border: Border.all(color: primary),
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(10),
+                                              topLeft: Radius.circular(10),
+
+                                            )),
+                                        child: Center(
+                                          child: SvgPicture.asset(
+                                              "assets/Icons/Plus.svg"),
+                                        ),
+                                      )),
+>>>>>>> Stashed changes
                                   Flexible(
                                     flex: 3,
                                     child: Container(
