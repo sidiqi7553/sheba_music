@@ -6,9 +6,9 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/LoginPages_Backbtn.dart';
 import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/const/App_Logo.dart';
+import 'package:sheba_music/const/App_Text.dart';
 
-import '../../../const/App_Logo.dart';
-import '../../../const/App_Text.dart';
 import 'common_login/continer_templete.dart';
 import 'verify_otp_page.dart';
 

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
-import '../../../const/App_Logo.dart';
-import '../../../const/App_Text.dart';
-import '../../Widgets/BackGround_Container.dart';
 import 'package:pinput/pinput.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/const/App_Logo.dart';
+import 'package:sheba_music/const/App_Text.dart';
 
-import 'common_login/continer_templete.dart';
+import 'common_login/continer_templete_Artist.dart';
 
-class VerifyOtpPage extends StatefulWidget {
-  const VerifyOtpPage({Key? key}) : super(key: key);
+class VerifyOtpPage_Producer extends StatefulWidget {
+  const VerifyOtpPage_Producer({Key? key}) : super(key: key);
 
   @override
-  State<VerifyOtpPage> createState() => _VerifyOtpPageState();
+  State<VerifyOtpPage_Producer> createState() => _VerifyOtpPageState();
 }
 
-class _VerifyOtpPageState extends State<VerifyOtpPage> {
+class _VerifyOtpPageState extends State<VerifyOtpPage_Producer> {
   final defaultPinTheme = PinTheme(
     width: 56,
     height: 56,
@@ -188,7 +188,7 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
                     onTap: () {
                       // Get.to(ContinueWithPhone());
                     },
-                    child: ContinerTemplete(
+                    child: ContinerTemplete_Producer(
                       BoxText: "Send Otp",
                     ),
                   ),

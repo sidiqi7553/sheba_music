@@ -3,26 +3,26 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
+import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
 
 import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/const/App_Logo.dart';
 import 'package:sheba_music/const/App_Text.dart';
-import '../../../const/App_Colors.dart';
-import '../../../const/App_Logo.dart';
-import '../../Widgets/BackGround_Container.dart';
-import 'common_login/continer_templete.dart';
-import '../../Widgets/customtextformfield.dart';
-import 'continue_with_phone.dart';
-import 'forget_password_page.dart';
-import 'register_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+import 'common_login/continer_templete_influencer.dart';
+import 'continue_with_phone_influencer.dart';
+import 'forget_password_page_influencer.dart';
+import 'register_page_influencer.dart';
+
+class LoginPage_influencer extends StatefulWidget {
+  const LoginPage_influencer({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginPage_influencer> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage_influencer> {
   TextEditingController tectec = TextEditingController();
 
   bool _obsecure = true;
@@ -128,9 +128,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             GestureDetector(
               onTap: () {
-                Get.to(ContinueWithPhone());
+                Get.to(ContinueWithPhone_influencer());
               },
-              child: ContinerTemplete(
+              child: ContinerTemplete_influencer(
                 BoxText: "Login",
               ),
             ),
@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      Get.to(ForgetPasswordPage());
+                      Get.to(ForgetPasswordPage_influencer());
                     },
                     child: AppText(
                       text: "Forget Password?",
@@ -322,7 +322,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.to(RegisterPage());
+                    Get.to(RegisterPage_influencer());
                   },
                   child: AppText(
                     text: "Register Here",

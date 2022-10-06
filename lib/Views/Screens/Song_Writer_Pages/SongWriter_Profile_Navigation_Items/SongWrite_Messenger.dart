@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger_Tabs/All_Messenger.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger_Tabs/messenger_tab1.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
@@ -28,15 +29,9 @@ class _MessengerState extends State<SongWriteMessenger> {
   ];
   List<Widget> page = [
     All_Messenger(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    All_Messenger_Tab(),
+    All_Messenger_Tab(),
+    All_Messenger_Tab(),
   ];
   int list = 0;
 
@@ -45,10 +40,8 @@ class _MessengerState extends State<SongWriteMessenger> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
-        child: inner_Pages_App_Bar(
-          title: "Messenger",
-          action: Container()),
-        ),
+        child: inner_Pages_App_Bar(title: "Messenger", action: Container()),
+      ),
       body: BackGround_Container(
         child: SingleChildScrollView(
           child: Column(
@@ -59,13 +52,13 @@ class _MessengerState extends State<SongWriteMessenger> {
               Container(
                 height: 35,
                 margin:
-                const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+                    const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(25)),
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
-                  // controller: scrollController,
+                    // controller: scrollController,
                     itemCount: catagory.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (ctx, index) {
@@ -104,9 +97,9 @@ class _MessengerState extends State<SongWriteMessenger> {
                                   color: containercolor),
                               child: Center(
                                   child: Text(
-                                    catagory[index],
-                                    style: TextStyle(fontSize: 13, color: white),
-                                  )),
+                                catagory[index],
+                                style: TextStyle(fontSize: 13, color: white),
+                              )),
                             ),
                           ),
                         ),
@@ -120,11 +113,9 @@ class _MessengerState extends State<SongWriteMessenger> {
                   height: MediaQuery.of(context).size.height * 0.7,
                   child: page[list]),
             ],
-
           ),
         ),
       ),
-      );
-
+    );
   }
 }

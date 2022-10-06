@@ -39,7 +39,6 @@ class _All_TicketsState extends State<All_Tickets> {
                             },
                             child: Tickets_Details_Widget(),
 
-
                           ),
                         );
                       }),

@@ -32,7 +32,7 @@ class Library extends StatelessWidget {
       ),
       body: BackGround_Container(
           child: SingleChildScrollView(
-<<<<<<< Updated upstream
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -59,76 +59,8 @@ class Library extends StatelessWidget {
                               widht: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
                                 children: [
-                                  Flexible(
-                                      flex: 4,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color: containercolor,
-                                            border: Border.all(color: primary),
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(10),
-                                              topLeft: Radius.circular(10),
-=======
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: 170,
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
-                  margin: const EdgeInsets.symmetric(
-                      horizontal: 00, vertical: 20),
-                  decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(25)),
-                  child: ListView.builder(
-                    // controller: scrollController,
-                      itemCount: 20,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (ctx, index) {
-                        if (index == 0) {
-                          return
-                            GestureDetector(
-                              onTap: () {
-                                Get.to(Create_Playlist());
-                              },
-                              child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10.0, right: 10, top: 10),
-                                  child: Universal_Container(
 
-                                    height: 120,
-                                    widht: 150,
 
-                                    child: Column(
-                                      children: [
-                                        Flexible(
-                                            flex: 4,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: containercolor,
-                                                  border: Border.all(
-                                                      color: primary),
-                                                  borderRadius: BorderRadius
-                                                      .only(
-                                                    topRight: Radius.circular(
-                                                        10),
-                                                    topLeft: Radius.circular(
-                                                        10),)
-                                              ),
-                                              child: Center(
-                                                child: SvgPicture.asset(
-                                                    "assets/Icons/Plus.svg"),
-                                              ),
->>>>>>> Stashed changes
-                                            )),
-                                        child: Center(
-                                          child: SvgPicture.asset(
-                                              "assets/Icons/Plus.svg"),
-                                        ),
-                                      )),
                                   Flexible(
                                     flex: 3,
                                     child: Container(

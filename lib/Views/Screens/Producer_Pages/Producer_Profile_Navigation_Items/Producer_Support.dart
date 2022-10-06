@@ -72,31 +72,37 @@ class _SupportState extends State<Producer_Support> {
             Row(
               children: <Widget>[
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.75,
-                  height: 40,
+                  margin: EdgeInsets.only(right: 5, left: 8),
                   decoration: BoxDecoration(
-                    color: white,
+                    borderRadius: BorderRadius.circular(10),
+                    color: textformfieldColor,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 2),
-                    child: TextField(
-                      cursorColor: black,
-                      controller: _sendMessageController,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.68,
+                    child: TextFormField(
+                      style: TextStyle(color: white),
+                      autofocus: false,
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.only(left: 10, top: 5),
-                          border: InputBorder.none,
-                          hintText: "Type a message",
-                          hintStyle: GoogleFonts.poppins(color: Colors.grey),
-                          suffixIcon: Container(
-                              width: 60,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child:
-                                    SvgPicture.asset("assets/Icons/Send_2.svg"),
-                              ))),
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 10),
+                          child: SvgPicture.asset('assets/Icons/Send_2.svg'),
+                        ),
+                        hintText: "Enter Your Message",
+                        hintStyle: TextStyle(color: white),
+                        labelStyle: TextStyle(color: white),
+                        contentPadding: EdgeInsets.only(left: 10, top: 17),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: primary, width: 1.0),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: primary, width: 1.0),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
             Container(
@@ -108,9 +114,9 @@ class _SupportState extends State<Producer_Support> {
                   border: Border.all(color: primary)),
               child: Center(
                   child: Icon(
-                Icons.camera_alt_outlined,
-                color: white,
-              )),
+                    Icons.camera_alt_outlined,
+                    color: white,
+                  )),
             ),
           ],
         ),

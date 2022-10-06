@@ -3,14 +3,13 @@ import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/const/App_Logo.dart';
+import 'package:sheba_music/const/App_Text.dart';
+import 'common_login/continer_templete_Artist.dart';
+import 'verify_otp_page_SongWriter.dart';
 
-import '../../../const/App_Logo.dart';
-import '../../../const/App_Text.dart';
-import 'common_login/continer_templete.dart';
-import 'verify_otp_page.dart';
-
-class ForgetPasswordPage extends StatelessWidget {
-  const ForgetPasswordPage({Key? key}) : super(key: key);
+class ForgetPasswordPage_SongWriter extends StatelessWidget {
+  const ForgetPasswordPage_SongWriter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +81,9 @@ class ForgetPasswordPage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(VerifyOtpPage());
+                  Get.to(VerifyOtpPage_SongWriter());
                 },
-                child: ContinerTemplete(
+                child: ContinerTemplete_Artist(
                   BoxText: "Send OTP",
                 ),
               ),

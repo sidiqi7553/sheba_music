@@ -34,19 +34,10 @@ class _TicketsState extends State<Tickets> {
   List<Widget> page = [
     All_Tickets(),
     All_Tickets(),
-<<<<<<< Updated upstream
     Exibation_Details_Widget(),
     Tour_Details_Widget(),
-
-
-
-=======
-    All_Tickets(),
-    All_Tickets(),
->>>>>>> Stashed changes
   ];
   int list = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

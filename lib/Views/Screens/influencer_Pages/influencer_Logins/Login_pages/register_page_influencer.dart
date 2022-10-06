@@ -4,25 +4,25 @@ import 'package:get/get.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-
 import 'package:flutter_svg/svg.dart';
 import 'package:csc_picker/csc_picker.dart';
-import '../../../const/App_Colors.dart';
-import '../../../const/App_Logo.dart';
-import '../../../const/App_Text.dart';
-import '../../Widgets/customtextformfield.dart';
-import 'common_login/continer_templete.dart';
-import 'login_main_page.dart';
-import 'verify_otp_page.dart';
+import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
+import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/const/App_Logo.dart';
+import 'package:sheba_music/const/App_Text.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+import 'common_login/continer_templete_influencer.dart';
+import 'login_main_page_influencer.dart';
+import 'verify_otp_page_influencer.dart';
+
+class RegisterPage_influencer extends StatefulWidget {
+  const RegisterPage_influencer({Key? key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<RegisterPage_influencer> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage_influencer> {
   int groupValue = 0;
   bool firstValue = false;
   TextEditingController tectec = TextEditingController();
@@ -196,9 +196,9 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(VerifyOtpPage());
+                  Get.to(VerifyOtpPage_influencer());
                 },
-                child: ContinerTemplete(
+                child: ContinerTemplete_influencer(
                   BoxText: "Register",
                 ),
               ),
@@ -396,7 +396,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Get.to(LoginPage());
+                      Get.to(LoginPage_influencer());
                     },
                     child: AppText(
                       text: " Login Here",

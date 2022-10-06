@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sheba_music/const/App_Text.dart';
 
-import '../../../../const/App_Colors.dart';
-import '../../../../const/App_Text.dart';
+import '../../../../../../const/App_Colors.dart';
 
 
-class ContinerTemplete extends StatelessWidget {
-  ContinerTemplete({Key? key, required this.BoxText}) : super(key: key);
+
+
+
+class ContinerTemplete_influencer extends StatelessWidget {
+  ContinerTemplete_influencer({Key? key, required this.BoxText}) : super(key: key);
 
   String BoxText;
 

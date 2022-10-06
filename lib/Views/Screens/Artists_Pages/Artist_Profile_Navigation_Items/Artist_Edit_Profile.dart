@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:csc_picker/csc_picker.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
@@ -8,14 +7,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Login_pages/common_login/continer_templete.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Login_pages/verify_otp_page.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
-import 'package:sheba_music/Views/Screens/Login_pages/verify_otp_page.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
-import '../../Login_pages/common_login/continer_templete.dart';
 
 class Artist_Edit_Profile extends StatefulWidget {
   const Artist_Edit_Profile({Key? key}) : super(key: key);

@@ -8,14 +8,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Login_pages/common_login/continer_templete.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/Login_pages/verify_otp_page.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 
 import '../../../Widgets/customtextformfield.dart';
-import '../../Login_pages/common_login/continer_templete.dart';
-import '../../Login_pages/verify_otp_page.dart';
+
 
 class Producer_Edit_Profile extends StatefulWidget {
   const Producer_Edit_Profile({Key? key}) : super(key: key);

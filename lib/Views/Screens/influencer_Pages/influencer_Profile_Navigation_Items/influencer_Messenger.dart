@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger_Tabs/All_Messenger.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Messenger_Tabs/messenger_tab1.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
@@ -28,15 +29,9 @@ class _MessengerState extends State<influencerMessenger> {
   ];
   List<Widget> page = [
     All_Messenger(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    All_Messenger_Tab(),
+    All_Messenger_Tab(),
+    All_Messenger_Tab(),
   ];
   int list = 0;
 
