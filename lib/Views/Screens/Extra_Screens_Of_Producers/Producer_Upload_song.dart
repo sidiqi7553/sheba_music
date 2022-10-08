@@ -359,7 +359,7 @@ class _Producer_Upload_songState extends State<Producer_Upload_song> {
                   ),
                   Container(
                     height: 35,
-                    margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+                    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(25)),
@@ -426,7 +426,7 @@ class _Producer_Upload_songState extends State<Producer_Upload_song> {
                   ),
                   Container(
                     height: 35,
-                    margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+                    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(25)),
@@ -484,7 +484,7 @@ class _Producer_Upload_songState extends State<Producer_Upload_song> {
                     children: [
                       SizedBox(height: 20,),
                       customtextFormFieldOnlyHintText(
-                        hintText: "Live Stream Title",
+                        hintText: "Enter BPT of beat",
                       ),
                       SizedBox(height: 20,),
 

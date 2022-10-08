@@ -6,14 +6,14 @@ import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
 
-class Reports extends StatefulWidget {
-  const Reports({Key? key}) : super(key: key);
+class Reports2 extends StatefulWidget {
+  const Reports2({Key? key}) : super(key: key);
 
   @override
-  State<Reports> createState() => _ReportsState();
+  State<Reports2> createState() => _Reports2State();
 }
 
-class _ReportsState extends State<Reports> {
+class _Reports2State extends State<Reports2> {
   int current = 0;
   List<String> catagory = [
     "Week",
@@ -43,7 +43,7 @@ class _ReportsState extends State<Reports> {
         child: Column(
           children: [
             Container(
-              height: 120,
+              height: 100,
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
               decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _ReportsState extends State<Reports> {
 
             ),
             Container(
-              height: 120,
+              height: 100,
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
               decoration: BoxDecoration(
@@ -223,8 +223,7 @@ class _Week_reportState extends State<Week_report> {
                 children: [
                   Align(
                       alignment: Alignment.bottomCenter,
-                      child: Container())
-
+                      child: ChartReport())
                 ],
               ),
             ),

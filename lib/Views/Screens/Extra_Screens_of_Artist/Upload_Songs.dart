@@ -266,7 +266,7 @@ class _Upload_SongsState extends State<Upload_Songs> {
           ),
           Container(
             height: 35,
-            margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
             decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(25)),
@@ -333,7 +333,7 @@ class _Upload_SongsState extends State<Upload_Songs> {
           ),
           Container(
             height: 35,
-            margin: const EdgeInsets.symmetric(horizontal: 00, vertical: 00),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 00),
             decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(25)),

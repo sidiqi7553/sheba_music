@@ -2,6 +2,7 @@ import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Artists_Pages/Artist_Profile_Navigation_Items/Artist_Edit_Profile.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Create_Screen.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Reports.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/pic_gradinet_color.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/MyProfile_Navigation_Items/Change_Password.dart';
@@ -40,6 +41,7 @@ class _MyProfileState extends State<MyProfileArtist> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(55),
           child: Artist_Main_Pages_App_Bar(
+              upload: Create_Screen(),
               title: AppText(
             text: "Profile",
             SizeofFont: 20,
