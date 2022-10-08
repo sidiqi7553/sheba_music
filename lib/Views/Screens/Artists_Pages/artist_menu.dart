@@ -38,7 +38,9 @@ class _MenuState extends State<Artist_Menu> {
     return Dismissible(
       direction: DismissDirection.down,
       key: const Key('key'),
-      onDismissed: (_) {},
+      onDismissed: (_) {
+        miniplayercontroller.mini.value=false;
+      },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
         color: Colors.transparent,
@@ -92,9 +94,13 @@ class _MenuState extends State<Artist_Menu> {
           children: [
             Column(
               children: [
-                miniPlayer(),
-                // if (miniplayercontroller.mini.value == true) miniPlayer(),
-                // if(miniplayercontroller.mini.value==false)SizedBox(height: 100,),
+                Obx(
+                    (){
+                    return  miniplayercontroller.mini.value == true?miniPlayer()
+                      :SizedBox(height: 100,);
+                    }
+                ),
+
 
                 Align(
                   alignment: Alignment.bottomCenter,

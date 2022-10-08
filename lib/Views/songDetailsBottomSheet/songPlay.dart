@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:sheba_music/Example.dart';
 import 'package:sheba_music/const/App_Colors.dart';
 import 'package:sheba_music/const/App_Text.dart';
+import 'package:sheba_music/controllers/MiniPlayer_Artist_Controller/MiniPlayer_Artist_Controller.dart';
 
 import '../Screens/Guest_Pages/HomeTabs_items/Navigation_items/playSongPage.dart';
 import '../Widgets/GlassBox.dart';
@@ -18,10 +19,12 @@ class songPlay extends StatefulWidget {
 }
 
 class _songPlayState extends State<songPlay> {
+  MiniPlayerController miniplayercontroller = Get.put(MiniPlayerController());
+
   final audioPlayer = AudioPlayer();
 
   bool isPlaying = false;
-
+ 
   Duration duration = Duration.zero;
 
   Duration position = Duration.zero;
@@ -63,146 +66,167 @@ class _songPlayState extends State<songPlay> {
 
   @override
   Widget build(BuildContext context) {
-    return GlassBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: GestureDetector(
-          onTap: () {
-            Get.to(audioplayer());
-          },
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 18.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Image(
-                      image: AssetImage("assets/Images/Song1.png"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AppText(
-                        text: "Happier",
-                        SizeofFont: 15,
-                        textcolor: white,
+    return Obx(() {
+      if(miniplayercontroller.mini.value==true){
+
+          isPlaying = true;
+           audioPlayer.pause();
+
+
+      }
+      else{
+
+          isPlaying = false;
+           audioPlayer.resume();
+
+
+      }
+      return GlassBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: GestureDetector(
+            onTap: () {
+              Get.to(audioplayer());
+            },
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      AppText(
-                        text: "Marshmello,Bastille",
-                        SizeofFont: 12,
-                        textcolor: whiteforsubtitle,
+                      child: Image(
+                        image: AssetImage("assets/Images/Song1.png"),
+                        fit: BoxFit.cover,
                       ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.48,
-                        child: Slider(
-                          min: 0,
-                          max: duration.inSeconds.toDouble(),
-                          value: position.inSeconds.toDouble(),
-                          onChanged: (value) async {
-                            final position = Duration(seconds: value.toInt());
-                            await audioPlayer.seek(position);
-                            await audioPlayer.resume();
-                          },
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppText(
+                          text: "Happier",
+                          SizeofFont: 15,
+                          textcolor: white,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Container(
-                          width: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SvgPicture.asset(
-                                "assets/Icons/Heart.svg",
-                                height: 20,
-                              ),
-                              play_pause_Backward_forward_box(
-                                child: Center(
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(
-                                          "assets/Icons/backward.svg"),
-                                      SvgPicture.asset(
-                                          "assets/Icons/backward.svg"),
-                                    ],
+                        AppText(
+                          text: "Marshmello,Bastille",
+                          SizeofFont: 12,
+                          textcolor: whiteforsubtitle,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.48,
+                          child: Slider(
+                            min: 0,
+                            max: duration.inSeconds.toDouble(),
+                            value: position.inSeconds.toDouble(),
+                            onChanged: (value) async {
+                              final position = Duration(seconds: value.toInt());
+                              await audioPlayer.seek(position);
+                              await audioPlayer.resume();
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Container(
+                            width: 150,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/Icons/Heart.svg",
+                                  height: 20,
+                                ),
+                                play_pause_Backward_forward_box(
+                                  child: Center(
+                                    child: Row(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .center,
+                                      children: [
+                                        SvgPicture.asset(
+                                            "assets/Icons/backward.svg"),
+                                        SvgPicture.asset(
+                                            "assets/Icons/backward.svg"),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              GestureDetector(
-                                onTap: () async {
-                                  if (isPlaying) {
-                                    await audioPlayer.pause();
-                                  } else {
-                                    await audioPlayer.resume();
-                                  }
-                                },
-                                child: play_pause_Backward_forward_box(
-                                  height: 40,
-                                  width: 40,
-                                  child: Center(
-                                    child: Container(
-                                      height: 30,
-                                      width: 30,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: primary, width: 2)),
-                                      child: Center(
-                                        child: Icon(
-                                          isPlaying
-                                              ? Icons.pause
-                                              : Icons.play_arrow,
-                                          color: white,
+                                GestureDetector(
+                                  onTap: () async {
+                                    if (isPlaying) {
+                                      await audioPlayer.pause();
+                                    } else {
+                                      await audioPlayer.resume();
+                                    }
+                                  },
+                                  child: play_pause_Backward_forward_box(
+                                    height: 40,
+                                    width: 40,
+                                    child: Center(
+                                      child: Container(
+                                        height: 30,
+                                        width: 30,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: primary, width: 2)),
+                                        child: Center(
+                                          child: Icon(
+                                            isPlaying
+                                                ? Icons.pause
+                                                : Icons.play_arrow,
+                                            color: white,
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              play_pause_Backward_forward_box(
-                                child: Center(
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(
-                                          "assets/Icons/forward.svg"),
-                                      SvgPicture.asset(
-                                          "assets/Icons/forward.svg"),
-                                    ],
+                                play_pause_Backward_forward_box(
+                                  child: Center(
+                                    child: Row(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .center,
+                                      children: [
+                                        SvgPicture.asset(
+                                            "assets/Icons/forward.svg"),
+                                        SvgPicture.asset(
+                                            "assets/Icons/forward.svg"),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ));
+          ));}
+      );
   }
 }
 

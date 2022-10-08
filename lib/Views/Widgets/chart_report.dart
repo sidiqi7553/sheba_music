@@ -15,8 +15,10 @@ class _ChartReportState extends State<ChartReport> {
 
   @override
   Widget build(BuildContext context) {
-    return LineChart(
-      mainData(),
+    return SizedBox(height: 100,
+      child: LineChart(
+        mainData(),
+      ),
     );
   }
 
@@ -77,7 +79,7 @@ class _ChartReportState extends State<ChartReport> {
             )
       ),
       gridData: FlGridData(
-        show: true,
+        show: false,
         drawVerticalLine: false,
         drawHorizontalLine: false,
         verticalInterval: 5,
@@ -94,7 +96,7 @@ class _ChartReportState extends State<ChartReport> {
           drawBehindEverything: true,
           sideTitles: SideTitles(
             showTitles: true,
-            reservedSize: 50,
+            reservedSize: 30,
             interval: 1,
             getTitlesWidget: bottomTitleWidgets,
           ),
@@ -105,13 +107,15 @@ class _ChartReportState extends State<ChartReport> {
           ),
         ),
       ),
+
       borderData: FlBorderData(
-          show: false,
+          show: true
+        ,
       ),
       minX: 0,
       maxX: 8,
       minY: 0,
-      maxY: 15000,
+      maxY: 14000,
       lineBarsData: [
         LineChartBarData(
           spots: const [

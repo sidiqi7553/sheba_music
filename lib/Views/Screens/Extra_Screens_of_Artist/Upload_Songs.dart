@@ -50,6 +50,8 @@ class _Upload_SongsState extends State<Upload_Songs> {
 
   PlatformFile? temp;
 
+  String? dropDownValue;
+
   pickphoto() async {
     final image =
         // ignore: invalid_use_of_visible_for_testing_member
@@ -396,10 +398,92 @@ class _Upload_SongsState extends State<Upload_Songs> {
                         hintText: "Live Stream Title",
                       ),
                       SizedBox(height: 20,),
+                      Container(
+                        margin: EdgeInsets.only(right: 20, left: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: primary),
 
-                      customTextFormFielddropdown(
+                          color: textformfieldColor,
+
+
+                        ),
+                      child: Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width*0.9,
+                          child: DropdownButton(isExpanded: true,
+                              value: dropDownValue,
+                              iconEnabledColor: Colors.white,
+                              icon: Icon(Icons.keyboard_arrow_down),
+                              underline: Container(),
+                              borderRadius: BorderRadius.circular(10),
+                              dropdownColor: Colors.white,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              hint:  Row(
+                                children: [
+                                  SizedBox(width: 5,),
+                                  Container(
+                                    child: Text(
+                                      "Select Any One",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(left: 8),
+
+                              items: [
+                                DropdownMenuItem(value: "Free",child: Text("Free",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red),)),
+                                DropdownMenuItem(value: "Paid",child: Text("Paid",style: TextStyle(fontWeight: FontWeight.bold,),)),
+                              ],
+                              selectedItemBuilder: (BuildContext context)=>[
+                                Row(
+                                  children: [
+                                    SizedBox(width: 5,),
+                                    Container(
+                                      child: Text(
+                                        "Free",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    ),
+                                  ],
+                                ).paddingOnly(left: 8),
+                                Row(
+                                  children: [
+                                    SizedBox(width: 5,),
+                                    Container(
+                                      child: Text(
+                                        "Paid",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    ),
+                                  ],
+                                ).paddingOnly(left: 8),
+                              ],
+                              onChanged: (value){
+
+                                setState(() {
+                                  dropDownValue=value.toString();
+                                });
+                                dropDownValue=="Free"?"Free":
+                                "Paid";
+                              }),
+
+                        ),
+                      ).paddingOnly(bottom: 10),
+                      dropDownValue=="Paid"? customTextFormFielddropdown(
                         hintText: "Paid",
-                      ),
+                      ):Container(),
                       SizedBox(height: 20,),
                       customtextFormFieldOnlyHintText(
                         hintText: "Enter Amount",

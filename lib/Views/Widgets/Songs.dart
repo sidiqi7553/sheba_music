@@ -32,20 +32,21 @@ class _Song1State extends State<Song1> {
   }
   @override
   Widget build(BuildContext context) {
-    return SongListTile(
-      singerName: "Marshmello,Bastille",
-      songtitleimg: "assets/Images/Song1.png",
-      songName: "Happier",
-      songplay: (){
-       miniplayercontroller.mini.value=true;
-       setState((){
-         miniplayercontroller.mini;
-       });
-      },
-      details: (){
-        backgroundsong1play(context);
-      },
-    );
+    return
+      SongListTile(
+        singerName: "Marshmello,Bastille",
+        songtitleimg: "assets/Images/Song1.png",
+        songName: "Happier",
+        songplay: (){
+         miniplayercontroller.mini.value=true;
+         setState((){
+           miniplayercontroller.mini;
+         });
+        },
+        details: (){
+          backgroundsong1play(context);
+        },
+      );
   }
 }
 

@@ -19,7 +19,7 @@ class artist_Expanded_sheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0,horizontal: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 15.0,horizontal: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +78,7 @@ class artist_Expanded_sheet extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0,horizontal: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 15.0,horizontal: 20),
 
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

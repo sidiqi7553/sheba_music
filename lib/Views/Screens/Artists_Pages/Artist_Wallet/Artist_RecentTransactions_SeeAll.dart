@@ -100,7 +100,7 @@ class _RecentTransactions_SeeAllState extends State<Artist_RecentTransactions_Se
                     }),
               ),
               Container(
-                  height: MediaQuery.of(context).size.height * 0.81,
+                  height: MediaQuery.of(context).size.height * 0.5,
                   child: page[list]),
 
               ListTile(
@@ -184,8 +184,8 @@ class _WeekState extends State<Week> {
   ];
 
   List<Widget> page = [
-    Container(height: 100, child: ChartReport()),
-    Container(height: 100, child: ChartReport()),
+    Container(height: 90, child: ChartReport()),
+    Container(height: 90, child: ChartReport()),
 
 
   ];
@@ -220,14 +220,14 @@ class _WeekState extends State<Week> {
           ),
 
           Container(
-            height: 500,
+            height: 400,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20)
 
             ),
             child: Container(
-              height: 500,
+              height: 400,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border(
@@ -238,62 +238,58 @@ class _WeekState extends State<Week> {
               ),
               child: Column(
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                        height: 50,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(25)),
-                        width: MediaQuery.of(context).size.width,
-                        child: ListView.builder(
-                          // controller: scrollController,
-                            itemCount: catagory.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (ctx, index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    list = index;
-                                  });
-                                  print(context);
-                                },
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      catagory[index],
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: list == index
-                                            ? white
-                                            : whiteforsubtitle,
-                                        fontWeight: list==index?
-                                        FontWeight.bold:
-                                        null,
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 3,
-                                      margin: EdgeInsets.only(top: 10),
-                                      width: MediaQuery.of(context).size.width*0.45,
-                                      decoration: BoxDecoration(
-                                        color: list == index?
-                                        primary:
-                                        grey,
-                                      ),
-                                    )
-                                  ],
+                  Container(
+                    height: 50,
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(25)),
+                    width: MediaQuery.of(context).size.width,
+                    child: ListView.builder(
+                      // controller: scrollController,
+                        itemCount: catagory.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                list = index;
+                              });
+                              print(context);
+                            },
+                            child: Column(
+                              children: [
+                                Text(
+                                  catagory[index],
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: list == index
+                                        ? white
+                                        : whiteforsubtitle,
+                                    fontWeight: list==index?
+                                    FontWeight.bold:
+                                    null,
+                                  ),
                                 ),
-                              );
-                            }),
-                      ),
-                    ],
+                                Container(
+                                  height: 3,
+                                  margin: EdgeInsets.only(top: 10),
+                                  width: MediaQuery.of(context).size.width*0.45,
+                                  decoration: BoxDecoration(
+                                    color: list == index?
+                                    primary:
+                                    grey,
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        }),
                   ),
 
                   Container(
-                      height: MediaQuery.of(context).size.height * 0.4,
+                      height: MediaQuery.of(context).size.height * 0.1,
                       child: page[list]),
                 ],
               ),
