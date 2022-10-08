@@ -59,10 +59,7 @@ class Library extends StatelessWidget {
                               widht: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
                                 children: [
-<<<<<<< Updated upstream
 
-
-=======
                                   Flexible(
                                       flex: 4,
                                       child: Container(
@@ -79,7 +76,7 @@ class Library extends StatelessWidget {
                                               "assets/Icons/Plus.svg"),
                                         ),
                                       )),
->>>>>>> Stashed changes
+
                                   Flexible(
                                     flex: 3,
                                     child: Container(

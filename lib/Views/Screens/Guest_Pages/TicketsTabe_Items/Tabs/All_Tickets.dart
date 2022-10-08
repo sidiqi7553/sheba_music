@@ -37,10 +37,6 @@ class _All_TicketsState extends State<All_Tickets> {
                             onTap: () {
                               Get.to(Tickets_Details());
                             },
-<<<<<<< Updated upstream
-                            child: Tickets_Details_Widget(),
-
-=======
 
                             child: Tickets_Details_Widget(),
 
@@ -306,7 +302,6 @@ class _All_TicketsState extends State<All_Tickets> {
                             //   ),
                             // ),
 
->>>>>>> Stashed changes
                           ),
                         );
                       }),
