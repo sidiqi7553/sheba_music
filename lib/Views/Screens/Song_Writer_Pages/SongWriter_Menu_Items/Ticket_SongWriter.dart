@@ -6,6 +6,8 @@ import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
 import 'package:sheba_music/Views/Widgets/Main_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/Views/Widgets/exibation_widget.dart';
+import 'package:sheba_music/Views/Widgets/tour.dart';
 
 import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/TicketsTabe_Items/Tabs/All_Tickets.dart';
@@ -33,15 +35,9 @@ class _TicketsState extends State<TicketsSongWriter> {
   ];
   List<Widget> page = [
     All_Tickets(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    All_Tickets(),
+    Exibation_Details_Widget(),
+    Tour_Details_Widget(),
   ];
   int list = 0;
 

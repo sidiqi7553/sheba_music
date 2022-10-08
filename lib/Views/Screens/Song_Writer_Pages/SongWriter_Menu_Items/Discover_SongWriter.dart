@@ -9,6 +9,11 @@ import '../../../../const/App_Colors.dart';
 import '../../../Widgets/Artist_Main_Pages_App_Bar.dart';
 import '../../Guest_Pages/DiscoverTabs_Items/Tabs/All_Discover.dart';
 
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/afrobeats.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/life_time.dart';
+import 'package:sheba_music/Views/Screens/Guest_Pages/HomeTabs_items/Navigation_items/podcast_tab.dart';
+
+
 class DiscoverSongWriter extends StatefulWidget {
   const DiscoverSongWriter({Key? key}) : super(key: key);
 
@@ -31,15 +36,9 @@ class _DiscoverState extends State<DiscoverSongWriter> {
   ];
   List<Widget> page = [
     All_Discover(),
-    Container(
-      color: grey,
-    ),
-    Container(
-      color: primary,
-    ),
-    Container(
-      color: white,
-    ),
+    Podcast_Tab(),
+    Afrobeats_Tab(),
+    LifeTime_Tab(),
   ];
   int list = 0;
   @override

@@ -301,7 +301,6 @@ class _All_TicketsState extends State<All_Tickets> {
                             //     ],
                             //   ),
                             // ),
-
                           ),
                         );
                       }),
