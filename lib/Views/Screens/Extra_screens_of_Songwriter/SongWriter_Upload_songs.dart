@@ -30,6 +30,14 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
   List<String> indiaProvince = ['New Delhi', 'Bihar', 'Rajasthan'];
   List<String> usaProvince = ['Texas', 'Florida', 'California'];
 
+  List<String> license = [
+    "Basic License",
+    "Premium License",
+  ];
+  int intlicense = 0;
+  String? dropDownValue;
+  String? dropDownValue2;
+
   List<String> provinces = [];
   String? selectedCountry;
   String? selectedProvince;
@@ -489,47 +497,308 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                 ),
                 SizedBox(height: 20,),
 
-                customTextFormFielddropdown(
-                  hintText: "Paid",
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(right: 20, left: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: primary),
+                        color: textformfieldColor,
+                      ),
+                      child: Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: DropdownButton(
+                            isExpanded: true,
+                            value: dropDownValue,
+                            iconEnabledColor: Colors.white,
+                            icon: Icon(Icons.keyboard_arrow_down),
+                            underline: Container(
+                              color: textformfieldColor,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                            dropdownColor: textformfieldColor,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                            hint: Row(
+                              children: [
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Container(
+                                  child: Text(
+                                    "Select License Type",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                              ],
+                            ).paddingOnly(left: 8),
+                            items: [
+                              DropdownMenuItem(
+                                  value: "Free",
+                                  child: Text(
+                                    "Free",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red),
+                                  )),
+                              DropdownMenuItem(
+                                  value: "Paid",
+                                  child: Text(
+                                    "Paid",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                    ),
+                                  )),
+                            ],
+                            selectedItemBuilder: (BuildContext context) => [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      "Free",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(left: 8),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      "Paid",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(left: 8),
+                            ],
+                            onChanged: (value) {
+                              setState(() {
+                                dropDownValue = value.toString();
+                              });
+                              dropDownValue == "Free" ? "Free" : "Paid";
+                            }),
+                      ),
+                    ).paddingOnly(bottom: 10),
+                    dropDownValue == "Paid"
+                        ? Container(
+                      height: 35,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 0, vertical: 00),
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(35)),
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: ListView.builder(
+                        // controller: scrollController,
+                          itemCount: license.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (ctx, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  intlicense = index;
+                                });
+                                print(context);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0),
+                                child: Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 00, vertical: 5),
+                                  width:
+                                  MediaQuery.of(context).size.width * 0.3,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                    color: containercolor,
+                                    border: intlicense == index
+                                        ? Border.all(color: primary)
+                                        : Border.all(
+                                        color: Colors.transparent),
+                                    borderRadius: intlicense == index
+                                        ? BorderRadius.circular(35)
+                                        : BorderRadius.circular(35),
+                                  ),
+                                  child: Neumorphic(
+                                    style: NeumorphicStyle(
+                                        surfaceIntensity: 0.9,
+                                        shadowLightColorEmboss: black,
+                                        shape: NeumorphicShape.concave,
+                                        boxShape:
+                                        NeumorphicBoxShape.roundRect(
+                                            BorderRadius.circular(12)),
+                                        depth: -3,
+                                        lightSource: LightSource.bottomRight,
+                                        color: containercolor),
+                                    child: Center(
+                                        child: Text(
+                                          license[index],
+                                          style: TextStyle(
+                                              fontSize: 10, color: white),
+                                        )),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
+                    )
+                        : Container(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    customtextFormFieldOnlyHintText(
+                      hintText: "Enter Amount",
+                    ).paddingOnly(bottom: 20),
+                    Container(
+                      margin: EdgeInsets.only(right: 20, left: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: primary),
+                        color: textformfieldColor,
+                      ),
+                      child: Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: DropdownButton(
+                            isExpanded: true,
+                            value: dropDownValue2,
+                            iconEnabledColor: Colors.white,
+                            icon: Icon(Icons.keyboard_arrow_down),
+                            underline: Container(
+                              color: textformfieldColor,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                            dropdownColor: textformfieldColor,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                            hint: Row(
+                              children: [
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Container(
+                                  child: Text(
+                                    "Choose Publish Category",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ),
+                              ],
+                            ).paddingOnly(left: 8),
+                            items: [
+                              DropdownMenuItem(
+                                  value: "Single",
+                                  child: Text(
+                                    "Single",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red),
+                                  )),
+                              DropdownMenuItem(
+                                  value: "Album",
+                                  child: Text(
+                                    "Album",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                    ),
+                                  )),
+                            ],
+                            selectedItemBuilder: (BuildContext context) => [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      "Choose Publish Category (Single)",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(left: 8),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      "Choose Publish Category (Album)",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(left: 8),
+                            ],
+                            onChanged: (value) {
+                              setState(() {
+                                dropDownValue2 = value.toString();
+                              });
+                              dropDownValue2 == "Single" ? "Single" : "Album";
+                            }),
+                      ),
+                    ).paddingOnly(bottom: 10),
+                    dropDownValue2 == "Album"
+                        ? Center(
+                      child: TextButton(
+                        onPressed: (){
+                          Get.to(Select_Album());
+                        },
+                        child: AppText(text: "Select Album / EP ", SizeofFont: 14,textcolor: yellow,),
+                      ),
+                    )
+                        : Container(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 20,),
-                customtextFormFieldOnlyHintText(
-                  hintText: "Enter Amount",
+                SizedBox(
+                  height: 150,
                 ),
               ],
             ),
-            SizedBox(height: 60,),
-            Container(
-              height: 100,
-              color: Colors.transparent,
-              child: Center(
-                child: GestureDetector(
-                  onTap: (){
-                    Get.to(Select_Album());
-                  },
-                  child: Container(
-                    height: 40,
-                    width: MediaQuery.of(context).size.width*0.8,
-                    margin: EdgeInsets.only(left: 70,right: 70,top: 00),
-                    decoration: BoxDecoration(
-                      color: primary,
-                      borderRadius: BorderRadius.circular(10),
 
-                    ),
-                    child: Center(
-                      child: AppText(text: "Upload Songs", SizeofFont: 20,textcolor: white,),
-                    ),
-                  ),
-                ),
-              )
-              ,
-            ),
 
           ]),
         ),
       ),
 
-<<<<<<< HEAD
+
         bottomSheet: GlassBox(
             width: double.infinity,
             height: 80.0,
@@ -549,7 +818,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                       primary),
                   child: Center(
                     child: AppText(
-                        text: "Upload",
+                        text: "Submit",
                         SizeofFont: 20,
                         textcolor: white
                     ),
@@ -557,9 +826,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                 ),
               ),
             )),
-=======
 
->>>>>>> d9cd8d7c9f50c427a5108736cfeef7f2784ec656
     );
   }
 }

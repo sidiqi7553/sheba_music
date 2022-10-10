@@ -7,9 +7,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/Wallet/Wallet_Main.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/GlassBox.dart';
 import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
+import 'package:sheba_music/const/App_Text.dart';
 
 class Select_Album_2 extends StatefulWidget {
   const Select_Album_2({Key? key}) : super(key: key);
@@ -138,6 +140,28 @@ class _Select_Album_2State extends State<Select_Album_2> {
           ) ,
         ),
       ),
+      bottomSheet: GlassBox(
+          width: double.infinity,
+          height: 80.0,
+          child: Center(
+            child: GestureDetector(
+              onTap: () {
+                // if (selectedItems.length >= 3) {
+                //   Get.to(Menu());
+                // } else {}
+              },
+              child: Container(
+                height: 40,
+                width: MediaQuery.of(context).size.width * 0.7,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10), color: primary),
+                child: Center(
+                  child:
+                  AppText(text: "OK", SizeofFont: 20, textcolor: white),
+                ),
+              ),
+            ),
+          )),
     );
   }
 }

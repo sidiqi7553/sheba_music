@@ -17,14 +17,14 @@ import 'package:sheba_music/const/App_Text.dart';
 
 import 'Select_Album.dart';
 
-class Upload_Songs extends StatefulWidget {
-  const Upload_Songs({Key? key}) : super(key: key);
+class UploadSongAlbumselected extends StatefulWidget {
+  const UploadSongAlbumselected({Key? key}) : super(key: key);
 
   @override
-  State<Upload_Songs> createState() => _Upload_SongsState();
+  State<UploadSongAlbumselected> createState() => _UploadSongAlbumselectedState();
 }
 
-class _Upload_SongsState extends State<Upload_Songs> {
+class _UploadSongAlbumselectedState extends State<UploadSongAlbumselected> {
   List<String> countries = ['USA', 'India'];
   List<String> indiaProvince = ['New Delhi', 'Bihar', 'Rajasthan'];
   List<String> usaProvince = ['Texas', 'Florida', 'California'];
@@ -61,8 +61,8 @@ class _Upload_SongsState extends State<Upload_Songs> {
 
   pickphoto() async {
     final image =
-        // ignore: invalid_use_of_visible_for_testing_member
-        await FilePicker.platform.pickFiles(
+    // ignore: invalid_use_of_visible_for_testing_member
+    await FilePicker.platform.pickFiles(
       type: FileType.image,
     );
     if (image == null) return;
@@ -75,8 +75,8 @@ class _Upload_SongsState extends State<Upload_Songs> {
 
   pickCoverphoto() async {
     final image =
-        // ignore: invalid_use_of_visible_for_testing_member
-        await FilePicker.platform.pickFiles(
+    // ignore: invalid_use_of_visible_for_testing_member
+    await FilePicker.platform.pickFiles(
       type: FileType.audio,
     );
     if (image == null) return;
@@ -124,57 +124,57 @@ class _Upload_SongsState extends State<Upload_Songs> {
                     width: MediaQuery.of(context).size.width,
                     decoration: temp2 == null
                         ? BoxDecoration(
-                            color: textformfieldColor,
-                            borderRadius: BorderRadius.circular(5),
-                          )
+                      color: textformfieldColor,
+                      borderRadius: BorderRadius.circular(5),
+                    )
                         : BoxDecoration(
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: FileImage(File(temp2!.path!)),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: FileImage(File(temp2!.path!)),
+                      ),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: temp2 == null
                         ? Center(
-                            child: Container(
-                              height: 90,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/Icons/audio(2).svg',
-                                    color: white,
-                                    height: 50,
-                                  ),
-                                  Text(
-                                    'Select Audio',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: white,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                      child: Container(
+                        height: 90,
+                        child: Column(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceAround,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/Icons/audio(2).svg',
+                              color: white,
+                              height: 50,
                             ),
-                          )
-                        : Align(
-                            alignment: Alignment.topRight,
-                            child: IconButton(
-                              hoverColor: Colors.transparent,
-                              onPressed: (() {
-                                setState(() {
-                                  temp2 = null;
-                                });
-                              }),
-                              icon: Icon(
-                                Icons.close,
+                            Text(
+                              'Select Audio',
+                              style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
                                 color: white,
                               ),
                             ),
-                          ),
+                          ],
+                        ),
+                      ),
+                    )
+                        : Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
+                        hoverColor: Colors.transparent,
+                        onPressed: (() {
+                          setState(() {
+                            temp2 = null;
+                          });
+                        }),
+                        icon: Icon(
+                          Icons.close,
+                          color: white,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -202,57 +202,57 @@ class _Upload_SongsState extends State<Upload_Songs> {
                     width: MediaQuery.of(context).size.width,
                     decoration: temp == null
                         ? BoxDecoration(
-                            color: textformfieldColor,
-                            borderRadius: BorderRadius.circular(5),
-                          )
+                      color: textformfieldColor,
+                      borderRadius: BorderRadius.circular(5),
+                    )
                         : BoxDecoration(
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: FileImage(File(temp!.path!)),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: FileImage(File(temp!.path!)),
+                      ),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: temp == null
                         ? Center(
-                            child: Container(
-                              height: 90,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/Icons/Plus.svg',
-                                    color: white,
-                                    height: 50,
-                                  ),
-                                  Text(
-                                    'Upload Cover Art',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: white,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                      child: Container(
+                        height: 90,
+                        child: Column(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceAround,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/Icons/Plus.svg',
+                              color: white,
+                              height: 50,
                             ),
-                          )
-                        : Align(
-                            alignment: Alignment.topRight,
-                            child: IconButton(
-                              hoverColor: Colors.transparent,
-                              onPressed: (() {
-                                setState(() {
-                                  temp = null;
-                                });
-                              }),
-                              icon: Icon(
-                                Icons.close,
+                            Text(
+                              'Upload Cover Art',
+                              style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
                                 color: white,
                               ),
                             ),
-                          ),
+                          ],
+                        ),
+                      ),
+                    )
+                        : Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
+                        hoverColor: Colors.transparent,
+                        onPressed: (() {
+                          setState(() {
+                            temp = null;
+                          });
+                        }),
+                        icon: Icon(
+                          Icons.close,
+                          color: white,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -283,7 +283,7 @@ class _Upload_SongsState extends State<Upload_Songs> {
                   borderRadius: BorderRadius.circular(25)),
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                  // controller: scrollController,
+                // controller: scrollController,
                   itemCount: catagory.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (ctx, index) {
@@ -322,9 +322,9 @@ class _Upload_SongsState extends State<Upload_Songs> {
                                 color: containercolor),
                             child: Center(
                                 child: Text(
-                              catagory[index],
-                              style: TextStyle(fontSize: 13, color: white),
-                            )),
+                                  catagory[index],
+                                  style: TextStyle(fontSize: 13, color: white),
+                                )),
                           ),
                         ),
                       ),
@@ -350,7 +350,7 @@ class _Upload_SongsState extends State<Upload_Songs> {
                   borderRadius: BorderRadius.circular(25)),
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                  // controller: scrollController,
+                // controller: scrollController,
                   itemCount: catagory.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (ctx, index) {
@@ -389,19 +389,15 @@ class _Upload_SongsState extends State<Upload_Songs> {
                                 color: containercolor),
                             child: Center(
                                 child: Text(
-                              genre[index],
-                              style: TextStyle(fontSize: 13, color: white),
-                            )),
+                                  genre[index],
+                                  style: TextStyle(fontSize: 13, color: white),
+                                )),
                           ),
                         ),
                       ),
                     );
                   }),
             ),
-
-
-
-
             Column(
               children: [
                 SizedBox(
@@ -466,39 +462,39 @@ class _Upload_SongsState extends State<Upload_Songs> {
                               )),
                         ],
                         selectedItemBuilder: (BuildContext context) => [
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      "Free",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  ),
-                                ],
-                              ).paddingOnly(left: 8),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      "Paid",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  ),
-                                ],
-                              ).paddingOnly(left: 8),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Container(
+                                child: Text(
+                                  "Free",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
                             ],
+                          ).paddingOnly(left: 8),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Container(
+                                child: Text(
+                                  "Paid",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ],
+                          ).paddingOnly(left: 8),
+                        ],
                         onChanged: (value) {
                           setState(() {
                             dropDownValue = value.toString();
@@ -509,67 +505,67 @@ class _Upload_SongsState extends State<Upload_Songs> {
                 ).paddingOnly(bottom: 10),
                 dropDownValue == "Paid"
                     ? Container(
-                        height: 35,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 0, vertical: 00),
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(35)),
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: ListView.builder(
-                            // controller: scrollController,
-                            itemCount: license.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (ctx, index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    intlicense = index;
-                                  });
-                                  print(context);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 00, vertical: 5),
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.3,
-                                    height: 35,
-                                    decoration: BoxDecoration(
-                                      color: containercolor,
-                                      border: intlicense == index
-                                          ? Border.all(color: primary)
-                                          : Border.all(
-                                              color: Colors.transparent),
-                                      borderRadius: intlicense == index
-                                          ? BorderRadius.circular(35)
-                                          : BorderRadius.circular(35),
-                                    ),
-                                    child: Neumorphic(
-                                      style: NeumorphicStyle(
-                                          surfaceIntensity: 0.9,
-                                          shadowLightColorEmboss: black,
-                                          shape: NeumorphicShape.concave,
-                                          boxShape:
-                                              NeumorphicBoxShape.roundRect(
-                                                  BorderRadius.circular(12)),
-                                          depth: -3,
-                                          lightSource: LightSource.bottomRight,
-                                          color: containercolor),
-                                      child: Center(
-                                          child: Text(
-                                        license[index],
-                                        style: TextStyle(
-                                            fontSize: 10, color: white),
-                                      )),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }),
-                      )
+                  height: 35,
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 0, vertical: 00),
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(35)),
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: ListView.builder(
+                    // controller: scrollController,
+                      itemCount: license.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (ctx, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              intlicense = index;
+                            });
+                            print(context);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0),
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: 00, vertical: 5),
+                              width:
+                              MediaQuery.of(context).size.width * 0.3,
+                              height: 35,
+                              decoration: BoxDecoration(
+                                color: containercolor,
+                                border: intlicense == index
+                                    ? Border.all(color: primary)
+                                    : Border.all(
+                                    color: Colors.transparent),
+                                borderRadius: intlicense == index
+                                    ? BorderRadius.circular(35)
+                                    : BorderRadius.circular(35),
+                              ),
+                              child: Neumorphic(
+                                style: NeumorphicStyle(
+                                    surfaceIntensity: 0.9,
+                                    shadowLightColorEmboss: black,
+                                    shape: NeumorphicShape.concave,
+                                    boxShape:
+                                    NeumorphicBoxShape.roundRect(
+                                        BorderRadius.circular(12)),
+                                    depth: -3,
+                                    lightSource: LightSource.bottomRight,
+                                    color: containercolor),
+                                child: Center(
+                                    child: Text(
+                                      license[index],
+                                      style: TextStyle(
+                                          fontSize: 10, color: white),
+                                    )),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                )
                     : Container(),
                 SizedBox(
                   height: 20,
@@ -692,6 +688,11 @@ class _Upload_SongsState extends State<Upload_Songs> {
                 ),
               ],
             ),
+
+
+
+
+
             SizedBox(
               height: 150,
             ),
@@ -715,7 +716,7 @@ class _Upload_SongsState extends State<Upload_Songs> {
                     borderRadius: BorderRadius.circular(10), color: primary),
                 child: Center(
                   child:
-                      AppText(text: "Submit", SizeofFont: 20, textcolor: white),
+                  AppText(text: "Submit", SizeofFont: 20, textcolor: white),
                 ),
               ),
             ),

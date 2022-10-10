@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/MyPlayaList.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/GlassBox.dart';
 import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/Views/Widgets/mySearchBar.dart';
@@ -33,10 +34,10 @@ class _Select_AlbumState extends State<Select_Album> {
         child: Column(
           children: [
 
+
             mySearchBar(
               hinttext: "Search Album",
             ),
-
             Container(
               height: MediaQuery
                   .of(context)
@@ -47,25 +48,28 @@ class _Select_AlbumState extends State<Select_Album> {
                   .size
                   .width,
               margin: const EdgeInsets.symmetric(
-                  horizontal: 00, vertical: 20),
+                  horizontal: 00, vertical: 10),
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(25)),
               child: ListView.builder(
+                scrollDirection: Axis.vertical,
                 // controller: scrollController,
-                  itemCount: 3,
+                  itemCount: 2,
 
                   itemBuilder: (ctx, index) {
                     if (index == 0) {
                       return
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(Select_Album_2());
+                          },
                           child: Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, right: 10, top: 10),
                               child: Universal_Container(
 
-                                height: 120,
+                                height: 170,
                                 widht: 150,
 
                                 child: Column(
@@ -74,23 +78,23 @@ class _Select_AlbumState extends State<Select_Album> {
                                         flex: 4,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                              color: containercolor,
-                                              border: Border.all(
-                                                  color: primary),
-                                              borderRadius: BorderRadius
-                                                  .only(
-                                                topRight: Radius.circular(
-                                                    10),
-                                                topLeft: Radius.circular(
-                                                    10),)
+                                            color: containercolor,
+                                            border: Border.all(
+                                                color: primary),
+                                            borderRadius: BorderRadius
+                                                .only(
+                                              topRight: Radius.circular(
+                                                  10),
+                                              topLeft: Radius.circular(
+                                                  10),),
                                           ),
                                           child: Center(
                                             child: SvgPicture.asset(
-                                                "assets/Icons/Plus.svg"),
+                                              "assets/Icons/Plus.svg",height: 50,),
                                           ),
                                         )),
                                     Flexible(
-                                      flex: 3,
+                                      flex: 1,
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.only(
@@ -105,10 +109,12 @@ class _Select_AlbumState extends State<Select_Album> {
                                           child: Padding(
                                             padding: const EdgeInsets.only(
                                               left: 18.0, top: 8,),
-                                            child: AppText(
-                                              text: "Create Playlist",
-                                              SizeofFont: 16,
-                                              textcolor: white,
+                                            child: Center(
+                                              child: AppText(
+                                                text: "Create Album",
+                                                SizeofFont: 16,
+                                                textcolor: white,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -129,24 +135,31 @@ class _Select_AlbumState extends State<Select_Album> {
                               left: 10.0, right: 10, top: 10),
                           child: Universal_Container(
 
-                            height: 120,
+                            height: 170,
                             widht: 150,
 
                             child: Column(
                               children: [
                                 Flexible(
-                                    flex: 4,
+                                    flex: 3,
                                     child: Container(
                                       decoration: BoxDecoration(
+                                        borderRadius: BorderRadius
+                                            .only(
+                                          topRight: Radius.circular(
+                                              10),
+                                          topLeft: Radius.circular(
+                                              10),),
                                         color: Colors.transparent,
                                         image: DecorationImage(
+
                                             image: AssetImage(
                                                 "assets/Images/LiveStreamimg.png"),
-                                            fit: BoxFit.fill),
+                                            fit: BoxFit.fitWidth),
                                       ),
                                     )),
                                 Flexible(
-                                  flex: 3,
+                                  flex: 1,
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
@@ -164,9 +177,10 @@ class _Select_AlbumState extends State<Select_Album> {
                                         child: Column(
                                           crossAxisAlignment:
                                           CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             AppText(
-                                              text: "My Playlist 1",
+                                              text: "My Album",
                                               SizeofFont: 16,
                                               textcolor: white,
                                             ),
@@ -197,31 +211,28 @@ class _Select_AlbumState extends State<Select_Album> {
         ),
       )
       ),
-      bottomSheet: Container(
-        height: 60,
-        color: Colors.transparent,
-        child: Center(
-          child: GestureDetector(
-            onTap: (){
-              Get.to(Select_Album_2());
-            },
-            child: Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width*0.8,
-              margin: EdgeInsets.only(left: 70,right: 70,top: 00),
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(10),
-
-              ),
-              child: Center(
-                child: AppText(text: "ok", SizeofFont: 20,textcolor: white,),
+      bottomSheet: GlassBox(
+          width: double.infinity,
+          height: 80.0,
+          child: Center(
+            child: GestureDetector(
+              onTap: () {
+                // if (selectedItems.length >= 3) {
+                Get.back();
+                // } else {}
+              },
+              child: Container(
+                height: 40,
+                width: MediaQuery.of(context).size.width * 0.7,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10), color: primary),
+                child: Center(
+                  child:
+                  AppText(text: "OK", SizeofFont: 20, textcolor: white),
+                ),
               ),
             ),
-          ),
-        )
-        ,
-      ),
+          )),
     );
   }
 }
