@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Album.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/start_live_streaming.dart';
 import 'package:sheba_music/Views/Widgets/BackGround_Container.dart';
+import 'package:sheba_music/Views/Widgets/GlassBox.dart';
 import 'package:sheba_music/Views/Widgets/customtextformfield.dart';
 import 'package:sheba_music/Views/Widgets/inner_Pages_App_Bar.dart';
 import 'package:sheba_music/const/App_Colors.dart';
@@ -503,31 +504,33 @@ SizedBox(height: 160,)
             ),
         ),
 
-      bottomSheet: Container(
-        height: 100,
-        color: Colors.transparent,
-        child: Center(
-          child: GestureDetector(
-            onTap: (){
-              Get.to(Select_Album());
-            },
-            child: Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width*0.8,
-              margin: EdgeInsets.only(left: 70,right: 70,top: 00),
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(10),
-
-              ),
-              child: Center(
-                child: AppText(text: "Upload Songs", SizeofFont: 20,textcolor: white,),
+      bottomSheet: GlassBox(
+          width: double.infinity,
+          height: 80.0,
+          child: Center(
+            child: GestureDetector(
+              onTap: () {
+                // if (selectedItems.length >= 3) {
+                //   Get.to(Menu());
+                // } else {}
+              },
+              child: Container(
+                height: 40,
+                width: MediaQuery.of(context).size.width * 0.7,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color:
+                    primary),
+                child: Center(
+                  child: AppText(
+                      text: "Upload",
+                      SizeofFont: 20,
+                      textcolor: white
+                  ),
+                ),
               ),
             ),
-          ),
-        )
-        ,
-      ),
+          )),
     );
   }
 }

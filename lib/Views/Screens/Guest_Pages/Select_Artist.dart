@@ -280,6 +280,7 @@ class _Select_ArtistState extends State<Select_Artist> {
                   ),
                 ),
               ),
-            )));
+            ))
+    );
   }
 }
