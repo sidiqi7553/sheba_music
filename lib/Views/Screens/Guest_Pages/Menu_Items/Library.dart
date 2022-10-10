@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Create_Playlist.dart';
+import 'package:sheba_music/Views/Screens/Extra_Screens_of_Artist/Select_Create_Playlist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Downloads_song.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/Following_Artist.dart';
 import 'package:sheba_music/Views/Screens/Guest_Pages/LibraryTabs_items/Navigation_Items/MyPlayaList.dart';
@@ -44,13 +45,15 @@ class Library extends StatelessWidget {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(25)),
               child: ListView.builder(
-                  // controller: scrollController,
+                // controller: scrollController,
                   itemCount: 20,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (ctx, index) {
                     if (index == 0) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(Select_Create_Playlist());
+                        },
                         child: Padding(
                             padding: const EdgeInsets.only(
                                 left: 10.0, right: 10, top: 10),
@@ -89,20 +92,27 @@ class Library extends StatelessWidget {
                                       ),
                                       child: Container(
                                         height:
-                                            MediaQuery.of(context).size.height *
-                                                0.2,
+                                        MediaQuery.of(context).size.height *
+                                            0.2,
                                         width:
-                                            MediaQuery.of(context).size.width *
-                                                0.45,
+                                        MediaQuery.of(context).size.width *
+                                            0.45,
                                         child: Padding(
                                           padding: const EdgeInsets.only(
-                                            left: 15.0,
-                                            top: 12,
+                                            left: 0.0,
+                                            top: 0,
                                           ),
-                                          child: AppText(
-                                            text: "Create Playlist",
-                                            SizeofFont: 16,
-                                            textcolor: white,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              AppText(
+                                                text: "Create Playlist",
+                                                SizeofFont: 16,
+                                                textcolor: white,
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -148,25 +158,22 @@ class Library extends StatelessWidget {
                                     ),
                                     child: Container(
                                       width: double.infinity,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 5.0, top: 8, right: 5),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            AppText(
-                                              text: "My Playlist 1",
-                                              SizeofFont: 16,
-                                              textcolor: white,
-                                            ),
-                                            AppText(
-                                              text: "8 Songs",
-                                              SizeofFont: 12,
-                                              textcolor: whiteforsubtitle,
-                                            ),
-                                          ],
-                                        ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          AppText(
+                                            text: "My Playlist 1",
+                                            SizeofFont: 16,
+                                            textcolor: white,
+                                          ),
+                                          AppText(
+                                            text: "8 Songs",
+                                            SizeofFont: 12,
+                                            textcolor: whiteforsubtitle,
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),

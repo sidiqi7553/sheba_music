@@ -44,7 +44,7 @@ class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
                   .size
                   .width,
               margin: const EdgeInsets.symmetric(
-                  horizontal: 00, vertical: 20),
+                  horizontal: 00, vertical: 10),
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(25)),
@@ -64,7 +64,7 @@ class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
                                   left: 10.0, right: 10, top: 10),
                               child: Universal_Container(
 
-                                height: 140,
+                                height: 170,
                                 widht: 150,
 
                                 child: Column(
@@ -81,15 +81,15 @@ class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
                                                 topRight: Radius.circular(
                                                     10),
                                                 topLeft: Radius.circular(
-                                                    10),)
+                                                    10),),
                                           ),
                                           child: Center(
                                             child: SvgPicture.asset(
-                                                "assets/Icons/Plus.svg"),
+                                                "assets/Icons/Plus.svg",height: 50,),
                                           ),
                                         )),
                                     Flexible(
-                                      flex: 3,
+                                      flex: 1,
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.only(
@@ -130,24 +130,31 @@ class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
                               left: 10.0, right: 10, top: 10),
                           child: Universal_Container(
 
-                            height: 120,
+                            height: 170,
                             widht: 150,
 
                             child: Column(
                               children: [
                                 Flexible(
-                                    flex: 4,
+                                    flex: 3,
                                     child: Container(
                                       decoration: BoxDecoration(
+                                        borderRadius: BorderRadius
+                                            .only(
+                                          topRight: Radius.circular(
+                                              10),
+                                          topLeft: Radius.circular(
+                                              10),),
                                         color: Colors.transparent,
                                         image: DecorationImage(
+
                                             image: AssetImage(
                                                 "assets/Images/LiveStreamimg.png"),
-                                            fit: BoxFit.fill),
+                                            fit: BoxFit.fitWidth),
                                       ),
                                     )),
                                 Flexible(
-                                  flex: 3,
+                                  flex: 1,
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
@@ -165,6 +172,7 @@ class _Select_Create_PlaylistState extends State<Select_Create_Playlist> {
                                         child: Column(
                                           crossAxisAlignment:
                                           CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             AppText(
                                               text: "My Playlist 1",

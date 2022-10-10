@@ -31,11 +31,11 @@ class Universal_Container extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
-                  offset: Offset(18, 18),
+                  offset: Offset(5, 5),
                   blurRadius: 36,
                   color: black.withOpacity(0.25)),
               BoxShadow(
-                  offset: Offset(-18, -18),
+                  offset: Offset(-5, -5),
                   blurRadius: 36,
                   color: white.withOpacity(0.1)),
             ]),
