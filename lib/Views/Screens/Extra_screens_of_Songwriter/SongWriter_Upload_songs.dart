@@ -497,37 +497,38 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                 ),
               ],
             ),
-            SizedBox(height: 160,)
+            SizedBox(height: 60,),
+            Container(
+              height: 100,
+              color: Colors.transparent,
+              child: Center(
+                child: GestureDetector(
+                  onTap: (){
+                    Get.to(Select_Album());
+                  },
+                  child: Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width*0.8,
+                    margin: EdgeInsets.only(left: 70,right: 70,top: 00),
+                    decoration: BoxDecoration(
+                      color: primary,
+                      borderRadius: BorderRadius.circular(10),
+
+                    ),
+                    child: Center(
+                      child: AppText(text: "Upload Songs", SizeofFont: 20,textcolor: white,),
+                    ),
+                  ),
+                ),
+              )
+              ,
+            ),
 
           ]),
         ),
       ),
 
-      bottomSheet: Container(
-        height: 100,
-        color: Colors.transparent,
-        child: Center(
-          child: GestureDetector(
-            onTap: (){
-              Get.to(Select_Album ());
-            },
-            child: Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width*0.8,
-              margin: EdgeInsets.only(left: 70,right: 70,top: 00),
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(10),
 
-              ),
-              child: Center(
-                child: AppText(text: "Upload Song", SizeofFont: 20,textcolor: white,),
-              ),
-            ),
-          ),
-        )
-        ,
-      ),
     );
   }
 }

@@ -44,6 +44,10 @@ class _TicketsState extends State<Tickets> {
 
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   ];
   int list = 0;
   @override
