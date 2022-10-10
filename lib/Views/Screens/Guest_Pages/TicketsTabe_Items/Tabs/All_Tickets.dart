@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sheba_music/Views/Widgets/HomeOriginModals/tickets.dart';
-import 'package:sheba_music/Views/Widgets/Universal_Container.dart';
-import 'package:sheba_music/const/App_Colors.dart';
-import 'package:sheba_music/const/App_Text.dart';
-
 import '../../../../Widgets/BackGround_Container.dart';
 import '../Navigation_Items/Tickets_Details.dart';
 
@@ -303,7 +298,15 @@ class _All_TicketsState extends State<All_Tickets> {
                             //       ),
                             //     ],
                             //   ),
+<<<<<<< Updated upstream
 
+=======
+
+                            // ),
+
+
+
+>>>>>>> Stashed changes
                           ),
                         );
                       }),
