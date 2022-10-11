@@ -697,11 +697,8 @@ class _Upload_SongsState extends State<Upload_Songs> {
             ),
           ]),
         ),
-<<<<<<< Updated upstream
       ),
-=======
 
->>>>>>> Stashed changes
       bottomSheet: GlassBox(
           width: double.infinity,
           height: 80.0,
@@ -719,24 +716,14 @@ class _Upload_SongsState extends State<Upload_Songs> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10), color: primary),
                 child: Center(
-<<<<<<< Updated upstream
                   child:
                       AppText(text: "Submit", SizeofFont: 20, textcolor: white),
-=======
-                  child: AppText(
-                    text: "Submit",
-                    SizeofFont: 20,
-                    textcolor: white
-                  ),
->>>>>>> Stashed changes
+
                 ),
               ),
             ),
           )),
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     );
   }
 }

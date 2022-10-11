@@ -798,12 +798,9 @@ class _Producer_Upload_songState extends State<Producer_Upload_song> {
             ),
           ]),
         ),
-<<<<<<< Updated upstream
       ),
-=======
 
 
->>>>>>> Stashed changes
       bottomSheet: GlassBox(
           width: double.infinity,
           height: 80.0,
@@ -826,10 +823,7 @@ class _Producer_Upload_songState extends State<Producer_Upload_song> {
               ),
             ),
           )),
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     );
   }
 }
