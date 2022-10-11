@@ -11,6 +11,8 @@ class All_Tickets extends StatefulWidget {
   State<All_Tickets> createState() => _All_TicketsState();
 }
 
+
+
 class _All_TicketsState extends State<All_Tickets> {
   @override
   Widget build(BuildContext context) {
@@ -298,12 +300,7 @@ class _All_TicketsState extends State<All_Tickets> {
                             //       ),
                             //     ],
                             //   ),
-
-
                             // ),
-
-
-
                           ),
                         );
                       }),
