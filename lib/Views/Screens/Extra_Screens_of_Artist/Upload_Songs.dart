@@ -508,68 +508,75 @@ class _Upload_SongsState extends State<Upload_Songs> {
                   ),
                 ).paddingOnly(bottom: 10),
                 dropDownValue == "Paid"
-                    ? Container(
-                        height: 35,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 0, vertical: 00),
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(35)),
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: ListView.builder(
-                            // controller: scrollController,
-                            itemCount: license.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (ctx, index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    intlicense = index;
-                                  });
-                                  print(context);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 00, vertical: 5),
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.3,
-                                    height: 35,
-                                    decoration: BoxDecoration(
-                                      color: containercolor,
-                                      border: intlicense == index
-                                          ? Border.all(color: primary)
-                                          : Border.all(
-                                              color: Colors.transparent),
-                                      borderRadius: intlicense == index
-                                          ? BorderRadius.circular(35)
-                                          : BorderRadius.circular(35),
-                                    ),
-                                    child: Neumorphic(
-                                      style: NeumorphicStyle(
-                                          surfaceIntensity: 0.9,
-                                          shadowLightColorEmboss: black,
-                                          shape: NeumorphicShape.concave,
-                                          boxShape:
-                                              NeumorphicBoxShape.roundRect(
-                                                  BorderRadius.circular(12)),
-                                          depth: -3,
-                                          lightSource: LightSource.bottomRight,
-                                          color: containercolor),
-                                      child: Center(
-                                          child: Text(
-                                        license[index],
-                                        style: TextStyle(
-                                            fontSize: 10, color: white),
-                                      )),
-                                    ),
+                    ? Column(
+                  children: [
+                    Container(
+                      height: 35,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 0, vertical: 00),
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(35)),
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: ListView.builder(
+                        // controller: scrollController,
+                          itemCount: license.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (ctx, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  intlicense = index;
+                                });
+                                print(context);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0),
+                                child: Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 00, vertical: 5),
+                                  width:
+                                  MediaQuery.of(context).size.width * 0.3,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                    color: containercolor,
+                                    border: intlicense == index
+                                        ? Border.all(color: primary)
+                                        : Border.all(
+                                        color: Colors.transparent),
+                                    borderRadius: intlicense == index
+                                        ? BorderRadius.circular(35)
+                                        : BorderRadius.circular(35),
+                                  ),
+                                  child: Neumorphic(
+                                    style: NeumorphicStyle(
+                                        surfaceIntensity: 0.9,
+                                        shadowLightColorEmboss: black,
+                                        shape: NeumorphicShape.concave,
+                                        boxShape:
+                                        NeumorphicBoxShape.roundRect(
+                                            BorderRadius.circular(12)),
+                                        depth: -3,
+                                        lightSource: LightSource.bottomRight,
+                                        color: containercolor),
+                                    child: Center(
+                                        child: Text(
+                                          license[index],
+                                          style: TextStyle(
+                                              fontSize: 10, color: white),
+                                        )),
                                   ),
                                 ),
-                              );
-                            }),
-                      )
+                              ),
+                            );
+                          }),
+                    ).paddingOnly(bottom: 10),
+                    customtextFormFieldOnlyHintText(
+                      hintText: "Enter Amount",
+                    ).paddingOnly(bottom: 10),
+                  ],
+                )
                     : Container(),
                 SizedBox(
                   height: 20,
@@ -697,8 +704,16 @@ class _Upload_SongsState extends State<Upload_Songs> {
             ),
           ]),
         ),
+<<<<<<< Updated upstream
       ),
 
+=======
+
+      ),
+
+
+
+>>>>>>> Stashed changes
       bottomSheet: GlassBox(
           width: double.infinity,
           height: 80.0,
@@ -716,8 +731,17 @@ class _Upload_SongsState extends State<Upload_Songs> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10), color: primary),
                 child: Center(
+<<<<<<< Updated upstream
                   child:
                       AppText(text: "Submit", SizeofFont: 20, textcolor: white),
+=======
+
+                  child: AppText(
+                    text: "Submit",
+                    SizeofFont: 20,
+                    textcolor: white
+                  ),
+>>>>>>> Stashed changes
 
                 ),
               ),
