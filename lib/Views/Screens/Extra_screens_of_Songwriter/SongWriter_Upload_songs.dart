@@ -676,9 +676,7 @@ class _SongWriter_Upload_songsState extends State<SongWriter_Upload_songs> {
                     SizedBox(
                       height: 20,
                     ),
-                    customtextFormFieldOnlyHintText(
-                      hintText: "Enter Amount",
-                    ).paddingOnly(bottom: 20),
+
                     Container(
                       margin: EdgeInsets.only(right: 20, left: 20),
                       decoration: BoxDecoration(

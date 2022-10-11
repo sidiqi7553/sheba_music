@@ -300,13 +300,10 @@ class _All_TicketsState extends State<All_Tickets> {
                             //       ),
                             //     ],
                             //   ),
-<<<<<<< Updated upstream
                             // ),
-=======
 
 
 
->>>>>>> Stashed changes
                           ),
                         );
                       }),
